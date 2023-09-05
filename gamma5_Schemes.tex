@@ -1,0 +1,229 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\setlength{\parindent}{1cm}
+\setlength{\parskip}{.5em}
+\renewcommand{\baselinestretch}{1.0}
+\usepackage{tikz,multicol,amsfonts,relsize,amsmath,physics,graphicx,slashed,color,colortbl,wrapfig,mathrsfs,caption,subcaption,pgfplots,array,longtable,multirow,bm,stackengine,pgfplots,fancyhdr,titlesec,enumitem,hyperref,float,lastpage,mathtools,tensor,amssymb}
+\pgfplotsset{compat=newest}
+\hypersetup{
+colorlinks=true,setpagesize,
+linkcolor=black,
+filecolor=magenta,      
+urlcolor=cyan,
+}
+\definecolor{Gray}{gray}{0.3}
+\usetikzlibrary{arrows,positioning} 
+\usetikzlibrary{arrows.meta}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+\newcommand{\numberthis}{\addtocounter{equation}{1}\tag{\theequation}}
+\newcommand{\numberthisa}{\addtocounter{equation}{1}\tag{\theequation a}}
+\newcommand{\numberthisb}{\addtocounter{equation}{0}\tag{\theequation b}}
+\newcommand{\numberthisc}{\addtocounter{equation}{0}\tag{\theequation c}}
+\newcommand{\numberthisd}{\addtocounter{equation}{0}\tag{\theequation d}}
+\newcommand{\numberthise}{\addtocounter{equation}{0}\tag{\theequation e}}
+\newcommand{\numberthisf}{\addtocounter{equation}{0}\tag{\theequation f}}
+\def\shrinkage{2.1mu}
+\def\vecsign{\mathchar"017E}
+\def\dvecsign{\smash{\stackon[-2.60pt]{\mkern-\shrinkage\vecsign}{\rotatebox{180}{$\mkern-\shrinkage\vecsign$}}}}
+\def\dvec#1{\def\useanchorwidth{T}\stackon[-4.2pt]{#1}{\,\dvecsign}}
+\stackMath
+\tikzset{
+	>=stealth',}
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{section}.\arabic{table}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+
+
+\titleformat{\section}
+{\Large\scshape}{\thesection}{1em}{}
+\titleformat{\subsection}
+{\large\scshape}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+{\scshape}{\thesubsubsection}{1em}{}
+\pagestyle{fancy}
+\lhead{\(\gamma_5\) Schemes}
+\rhead{\thepage/\pageref{LastPage}}
+\cfoot{}
+\renewcommand{\thesection}{\Roman{section}} 
+\renewcommand{\thesubsection}{\thesection.\textup{\roman{subsection}}}
+\renewcommand{\thesubsubsection}{\thesubsection.\textup{\roman{subsubsection}}}
+
+\makeatletter
+\renewcommand\@dotsep{1000}
+\makeatother
+\makeatletter
+\renewcommand{\l@section}{\@dottedtocline{1}{1.5em}{2.6em}}
+\renewcommand{\l@subsection}{\@dottedtocline{2}{4.0em}{3.0em}}
+\renewcommand{\l@subsubsection}{\@dottedtocline{3}{7.4em}{4.5em}}
+\makeatother
+
+\newcommand{\ve}[2]{\left[
+	\begin{array}{c}
+		#1\\
+		
+		#2
+	\end{array}
+	\right]
+}
+
+\allowdisplaybreaks
+
+\newcommand{\ndot}{\mathrel{\raisebox{-2.3pt}{$ \!  \mathlarger{\mathlarger{\mathlarger{\mathlarger{\cdot}}}} \! $}}}
+
+\newcommand{\edot}{\mathrel{\raisebox{-2.3pt}{$\mathlarger{\mathlarger{\mathlarger{\cdot}}}$}}}
+
+\newcommand{\Li}[1]{\mathrm{Li}_{#1}}
+
+\newcommand{\twomatrix}[4]{
+	\left[
+	\begin{array}{cc}
+		#1 & #2\\
+		#3 & #4
+	\end{array}
+	\right]
+}
+\newcommand{\threematrix}[9]{
+	\left[
+	\begin{array}{ccc}
+		#1 & #2 & #3\\
+		#4 & #5 & #6\\
+		#7 & #8 & #9
+	\end{array}
+	\right]
+}
+%-----------------------------------------------------------------------------------------
+%tikz stuff
+%-----------------------------------------------------------------------------------------
+
+\newcommand{\tikzline}[4]{\draw (#1,#2) -- (#3,#4);}
+\newcommand{\tikztline}[4]{\draw[thick] (#1,#2) -- (#3,#4);}
+\newcommand{\tikzutline}[4]{\draw[ultra thick] (#1,#2) -- (#3,#4);}
+\newcommand{\tikzaline}[4]{\draw[->] (#1,#2) -- (#3,#4);}
+\newcommand{\tikzatline}[4]{\draw[thick,->] (#1,#2) -- (#3,#4);}
+\newcommand{\tikzautline}[4]{\draw[ultra thick,->] (#1,#2) -- (#3,#4);}
+
+%
+% Polar input: takes in a starting point, a radial distance from that point, and an angle with the x-axis
+%
+
+\newcommand{\tikzlinep}[4]{\draw (#1,#2) -- (#1+#3*cos{#4},#2+#3*sin{#4});}
+\newcommand{\tikztlinep}[4]{\draw[thick] (#1,#2) -- (#1+#3*cos{#4},#2+#3*sin{#4});}
+\newcommand{\tikzutlinep}[4]{\draw[ultra thick] (#1,#2) -- (#1+#3*cos{#4},#2+#3*sin{#4});}
+\newcommand{\tikzalinep}[4]{\draw[->] (#1,#2) -- (#1+#3*cos{#4},#2+#3*sin{#4});}
+\newcommand{\tikzatlinep}[4]{\draw[thick,->] (#1,#2) -- (#1+#3*cos{#4},#2+#3*sin{#4});}
+\newcommand{\tikzautlinep}[4]{\draw[ultra thick,->] (#1,#2) -- (#1+#3*cos{#4},#2+#3*sin{#4});}
+
+\newcommand{\tikzsquare}[3]{\draw (#1,#2) -- (#1+#3,#2) -- (#1+#3,#2+#3) -- (#1,#2+#3) -- cycle;}
+\newcommand{\tikztsquare}[3]{\draw[thick] (#1,#2) -- (#1+#3,#2) -- (#1+#3,#2+#3) -- (#1,#2+#3) -- cycle;}
+\newcommand{\tikzutsquare}[3]{\draw[ultra thick] (#1,#2) -- (#1+#3,#2) -- (#1+#3,#2+#3) -- (#1,#2+#3) -- cycle;}
+
+\newcommand{\tikzrect}[4]{\draw (#1,#2) -- (#1+#3,#2) -- (#1+#3,#2+#4) -- (#1,#2+#4) -- cycle;}
+\newcommand{\tikztrect}[4]{\draw[thick] (#1,#2) -- (#1+#3,#2) -- (#1+#3,#2+#4) -- (#1,#2+#4) -- cycle;}
+\newcommand{\tikzutrect}[4]{\draw[ultra thick] (#1,#2) -- (#1+#3,#2) -- (#1+#3,#2+#4) -- (#1,#2+#4) -- cycle;}
+
+\newcommand{\tikzcircle}[3]{\draw (#1,#2) circle (#3);}
+\newcommand{\tikztcircle}[3]{\draw[thick] (#1,#2) circle (#3);}
+\newcommand{\tikzutcircle}[3]{\draw[ultra thick] (#1,#2) circle (#3);}
+
+\newcommand{\tikzellipse}[4]{\draw (#1,#2) ellipse (#3 and #4);}
+\newcommand{\tikztellipse}[4]{\draw[thick] (#1,#2) ellipse (#3 and #4);}
+\newcommand{\tikzutellipse}[4]{\draw[ultra thick] (#1,#2) ellipse (#3 and #4);}
+
+%
+% Inputs: starting point, starting angle, final angle, radius
+%
+
+\newcommand{\tikzarc}[5]{\draw (#1,#2) arc (#3:#4:#5);}
+\newcommand{\tikztarc}[5]{\draw[thick] (#1,#2) arc (#3:#4:#5);}
+\newcommand{\tikzutarc}[5]{\draw[ultra thick] (#1,#2) arc (#3:#4:#5);}
+\newcommand{\tikzaarc}[5]{\draw[->] (#1,#2) arc (#3:#4:#5);}
+\newcommand{\tikzatarc}[5]{\draw[thick,->] (#1,#2) arc (#3:#4:#5);}
+\newcommand{\tikzautarc}[5]{\draw[ultra thick,->] (#1,#2) arc (#3:#4:#5);}
+
+\newcommand{\tikznode}[3]{\node at (#1,#2) {#3};}
+
+\begin{document}
+	\begin{center}
+		{\Huge \scshape \(\gamma_5\) Schemes in \(d\)-Dimensions}
+	\end{center}
+	
+	\vspace{0.5cm}
+	
+	\section{Regularization and Renormalization}
+	
+	\subsection{Universal Features of Dimensional Regularization}
+	
+	As we know, because many of the Feynman integrals appearing in loop calculations are divergent, it is important to regulate these poles; in modern calculations, the most common regularization scheme is dimensional regularization, where we perform  
+	\begin{equation}
+	\int\frac{d^4k_i}{(2\pi)^4}\rightarrow\mu^{2\epsilon}\int\frac{d^dk_i}{(2\pi)^d}.
+	\end{equation}
+	In other words, we work in \(d\)-dimensions; divergences in the integrals will then be manifested as poles in \(\epsilon=(4-d)/2\). 
+	
+	Because we work in \(d\)-dimensions, note that contracting two metrics yields  
+	\begin{equation}
+	g^{\mu\nu}g_{\mu\nu}=d,
+	\end{equation}
+	and so 
+	\begin{align*}
+	\gamma^\mu\gamma_\mu & =\frac{1}{2}g^{\mu\nu}\{\gamma_\mu,\gamma_\nu\}\\
+	& =d; \numberthis
+	\end{align*}
+	in general, \(\gamma\) matrices can be contracted according to  
+	\begin{equation}
+	\gamma^\mu\gamma_{\nu_1}\dots\gamma_{\nu_n}\gamma_\mu=2\sum_{i=1}^n(-1)^{i+n}\gamma_{\nu_i}\gamma_{\nu_1}\dots\gamma_{\nu_{i-1}}\gamma_{\nu_{i+1}}\dots\gamma_{\nu_n}+(-1)^{n}d\gamma_{\nu_1}\gamma_{\nu_n}.
+	\end{equation}
+	
+	As we know, in four-dimensions, \(\gamma_5\) is defined by  
+	\begin{equation}
+	\gamma_5=-i\gamma_0\gamma_1\gamma_2\gamma_3;
+	\end{equation}
+	however, there is no clear definition for this matrix in \(d\)-dimensions. Furthermore, it is not clear that the anticommutation relation  
+	\begin{equation}
+	\{\gamma_\mu,\gamma_5\}=0
+	\end{equation}
+	will translate directly into \(d\)-dimensions while traces of Dirac matrix chains maintain their cyclic property. There are two different schemes for handling \(\gamma_5\) in dimensional regularization: in the 't Hooft-Veltman-Breitenlohner-Maison scheme, the anticommutation relation for \(\gamma_5\) is modified while the cyclic property of the trace is maintained; on the other hand, in Kreimer's scheme, the anticommutation relation is maintained while the cyclic property of the trace is abandoned. 
+	
+	There are no \(d\)-dimensional analogues for either \(\gamma_5\) or the Levi-Civita tensor, \(\varepsilon_{\mu\nu\rho\sigma}\); we simply accept that the definition in Equation 1.5 along with the trace  
+	\begin{equation}
+	\Tr[\gamma_\mu\gamma_\nu\gamma_\rho\gamma_\sigma\gamma_5]=-4i\varepsilon_{\mu\nu\rho\sigma}
+	\end{equation}
+	and the additional properties  
+	\begin{align*}
+	\gamma_5^2 & =\mathbf{1}, \numberthisa\\
+	\gamma_5^\dagger & =\gamma_5 \numberthisb
+	\end{align*}
+	are continued to \(d\)-dimensions. However, since \(\gamma_5\) and \(\varepsilon_{\mu\nu\rho\sigma}\) are intrinsically four-dimensional objects, it is common to separate the four- and \(-2\epsilon\)-dimensional subspaces of the Lorentz indices; we write this as  
+	\begin{align*}
+	k^\mu & =\bar{k}^\mu+\hat{k}^\mu, \numberthisa\\
+	\gamma^\mu & =\bar{\gamma}^\mu+\hat{\gamma}^\mu, \numberthisb
+	\end{align*}
+	where the bar denotes the four-dimensional components and the hat denotes the \(-2\epsilon\)-components. This allows us to write down the usual four-dimensional identities for the contractions of Levi-Civita tensors, e.g.  
+	\begin{align*}
+	\varepsilon^{\mu\nu\rho\sigma}\varepsilon_{\mu\nu\rho\sigma} & =-24, \numberthisa\\
+	\varepsilon\indices{^{\mu\nu\rho}_\alpha}\varepsilon_{\mu\nu\rho\beta} & =-6\bar{g}_{\alpha\beta}, \numberthisb\\
+	\varepsilon\indices{^{\mu\nu}_{\alpha\delta}}\varepsilon_{\mu\nu\beta\eta} & =-2(\bar{g}_{\alpha\beta}\bar{g}_{\delta\eta}-\bar{g}_{\alpha\eta}\bar{g}_{\beta\delta}), \numberthisc
+	\end{align*}
+	where \(\bar{g}_{\mu\nu}\) denotes the four-dimensional metric. 
+	
+	When contracting indices of \(d\)-dimensional four-vectors, we must explicitly separate out the parts as  
+	\begin{equation}
+	\bar{g}_{\mu\nu}k_i^\mu k_j^\nu=k_i\ndot k_j-\hat{k}_i\ndot\hat{k}_j;
+	\end{equation}
+	this separation can cause some difficulties in loop calculations, e.g. numerators of the form \(\hat{k}_i\ndot\hat{k}_j\) can appear. This, however, is a solved problem at both one- and two-loops. 
+	
+	\section{The Na\"ive Approach}
+	
+	In this prescription, \(\gamma_5\) satisfies the anticommutation relation  
+	\begin{equation}
+	\{\gamma_5,\gamma^\mu\}=0;
+	\end{equation}
+	in addition to this, in order to study diagrams with odd numbers of \(\gamma_5\)'s, we must include the additional criterion that  
+	\begin{equation}
+	\Tr(\gamma_5\gamma^\mu\gamma^\nu\gamma^\rho\gamma^\sigma)=4i\varepsilon^{\mu\nu\rho\sigma}+\order{d-4},
+	\end{equation}
+	where, all indices take values \(0,1,2,3\), since the Levi-Civita tensor is inherently a 4-dimensional object. 
+\end{document}

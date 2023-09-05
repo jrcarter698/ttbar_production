@@ -1,0 +1,180 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\setlength{\parindent}{1cm}
+\setlength{\parskip}{.5em}
+\renewcommand{\baselinestretch}{1.0}
+\usepackage{tikz,multicol,amsfonts,relsize,amsmath,physics,graphicx,slashed,color,colortbl,wrapfig,mathrsfs,caption,subcaption,pgfplots,array,longtable,multirow,bm,stackengine,pgfplots,fancyhdr,titlesec,enumitem,hyperref,float,lastpage,mathtools,tensor,amssymb}
+\pgfplotsset{compat=newest}
+\hypersetup{
+colorlinks=true,setpagesize,
+linkcolor=black,
+filecolor=magenta,      
+urlcolor=cyan,
+}
+\definecolor{Gray}{gray}{0.3}
+\usetikzlibrary{arrows,positioning} 
+\usetikzlibrary{arrows.meta}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+\newcommand{\numberthis}{\addtocounter{equation}{1}\tag{\theequation}}
+\newcommand{\numberthisa}{\addtocounter{equation}{1}\tag{\theequation a}}
+\newcommand{\numberthisb}{\addtocounter{equation}{0}\tag{\theequation b}}
+\newcommand{\numberthisc}{\addtocounter{equation}{0}\tag{\theequation c}}
+\newcommand{\numberthisd}{\addtocounter{equation}{0}\tag{\theequation d}}
+\newcommand{\numberthise}{\addtocounter{equation}{0}\tag{\theequation e}}
+\newcommand{\numberthisf}{\addtocounter{equation}{0}\tag{\theequation f}}
+\def\shrinkage{2.1mu}
+\def\vecsign{\mathchar"017E}
+\def\dvecsign{\smash{\stackon[-2.60pt]{\mkern-\shrinkage\vecsign}{\rotatebox{180}{$\mkern-\shrinkage\vecsign$}}}}
+\def\dvec#1{\def\useanchorwidth{T}\stackon[-4.2pt]{#1}{\,\dvecsign}}
+\stackMath
+\tikzset{
+	>=stealth',}
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{section}.\arabic{table}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+
+
+\titleformat{\section}
+{\Large\scshape}{\thesection}{1em}{}
+\titleformat{\subsection}
+{\large\scshape}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+{\scshape}{\thesubsubsection}{1em}{}
+\pagestyle{fancy}
+%-------------------------------------------------------------------------------------
+% Header and Footer
+%-------------------------------------------------------------------------------------
+\lhead{Notes for ttbar Production}
+\rhead{\thepage/\pageref{LastPage}}
+\cfoot{}
+%-------------------------------------------------------------------------------------
+%
+%-------------------------------------------------------------------------------------
+\renewcommand{\thesection}{\Roman{section}} 
+\renewcommand{\thesubsection}{\thesection.\textup{\roman{subsection}}}
+\renewcommand{\thesubsubsection}{\thesubsection.\textup{\roman{subsubsection}}}
+
+\makeatletter
+\renewcommand\@dotsep{1000}
+\makeatother
+\makeatletter
+\renewcommand{\l@section}{\@dottedtocline{1}{1.5em}{2.6em}}
+\renewcommand{\l@subsection}{\@dottedtocline{2}{4.0em}{3.0em}}
+\renewcommand{\l@subsubsection}{\@dottedtocline{3}{7.4em}{4.5em}}
+\makeatother
+
+\newcommand{\ve}[2]{\left[
+	\begin{array}{c}
+		#1\\
+		
+		#2
+	\end{array}
+	\right]
+}
+
+\allowdisplaybreaks
+
+\newcommand{\ndot}{\mathrel{\raisebox{-2.3pt}{$ \!  \mathlarger{\mathlarger{\mathlarger{\mathlarger{\cdot}}}} \! $}}}
+
+\newcommand{\edot}{\mathrel{\raisebox{-2.3pt}{$\mathlarger{\mathlarger{\mathlarger{\cdot}}}$}}}
+
+\newcommand{\Li}[1]{\mathrm{Li}_{#1}}
+
+\newcommand{\twomatrix}[4]{
+	\left[
+	\begin{array}{cc}
+		#1 & #2\\
+		#3 & #4
+	\end{array}
+	\right]
+}
+\newcommand{\threematrix}[9]{
+	\left[
+	\begin{array}{ccc}
+		#1 & #2 & #3\\
+		#4 & #5 & #6\\
+		#7 & #8 & #9
+	\end{array}
+	\right]
+}
+%-----------------------------------------------------------------------------------------
+%tikz stuff
+%-----------------------------------------------------------------------------------------
+
+\newcommand{\tikzline}[4]{\draw (#1,#2) -- (#3,#4);}
+\newcommand{\tikztline}[4]{\draw[thick] (#1,#2) -- (#3,#4);}
+\newcommand{\tikzutline}[4]{\draw[ultra thick] (#1,#2) -- (#3,#4);}
+\newcommand{\tikzaline}[4]{\draw[->] (#1,#2) -- (#3,#4);}
+\newcommand{\tikzatline}[4]{\draw[thick,->] (#1,#2) -- (#3,#4);}
+\newcommand{\tikzautline}[4]{\draw[ultra thick,->] (#1,#2) -- (#3,#4);}
+
+%
+% Polar input: takes in a starting point, a radial distance from that point, and an angle with the x-axis
+%
+
+\newcommand{\tikzlinep}[4]{\draw (#1,#2) -- (#1+#3*cos{#4},#2+#3*sin{#4});}
+\newcommand{\tikztlinep}[4]{\draw[thick] (#1,#2) -- (#1+#3*cos{#4},#2+#3*sin{#4});}
+\newcommand{\tikzutlinep}[4]{\draw[ultra thick] (#1,#2) -- (#1+#3*cos{#4},#2+#3*sin{#4});}
+\newcommand{\tikzalinep}[4]{\draw[->] (#1,#2) -- (#1+#3*cos{#4},#2+#3*sin{#4});}
+\newcommand{\tikzatlinep}[4]{\draw[thick,->] (#1,#2) -- (#1+#3*cos{#4},#2+#3*sin{#4});}
+\newcommand{\tikzautlinep}[4]{\draw[ultra thick,->] (#1,#2) -- (#1+#3*cos{#4},#2+#3*sin{#4});}
+
+\newcommand{\tikzsquare}[3]{\draw (#1,#2) -- (#1+#3,#2) -- (#1+#3,#2+#3) -- (#1,#2+#3) -- cycle;}
+\newcommand{\tikztsquare}[3]{\draw[thick] (#1,#2) -- (#1+#3,#2) -- (#1+#3,#2+#3) -- (#1,#2+#3) -- cycle;}
+\newcommand{\tikzutsquare}[3]{\draw[ultra thick] (#1,#2) -- (#1+#3,#2) -- (#1+#3,#2+#3) -- (#1,#2+#3) -- cycle;}
+
+\newcommand{\tikzrect}[4]{\draw (#1,#2) -- (#1+#3,#2) -- (#1+#3,#2+#4) -- (#1,#2+#4) -- cycle;}
+\newcommand{\tikztrect}[4]{\draw[thick] (#1,#2) -- (#1+#3,#2) -- (#1+#3,#2+#4) -- (#1,#2+#4) -- cycle;}
+\newcommand{\tikzutrect}[4]{\draw[ultra thick] (#1,#2) -- (#1+#3,#2) -- (#1+#3,#2+#4) -- (#1,#2+#4) -- cycle;}
+
+\newcommand{\tikzcircle}[3]{\draw (#1,#2) circle (#3);}
+\newcommand{\tikztcircle}[3]{\draw[thick] (#1,#2) circle (#3);}
+\newcommand{\tikzutcircle}[3]{\draw[ultra thick] (#1,#2) circle (#3);}
+
+\newcommand{\tikzellipse}[4]{\draw (#1,#2) ellipse (#3 and #4);}
+\newcommand{\tikztellipse}[4]{\draw[thick] (#1,#2) ellipse (#3 and #4);}
+\newcommand{\tikzutellipse}[4]{\draw[ultra thick] (#1,#2) ellipse (#3 and #4);}
+
+%
+% Inputs: starting point, starting angle, final angle, radius
+%
+
+\newcommand{\tikzarc}[5]{\draw (#1,#2) arc (#3:#4:#5);}
+\newcommand{\tikztarc}[5]{\draw[thick] (#1,#2) arc (#3:#4:#5);}
+\newcommand{\tikzutarc}[5]{\draw[ultra thick] (#1,#2) arc (#3:#4:#5);}
+\newcommand{\tikzaarc}[5]{\draw[->] (#1,#2) arc (#3:#4:#5);}
+\newcommand{\tikzatarc}[5]{\draw[thick,->] (#1,#2) arc (#3:#4:#5);}
+\newcommand{\tikzautarc}[5]{\draw[ultra thick,->] (#1,#2) arc (#3:#4:#5);}
+
+\newcommand{\tikznode}[3]{\node at (#1,#2) {#3};}
+
+\begin{document}
+	\begin{center}
+		{\Huge \scshape Notes for ttbar Production}
+	\end{center}
+
+	\vspace{0.5cm}
+
+        \section{}
+
+        \begin{itemize}
+          \item The purpose is to study the process \(pp\rightarrow t\bar{t}\) with the inclusion of CP-violation. 
+          \item CP-violation can be introduced into \(t\bar{t}\) production by introducing the coupling term 
+	\begin{equation}
+	\mathcal{L}_\mathrm{CP}=\frac{m_t}{v}h\bar{t}(a+ib\gamma_5)t.
+	\end{equation}
+        
+        \item Experimental results can put constraints on the value for \(b\).
+        \item One can write down a list of the contributing tensor structures, \(T_i\), for both \(gg\rightarrow t\bar{t}\) and \(q\bar{q}\rightarrow t\bar{t}\); then their independence can be checked by computing the rank of the matrix 
+	\begin{equation}
+	M_{ij}=\sum_{\mathrm{pol}}T_i^\dagger T_j.
+	\end{equation}
+        \item I've computed this matrix for the 20 total tensor structures which appear in \(gg\rightarrow t\bar{t}\), but found that the matrix rank in 4-dimensions is 17, which disagrees with the expected value of 16.
+        \item We need to determine if this discrepancy is caused by the choice of tensor structures.
+        \item I'll also do some additional research on treatments of \(\gamma_5\) in 4-dimensions.
+        \end{itemize}
+\end{document}

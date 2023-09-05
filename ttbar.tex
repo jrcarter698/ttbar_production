@@ -1,0 +1,421 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\setlength{\parindent}{1cm}
+\setlength{\parskip}{.5em}
+\renewcommand{\baselinestretch}{1.0}
+\usepackage{tikz,multicol,amsfonts,relsize,amsmath,physics,graphicx,slashed,color,colortbl,wrapfig,mathrsfs,caption,subcaption,pgfplots,array,longtable,multirow,bm,stackengine,pgfplots,fancyhdr,titlesec,enumitem,hyperref,float,lastpage,mathtools,tensor,amssymb}
+\pgfplotsset{compat=newest}
+\hypersetup{
+colorlinks=true,setpagesize,
+linkcolor=black,
+filecolor=magenta,      
+urlcolor=cyan,
+}
+\definecolor{Gray}{gray}{0.3}
+\usetikzlibrary{arrows,positioning} 
+\usetikzlibrary{arrows.meta}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+\newcommand{\numberthis}{\addtocounter{equation}{1}\tag{\theequation}}
+\newcommand{\numberthisa}{\addtocounter{equation}{1}\tag{\theequation a}}
+\newcommand{\numberthisb}{\addtocounter{equation}{0}\tag{\theequation b}}
+\newcommand{\numberthisc}{\addtocounter{equation}{0}\tag{\theequation c}}
+\newcommand{\numberthisd}{\addtocounter{equation}{0}\tag{\theequation d}}
+\newcommand{\numberthise}{\addtocounter{equation}{0}\tag{\theequation e}}
+\newcommand{\numberthisf}{\addtocounter{equation}{0}\tag{\theequation f}}
+\newcommand{\numberthisg}{\addtocounter{equation}{0}\tag{\theequation g}}
+\newcommand{\numberthish}{\addtocounter{equation}{0}\tag{\theequation h}}
+\newcommand{\numberthisi}{\addtocounter{equation}{0}\tag{\theequation i}}
+\newcommand{\numberthisj}{\addtocounter{equation}{0}\tag{\theequation j}}
+\def\shrinkage{2.1mu}
+\def\vecsign{\mathchar"017E}
+\def\dvecsign{\smash{\stackon[-2.60pt]{\mkern-\shrinkage\vecsign}{\rotatebox{180}{$\mkern-\shrinkage\vecsign$}}}}
+\def\dvec#1{\def\useanchorwidth{T}\stackon[-4.2pt]{#1}{\,\dvecsign}}
+\stackMath
+\tikzset{
+	>=stealth',}
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{section}.\arabic{table}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+
+
+\titleformat{\section}
+{\Large\scshape}{\thesection}{1em}{}
+\titleformat{\subsection}
+{\large\scshape}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+{\scshape}{\thesubsubsection}{1em}{}
+\pagestyle{fancy}
+\lhead{\(t\bar{t}\)-Production with CP Violation}
+\rhead{\thepage/\pageref{LastPage}}
+\cfoot{}
+\renewcommand{\thesection}{\Roman{section}} 
+\renewcommand{\thesubsection}{\thesection.\textup{\roman{subsection}}}
+\renewcommand{\thesubsubsection}{\thesubsection.\textup{\roman{subsubsection}}}
+
+\makeatletter
+\renewcommand\@dotsep{1000}
+\makeatother
+\makeatletter
+\renewcommand{\l@section}{\@dottedtocline{1}{1.5em}{2.6em}}
+\renewcommand{\l@subsection}{\@dottedtocline{2}{4.0em}{3.0em}}
+\renewcommand{\l@subsubsection}{\@dottedtocline{3}{7.4em}{4.5em}}
+\makeatother
+
+\newcommand{\ve}[2]{\left[
+	\begin{array}{c}
+		#1\\
+		
+		#2
+	\end{array}
+	\right]
+}
+
+\allowdisplaybreaks
+
+\newcommand{\ndot}{\mathrel{\raisebox{-2.3pt}{$ \!  \mathlarger{\mathlarger{\mathlarger{\mathlarger{\cdot}}}} \! $}}}
+
+\newcommand{\edot}{\mathrel{\raisebox{-2.3pt}{$\mathlarger{\mathlarger{\mathlarger{\cdot}}}$}}}
+
+\newcommand{\Li}[1]{\mathrm{Li}_{#1}}
+
+\newcommand{\twomatrix}[4]{
+	\left[
+	\begin{array}{cc}
+		#1 & #2\\
+		#3 & #4
+	\end{array}
+	\right]
+}
+\newcommand{\threematrix}[9]{
+	\left[
+	\begin{array}{ccc}
+		#1 & #2 & #3\\
+		#4 & #5 & #6\\
+		#7 & #8 & #9
+	\end{array}
+	\right]
+}
+%-----------------------------------------------------------------------------------------
+%tikz stuff
+%-----------------------------------------------------------------------------------------
+
+\newcommand{\tikzline}[4]{\draw (#1,#2) -- (#3,#4);}
+\newcommand{\tikztline}[4]{\draw[thick] (#1,#2) -- (#3,#4);}
+\newcommand{\tikzutline}[4]{\draw[ultra thick] (#1,#2) -- (#3,#4);}
+\newcommand{\tikzaline}[4]{\draw[->] (#1,#2) -- (#3,#4);}
+\newcommand{\tikzatline}[4]{\draw[thick,->] (#1,#2) -- (#3,#4);}
+\newcommand{\tikzautline}[4]{\draw[ultra thick,->] (#1,#2) -- (#3,#4);}
+
+%
+% Polar input: takes in a starting point, a radial distance from that point, and an angle with the x-axis
+%
+
+\newcommand{\tikzlinep}[4]{\draw (#1,#2) -- (#1+#3*cos{#4},#2+#3*sin{#4});}
+\newcommand{\tikztlinep}[4]{\draw[thick] (#1,#2) -- (#1+#3*cos{#4},#2+#3*sin{#4});}
+\newcommand{\tikzutlinep}[4]{\draw[ultra thick] (#1,#2) -- (#1+#3*cos{#4},#2+#3*sin{#4});}
+\newcommand{\tikzalinep}[4]{\draw[->] (#1,#2) -- (#1+#3*cos{#4},#2+#3*sin{#4});}
+\newcommand{\tikzatlinep}[4]{\draw[thick,->] (#1,#2) -- (#1+#3*cos{#4},#2+#3*sin{#4});}
+\newcommand{\tikzautlinep}[4]{\draw[ultra thick,->] (#1,#2) -- (#1+#3*cos{#4},#2+#3*sin{#4});}
+
+\newcommand{\tikzsquare}[3]{\draw (#1,#2) -- (#1+#3,#2) -- (#1+#3,#2+#3) -- (#1,#2+#3) -- cycle;}
+\newcommand{\tikztsquare}[3]{\draw[thick] (#1,#2) -- (#1+#3,#2) -- (#1+#3,#2+#3) -- (#1,#2+#3) -- cycle;}
+\newcommand{\tikzutsquare}[3]{\draw[ultra thick] (#1,#2) -- (#1+#3,#2) -- (#1+#3,#2+#3) -- (#1,#2+#3) -- cycle;}
+
+\newcommand{\tikzrect}[4]{\draw (#1,#2) -- (#1+#3,#2) -- (#1+#3,#2+#4) -- (#1,#2+#4) -- cycle;}
+\newcommand{\tikztrect}[4]{\draw[thick] (#1,#2) -- (#1+#3,#2) -- (#1+#3,#2+#4) -- (#1,#2+#4) -- cycle;}
+\newcommand{\tikzutrect}[4]{\draw[ultra thick] (#1,#2) -- (#1+#3,#2) -- (#1+#3,#2+#4) -- (#1,#2+#4) -- cycle;}
+
+\newcommand{\tikzcircle}[3]{\draw (#1,#2) circle (#3);}
+\newcommand{\tikztcircle}[3]{\draw[thick] (#1,#2) circle (#3);}
+\newcommand{\tikzutcircle}[3]{\draw[ultra thick] (#1,#2) circle (#3);}
+
+\newcommand{\tikzellipse}[4]{\draw (#1,#2) ellipse (#3 and #4);}
+\newcommand{\tikztellipse}[4]{\draw[thick] (#1,#2) ellipse (#3 and #4);}
+\newcommand{\tikzutellipse}[4]{\draw[ultra thick] (#1,#2) ellipse (#3 and #4);}
+
+%
+% Inputs: starting point, starting angle, final angle, radius
+%
+
+\newcommand{\tikzarc}[5]{\draw (#1,#2) arc (#3:#4:#5);}
+\newcommand{\tikztarc}[5]{\draw[thick] (#1,#2) arc (#3:#4:#5);}
+\newcommand{\tikzutarc}[5]{\draw[ultra thick] (#1,#2) arc (#3:#4:#5);}
+\newcommand{\tikzaarc}[5]{\draw[->] (#1,#2) arc (#3:#4:#5);}
+\newcommand{\tikzatarc}[5]{\draw[thick,->] (#1,#2) arc (#3:#4:#5);}
+\newcommand{\tikzautarc}[5]{\draw[ultra thick,->] (#1,#2) arc (#3:#4:#5);}
+
+\newcommand{\tikznode}[3]{\node at (#1,#2) {#3};}
+
+\begin{document}
+	\begin{center}
+		{\Huge \scshape \(t\bar{t}\)-Production with CP-Violation}
+	\end{center}
+
+	\vspace{0.5cm}
+	
+	\section{Introduction}
+	
+	We are interested in the study of the production of top quark pairs, \(t\bar{t}\), through the hadron-level process \(pp\rightarrow t\bar{t}X\). There are two parton level processes which contribute to this: \(gg\rightarrow t\bar{t}\) and \(q\bar{q}\). In particular, we are interested in the one-loop contributions to this process including BSM effects which lead to CP-violation; these effects arise from the Lagrangian term
+	\begin{equation}
+	\mathcal{L}_{CP}=\frac{m_t}{v}h \bar{t}(a+ib\gamma_5)t.
+	\end{equation}
+	This term couples the Higgs with the top quark; here, \(v\) is the vacuum expectation value of the Higgs, while \(a,b\) are constants. From this \(b\)-term, CP-violating effects arise; in the Standard Model, \(a=1,b=0\). 
+	
+	\section{Kinematics}
+	
+	Both \(q\bar{q}\rightarrow t\bar{t}\) and \(gg\rightarrow t\bar{t}\) are \(2\rightarrow 2\) processes with massless initial states and massive final states; we define the initials state momenta as \(p_1,p_2\), while the final state momenta are \(p_3,p_4\). The kinematic variables for this process are then given by  
+	\begin{align*}
+	s & =(p_1+p_2)^2=(p_3+p_4)^2, \numberthisa\\
+	t & =(p_1-p_3)^2=(p_2-p_4)^2, \numberthisb\\
+	u & =(p_2-p_3)^2=(p_1-p_4)^2, \numberthisc
+	\end{align*}
+	which satisfy
+	\begin{equation}
+	s+t+u=2m_t^2.
+	\end{equation}
+	
+	\section{Tensor Structures}
+	
+	\subsection{Gluon Fusion}
+	
+	In \(d\)-dimensions, it is possible to reduce all tensor structures that appear in the problem to a total of 20 CP-even and 20 CP-odd structures; this is done by using a number of rules to rewrite the structures including the use of momentum conservation, the anticommutation relation, the Dirac equation, and the choice of a specific gauge. The tensors are contracted with external momenta and polarization vectors. From the gauge conditions \(\epsilon_1\ndot p_2=\epsilon_2\ndot p_1=0\), we can impose the polarization sums  
+	\begin{align*}
+	\sum_\mathrm{pol}\epsilon_1^\mu\epsilon_1^\nu & =-g^{\mu\nu}+\frac{p_1^\mu p_2^\nu+p_2^\mu p_1^\nu}{p_1\ndot p_2}, \numberthisa\\
+	\sum_\mathrm{pol}\epsilon_2^\mu\epsilon_2^\nu & =-g^{\mu\nu}+\frac{p_1^\mu p_2^\nu+p_2^\mu p_1^\nu}{p_1\ndot p_2}; \numberthisb
+	\end{align*}
+	notice that when we contract the r.h.s. of this with combinations of \(p_1^\mu,p_2^\mu\), the result is always zero. The tensor structures we consider here are given by  
+	\begin{align*}
+	T_1 & =\epsilon_1\ndot\epsilon_2\bar{u}(p_3)v(p_4), \numberthisa\\
+	T_2 & =\epsilon_1\ndot p_3\epsilon_2\ndot p_3\bar{u}(p_3)v(p_4), \numberthisb\\
+	T_3 & =\epsilon_1\ndot\epsilon_2\bar{u}(p_3)\slashed{p}_1v(p_4), \numberthisc\\
+	T_4 & =\epsilon_1\ndot p_3\epsilon_2\ndot p_3\bar{u}(p_3)\slashed{p}_1v(p_4), \numberthisd\\
+	T_5 & =\epsilon_1\ndot p_3\bar{u}(p_3)\slashed{\epsilon}_2v(p_4), \numberthise\\
+	T_6 & =\epsilon_2\ndot p_3\bar{u}(p_3)\slashed{\epsilon}_1v(p_4), \numberthisf\\
+	T_7 & =\bar{u}(p_3)\slashed{\epsilon}_1\slashed{\epsilon}_2\slashed{p}_1v(p_4), \numberthisg\\
+	T_8 & =\epsilon_1\ndot p_3\bar{u}(p_3)\slashed{\epsilon}_2\slashed{p}_1v(p_4), \numberthish\\
+	T_9 & =\bar{u}(p_3)\slashed{\epsilon}_1\slashed{\epsilon}_2v(p_4), \numberthisi\\
+	T_{10} & =\epsilon_2\ndot p_3\bar{u}(p_3)\slashed{\epsilon}_1\slashed{p}_1v(p_4); \numberthisj
+	\end{align*}
+	from these tensor structures, we can construct the following matrix:
+	\begin{equation}
+	M_{ij}=\sum_\mathrm{pol}T_i^\dagger T_j.
+	\end{equation}
+	The number of independent tensor structures in 4-dimensions can be determined by computing the rank of this matrix in the \(d\rightarrow 4\) limit; when we do this, we find a rank of 8. This means that there are 8 independent tensor structures in 4-dimensions; by repeating this test with smaller subsets of these structures, we can determine that \(T_{9,10}\) are evanescent structures. 
+	
+	Let us now redefine the tensor structures; to start, the first 8 structures remain unchanged  
+	\begin{equation}
+	\bar{T}_i=T_i
+	\end{equation}
+	for \(i=1,\dots,8\). In order to obtain \(\bar{T}_{9,10}\), we must first define the projection operators  
+	\begin{equation}
+	P_i^{8\times 8}\equiv\sum_{j=1}^8(M^{8\times 8})_{ij}^{-1}\bar{T}_j^\dagger,
+	\end{equation}
+	where \(M^{8\times 8}\) is the \(8\times 8\) submatrix of \(M\), which excludes \(T_{9,10}\); \(\bar{T}_{9,10}\) are then given by  
+	\begin{equation}
+	\bar{T}_i\equiv T_i-\sum_{j=1}^8(P_j^{8\times 8}T_i)\bar{T}_j.
+	\end{equation}
+        From these new tensor structures, we can write down the new matrix 
+	\begin{equation}
+	\bar{M}_{ij}=\sum_\mathrm{pol}\bar{T}_i^\dagger\bar{T}_j
+	\end{equation}
+        and the projection operators 
+	\begin{equation}
+	\bar{P}_i=\sum_{i=1}^{10}(\bar{M})_{ij}^{-1}\bar{T}_j^\dagger.
+	\end{equation}
+        Our amplitude will take the form 
+	\begin{equation}
+	\mathcal{A}(p_1,p_2,p_3)=\sum_{i=1}^8\mathcal{F}_i(p_1,p_2,p_3)T_i+\sum_{i=9}^{10}\mathcal{F}_{i}(p_1,p_2,p_3)T_{i};
+	\end{equation}
+        this can then be rewritten as 
+	\begin{equation}
+	\mathcal{A}(p_1,p_2,p_3)=\sum_{i=1}^{10}\bar{\mathcal{F}}_i(p_1,p_2,p_3)\bar{T}_i.
+	\end{equation}
+        When we apply a projection operator to this (suppressing the summation), we get 
+	\begin{equation}
+	\bar{P}_i\mathcal{A}=(\bar{M})_{ij}^{-1}\bar{T}_j^\dagger\bar{T}_\ell\bar{\mathcal{F}}_\ell;
+	\end{equation}
+        so if we sum this over the polarizations, we get 
+	\begin{align*}
+	  \sum_{\mathrm{pol}}\bar{P}_i\mathcal{A} & =\bar{\mathcal{F}}_\ell(\bar{M})_{ij}^{-1}\sum_\mathrm{pol}\bar{T}_j^\dagger\bar{T}_\ell\\
+          & =\bar{\mathcal{F}}_\ell(\bar{M})_{ij}^{-1}M_{j\ell}\\
+          & =\delta_{i\ell}\bar{\mathcal{F}}_\ell\\
+          & =\bar{\mathcal{F}}_i, \numberthis
+	\end{align*}
+        hence the name projection operator, since it projects out the coefficients on the different tensor structures.
+
+        Note what happens when we have \(i=1,\dots,8\) and \(j=9,10\): 
+	\begin{align*}
+	  \bar{M}_{ij} & =\sum_{pol}\bar{T}_i^\dagger\bar{T}_j\\
+          & =\sum_\mathrm{pol}T_i^\dagger\left[T_j-\sum_{k=1}^8(P_\ell^{8\times 8}T_j)\bar{T}_k\right]\\
+          & =M_{ij}-\sum_{\mathrm{pol}}\sum_{k,\ell=1}^8T_i^\dagger(M^{8\times 8})_{k\ell}^{-1}\bar{T}_\ell^\dagger T_j\bar{T}_k\\
+          & =M_{ij}-M_{ij}\\
+          & =0; \numberthis
+	\end{align*}
+        then the same can be done for \(i=9,10\) and \(j=1,\dots,8\). Note then that for \(i,j=1,\dots,8\), \(\bar{M}_{ij}=M_{ij}\); for the elements \(i,j=9,10\), we would have 
+	\begin{align*}
+	  \bar{M}_{ij} & =\sum_\mathrm{pol}\bar{T}_i^\dagger\bar{T}_j\\
+          & =\sum_{\mathrm{pol}}\left[T_i-\sum_{k=1}^8(P_k^{8\times 8}T_i)\bar{T}_k\right]^\dagger\left[T_j-\sum_{\ell=1}^8(P_\ell^{8\times 8}T_j)\bar{T}_\ell\right]\\
+          & =M_{ij}+\sum_{\mathrm{pol}}\sum_{k,\ell=1}^8(P_k^{8\times8})^\dagger P_\ell^{8\times 8}\bar{M}_{k\ell}M_{ij}-\sum_{\mathrm{pol}}\sum_{k=1}^8[(P_k^{8\times 8})^\dagger\bar{T}_k^\dagger+P_k^{8\times 8}\bar{T}_k] M_{ij}; \numberthis
+	\end{align*}
+        now note that 
+	\begin{align*}
+	  \sum_{\mathrm{pol}}\sum_{i,j=1}^8(P_k^{8\times 8})^\dagger P_j^{8\times 8}\bar{M}_{ij} & =\sum_{\mathrm{pol}}\sum_{i,j,k,\ell=1}^8M_{ik}^{-1}M_{j\ell}^{-1}\bar{T}_k\bar{T}_\ell^\dagger\\
+          & =\Tr(\mathbf{1}_8)\\
+          & =8, \numberthisa\\
+          \sum_{\mathrm{pol}}\sum_{i=1}^8[(P_i^{8\times 8})^\dagger \bar{T}_i^\dagger+P_i^{8\times 8}\bar{T}_i] & =\sum_{\mathrm{pol}}\sum_{i,j=1}^8[M_{ij}\bar{T}_j\bar{T}_i^\dagger+]
+	\end{align*}
+        
+	\subsection{CP-Odd Tensor Structures}
+	
+	In addition to the 10 CP-even tensor structures that we have already noted, there are an additional 10 CP-odd structures, which we can obtain by inserting a \(\gamma_5\) in the above structures:  
+	\begin{align*}
+	T_{11} & =\epsilon_1\ndot\epsilon_2\bar{u}(p_3)\gamma_5v(p_4), \numberthisa\\
+	T_{12} & =\epsilon_1\ndot p_3\epsilon_2\ndot p_3\bar{u}(p_3)\gamma_5v(p_4), \numberthisb\\
+	T_{13} & =\epsilon_1\ndot\epsilon_2\bar{u}(p_3)\gamma_5\slashed{p}_1v(p_4), \numberthisc\\
+	T_{14} & =\epsilon_1\ndot p_3\epsilon_2\ndot p_3\bar{u}(p_3)\gamma_5\slashed{p}_1v(p_4), \numberthisd\\
+	T_{15} & =\epsilon_1\ndot p_3\bar{u}(p_3)\gamma_5\slashed{\epsilon}_2v(p_4), \numberthise\\
+	T_{16} & =\epsilon_2\ndot p_3\bar{u}(p_3)\gamma_5\slashed{\epsilon}_1v(p_4), \numberthisf\\
+	T_{17} & =\bar{u}(p_3)\gamma_5\slashed{\epsilon}_1\slashed{\epsilon}_2\slashed{p}_1v(p_4), \numberthisg\\
+	T_{18} & =\epsilon_1\ndot p_3\bar{u}(p_3)\gamma_5\slashed{\epsilon}_2\slashed{p}_1v(p_4), \numberthish\\
+	T_{19} & =\bar{u}(p_3)\gamma_5\slashed{\epsilon}_1\slashed{\epsilon}_2v(p_4), \numberthisi\\
+	T_{20} & =\epsilon_2\ndot p_3\bar{u}(p_3)\gamma_5\slashed{\epsilon}_1\slashed{p}_1v(p_4); \numberthisj
+	\end{align*}
+	in order to compute the \(M\) matrix for all 20 tensor structures in \(d\)-dimensions, we would need to be careful of our handling of \(\gamma_5\). However, since we are only interested in counting the tensor structures in \(4\)-dimensions, it is sufficient to simply compute the requisite traces in 4d. Note that some of these traces will include a factor of \(\epsilon^{\mu\nu\rho\sigma}p_{1,\mu}p_{2,\nu}p_{3,\rho}p_{4,\sigma}\); see Appendix A for the computation of this factor. In 4-dimensions, the rank of \(M\) for these 20 tensor structures is 17, implying that there are 17 independent tensor structures in 4-dimensions.
+	
+	As we did with \(i=1,\dots,10\), we can redefine the 3 dependent tensor structures for \(i=1,\dots,20\). This is done in an analogous way to Equation 3.6; in this case, however, we will have  
+	\begin{equation}
+	P_i^{17\times 17}\equiv\sum_{j=1}^{17}(M^{17\times 17})_{ij}^{-1}\bar{T},
+	\end{equation}
+	where we have redefined the indices here so that \(T_{10}\) is now \(T_{18}\), while \(T_{19},T_{20}\) remain the same; we do this so that the last three tensor structures are dependent.
+	
+	\subsection{\(q\bar{q}\)-Annihilation}
+	
+	Here, all of the spin information is contained within the spinors \(\bar{u}(p_1),\bar{u}(p_3),v(p_2),v(p_4)\); all tensor structures will be of the form  
+	\begin{equation}
+	T=\bar{u}(p_1)\Gamma_1v(p_2)\bar{u}(p_3)\Gamma_2v(p_4),
+	\end{equation}
+	where I have kept the indices on the \(\Gamma_i\) implicit, since they will be contracted with each other. At one loop, each Dirac chain can contain at most 3 \(\gamma\) matrices; so we can determine all possible structures by taking the tensor 
+	\begin{equation}
+	\mathcal{T}^{\mu_1\mu_2\mu_3\mu_4\mu_5\mu_6}=\bar{u}(p_1)\gamma^{\mu_1}\gamma^{\mu_2}\gamma^{\mu_3}v(p_2)\bar{u}(p_3)\gamma^{\mu_4}\gamma^{\mu_5}\gamma^{\mu_6}v(p_4)
+	\end{equation}
+	with combinations of \(p_1,p_2,p_3\), and the metric tensor. When performing this construction, we note that the first Dirac chain can only contain odd numbers of \(\gamma\) matrices; this is because the spinors in this chain are massless, and thus when we sum them over the quark polarization states, they each add a \(\gamma\) factor but no mass term. So since the trace of an even number of \(\gamma\) matrices is zero, these tensors will not contribute. Furthermore, the Dirac equation allows us to rewrite \(\slashed{p}_1,\slashed{p}_2\) in the first chain with 0, and \(\slashed{p}_3,\slashed{p}_4\) in the second chain with \(m\); lastly we can use conservation of energy to replace the momenta, meaning that we can ignore \(p_2,p_4\). When we put all this together, we obtain  
+	\begin{align}
+	T_1 & =\bar{u}(p_1)\slashed{p}_3v(p_2)\bar{u}(p_3)v(p_4),\\
+	T_2 & =\bar{u}(p_1)\gamma_{\mu_1}v(p_2)\bar{u}(p_3)\gamma^{\mu_1}v(p_4),\\
+	T_3 & =\bar{u}(p_1)\slashed{p}_3v(p_2)\bar{u}(p_3)\slashed{p}_1v(p_4),\\
+	T_4 & =\bar{u}(p_1)\gamma_{\mu_1}v(p_2)\bar{u}(p_3)\slashed{p}_1\gamma^{\mu_1}v(p_4),\\
+	T_5 & =\bar{u}(p_1)\slashed{p}_3\gamma_{\mu_1}\gamma_{\mu_2}v(p_2)\bar{u}(p_3)\gamma^{\mu_1}\gamma^{\mu_2}v(p_4)\\
+	T_6 & =\bar{u}(p_1)\slashed{p}_3\gamma_{\mu_1}\gamma_{\mu_2}v(p_2)\bar{u}(p_3)\slashed{p}_1\gamma^{\mu_1}\gamma^{\mu_2}v(p_4)\\
+	T_7 & =\bar{u}(p_1)\gamma_{\mu_1}\gamma_{\mu_2}\gamma_{\mu_3}v(p_2)\bar{u}(p_3)\gamma^{\mu_1}\gamma^{\mu_2}\gamma^{\mu_3}v(p_4).
+	\end{align}
+	In \(d\)-dimensions, the matrix  
+	\begin{equation}
+	M_{ij}=\sum_\mathrm{pol}T_i^\dagger T_j
+	\end{equation}
+	is rank 7, meaning that these tensor structures are all independent in \(d\)-dimensions.
+
+        \section{Implementing the \(\gamma_5\) Scheme}
+
+        For our purposes, in order to include \(\gamma_5\)-dependent tensor structures in \(d\)-dimensions, we will first define that 
+	\begin{equation}
+	\Tr[\gamma_5\gamma^\mu\gamma^\nu\gamma^\rho\gamma^\sigma]=-4i\epsilon^{\mu\nu\rho\sigma};
+	\end{equation}
+        however, we must also define the new anticommutation relation 
+	\begin{equation}
+	\{\gamma_5,\gamma_\alpha\}=2\hat{g}_\alpha^\beta\gamma_5\gamma_\beta,
+	\end{equation}
+        where we have \(\hat{g}\) satisfies the following: 
+	\begin{align*}
+	  \hat{g}_{\alpha\beta} & =\hat{g}_{\beta\alpha}, \numberthisa\\
+          \hat{g}_\alpha^\alpha & =d-4, \numberthisb\\
+          \hat{g}_{\beta}^\alpha\epsilon_{\alpha\nu\rho\sigma} & =0, \numberthisc\\
+          \hat{g}_{\alpha\beta}\hat{g}_\gamma^\beta & =\hat{g}_{\alpha\beta}g_\gamma^\beta=\hat{g}_{\alpha\gamma}. \numberthisd
+	\end{align*}
+        Repeated application of this anticommutation relation can be used to move the \(\gamma_5\) all the way to the left side of the chain; once this has been accomplished, we can use the above definition to evaluate the traces. 
+	
+	\section{Spinor Helicity Variables}
+	
+	Spinor helicity variables provide an alternate method for writing down helicity amplitudes; we start by defining the inner product for massless Weyl spinors:  
+	\begin{align*}
+	\langle\chi_1\chi_2\rangle & =\epsilon^{\alpha\beta}\chi_{1,\alpha}\chi_{2,\beta}\\
+	& =\chi_{1,\alpha}\chi_2^\alpha, \numberthisa\\
+	[\chi_1\chi_2] & =\epsilon_{\dot{\alpha}\dot{\beta}}\tilde{\chi}_1^{\dot{\alpha}}\tilde{\chi}_2^{\dot{\beta}}\\
+	& =\tilde{\chi}_1^{\dot{\alpha}}\tilde{\chi}_{2,\alpha}. \numberthisb
+	\end{align*}
+	Note that the rank-2 Levi-Civita tensor is the metric for these spinors; because this is an antisymmetric tensor, one must be careful with the positioning of the upper and lower indices here, i.e. swapping the upper and lower indices introduces an overall minus sign. Here, \(\chi_\alpha\) represents a left-handed spinor, while \(\tilde{\chi}_{\dot{\alpha}}\) is a right-handed spinor; in other words, they have spins of \((1/2,0)\) and \((0,1/2)\), respectively. Now we can represent massless four-vectors as bispinors of the form  
+	\begin{align*}
+	p^{\alpha\dot{\alpha}} & =\lambda^\alpha\tilde{\lambda}^{\dot{\alpha}}\\
+	& =\bra{p}[p|, \numberthisa\\
+	p_{\dot{\alpha}\alpha} & =\tilde{\lambda}_{\dot{\alpha}}\lambda_\alpha\\
+	& =|p]\bra{p}; \numberthisb
+	\end{align*}
+	
+	\section{Appendix A: The Levi-Civita Tensor}
+	
+	First of all, note that the Levi-Civita tensor, \(\epsilon^{\mu\nu\rho\sigma}\), is inherently a four-dimensional object; that being said, it only appears in \(\gamma_5\) traces, which we only consider in 4-dimensions. In particular, they appear as a result of the trace  
+	\begin{equation}
+	\Tr(\gamma^\mu\gamma^\nu\gamma^\rho\gamma^\sigma\gamma_5)=-4i\epsilon^{\mu\nu\rho\sigma};
+	\end{equation}
+	this means that factors of \(\epsilon^{\mu\nu\rho\sigma}p_{1,\mu}p_{2,\nu}p_{3,\rho}p_{4,\sigma}\) will appear in the projection operators. It is then necessary to rewrite this factor in terms of the available kinematic variables; we might do this by making the following expansion:  
+	\begin{equation}
+	\epsilon^{\mu\nu\rho\sigma}p_{1,\mu}p_{2,\nu}p_{3,\rho}p_{4,\sigma}=As^2+Bt^2+Cst+Dm^2s+Em^2t+Fm^4.
+	\end{equation}
+	Note that under the transformation \(p_1\leftrightarrow p_2\), we have \(s\rightarrow s\), \(t\rightarrow u=2m^2-s-t\); then because of the antisymmetry of the Levi-Civita tensor, the r.h.s. of Equation 4.2 will be negated under this transformation. The result of these two observations is that  
+	\begin{multline}
+	As^2+B(2m^2-s-t)^2+Cs(2m^2-s-t)+Dm^2s+Em^2(2m^2-s-t)+Fm^4\\
+	=-As^2-Bt^2-Cst-Dm^2s-Em^2t-Fm^4;
+	\end{multline}
+	from this, we can write down several equations:  
+	\begin{align*}
+	2A+B-C & =0, \numberthisa\\
+	2B & =0, \numberthisb\\
+	-4B+2C+2D-E & =0, \numberthisc\\
+	2F & =0. \numberthisd
+	\end{align*}
+	Here, we've dropped two extra redundant equations; simplifying these, we have \(A=C/2,B=0,A+2D-E=0,F=0\). Clearly we need more equations in order to fully constrain these coefficients; to do this we repeat the above exercise with the transformation \(p_1\leftrightarrow p_4\), which yields \(s\rightarrow 2m^2-t\) and \(t\rightarrow 4m^2-s\). When we apply these transformations, we obtain  
+	\begin{multline}
+	A(2m^2-t)^2+B(4m^2-s)^2+C(2m^2-t)(4m^2-s)+Dm^2(2m^2-t)+Em^2(4m^2-s)+Fm^4\\
+	=-As^2-Bt^2-Cst-Dm^2s-Em^2t-Fm^4;
+	\end{multline}
+	this gives us the following unique equations:  
+	\begin{align*}
+	A+B & =0, \numberthisa\\
+	2C & =0. \numberthisb
+	\end{align*}
+	Combining these with the above 4 equations, we find that  
+	\begin{equation}
+	A=B=C=D=E=F=0;
+	\end{equation}
+	consequently, we have  
+	\begin{equation}
+	\boxed{\epsilon^{\mu\nu\rho\sigma}p_{1,\mu}p_{2,\nu}p_{3,\rho}p_{4,\sigma}=0.}
+	\end{equation}
+
+        
+	\begin{align*}
+	  T_1 & =\epsilon_2\ndot p_3\bar{u}(p_3)\slashed{\epsilon}_1v(p_4),\\
+          T_2 & =\epsilon_1\ndot p_3\bar{u}(p_3)\slashed{\epsilon}_2v(p_4),\\
+          T_3 & =(\epsilon_1\ndot p_3)(\epsilon_2\ndot p_3)\bar{u}(p_3)\slashed{p}_1v(p_4),\\
+          T_4 & =\bar{u}(p_3)\slashed{\epsilon}_2\slashed{p}_1\slashed{\epsilon}_1v(p_4),\\
+          T_5 & =\bar{u}(p_3)\slashed{\epsilon}_2\slashed{p}_1\slashed{\epsilon}_1v(p_4),\\
+          T_6 & =(\epsilon_1\ndot p_3)(\epsilon_2\ndot p_3)\bar{u}(p_3)v(p_4),\\
+          T_7 & =\epsilon_1\ndot\epsilon_2\bar{u}(p_3)v(p_4),\\
+          T_8 & =\epsilon_1\ndot p_3\bar{u}(p_3)\slashed{\epsilon}_2\slashed{p}_1v(p_4),\\
+          T_9 & =\epsilon_2\ndot p_3\bar{u}(p_3)\slashed{\epsilon}_1\gamma_5v(p_4),\\
+          T_{10} & =\epsilon_1\ndot p_3\bar{u}(p_3)\slashed{\epsilon}_2\gamma_5v(p_4),\\
+          T_{11} & =(\epsilon_1\ndot p_3)(\epsilon_2\ndot p_3)\bar{u}(p_3)\slashed{p}_1\gamma_5v(p_4),\\
+          T_{12} & =\bar{u}(p_3)\slashed{\epsilon}_2\slashed{p}_1\slashed{\epsilon}_1\gamma_5v(p_4),\\
+          T_{13} & =\bar{u}(p_3)\slashed{\epsilon}_1\slashed{p}_1\slashed{\epsilon}_2\gamma_5v(p_4),\\
+          T_{14} & =(\epsilon_1\ndot p_3)(\epsilon_2\ndot p_3)\bar{u}(p_3)\gamma_5v(p_4),\\
+          T_{15} & =\epsilon_1\ndot\epsilon_2\bar{u}(p_3)\gamma_5v(p_4),\\
+          T_{16} & =\epsilon_1\ndot p_3\bar{u}(p_3)\slashed{\epsilon}_2\slashed{p}_1\gamma_5v(p_4),\\
+          T_{17} & =\bar{u}(p_3)\slashed{\epsilon}_1\slashed{\epsilon}_2v(p_4),\\
+          T_{18} & =\epsilon_2\ndot p_3\bar{u}(p_3)\slashed{\epsilon}_1\slashed{p}_1v(p_4),\\
+          T_{19} & =\bar{u}(p_3)\slashed{\epsilon}_1\slashed{\epsilon}_2\gamma_5v(p_4),\\
+          T_{20} & =\epsilon_2\ndot p_3\bar{u}(p_3)\slashed{\epsilon}_1\slashed{p}_1\gamma_5v(p_4),\\
+	\end{align*}
+\end{document}

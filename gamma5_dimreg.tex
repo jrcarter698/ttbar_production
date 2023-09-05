@@ -1,0 +1,276 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\setlength{\parindent}{1cm}
+\setlength{\parskip}{.5em}
+\renewcommand{\baselinestretch}{1.0}
+\usepackage{tikz,multicol,amsfonts,relsize,amsmath,physics,graphicx,slashed,color,colortbl,wrapfig,mathrsfs,caption,subcaption,pgfplots,array,longtable,multirow,bm,stackengine,pgfplots,fancyhdr,titlesec,enumitem,hyperref,float,lastpage,mathtools,tensor,amssymb}
+\pgfplotsset{compat=newest}
+\hypersetup{
+colorlinks=true,setpagesize,
+linkcolor=black,
+filecolor=magenta,      
+urlcolor=cyan,
+}
+\definecolor{Gray}{gray}{0.3}
+\usetikzlibrary{arrows,positioning} 
+\usetikzlibrary{arrows.meta}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+\newcommand{\numberthis}{\addtocounter{equation}{1}\tag{\theequation}}
+\newcommand{\numberthisa}{\addtocounter{equation}{1}\tag{\theequation a}}
+\newcommand{\numberthisb}{\addtocounter{equation}{0}\tag{\theequation b}}
+\newcommand{\numberthisc}{\addtocounter{equation}{0}\tag{\theequation c}}
+\newcommand{\numberthisd}{\addtocounter{equation}{0}\tag{\theequation d}}
+\newcommand{\numberthise}{\addtocounter{equation}{0}\tag{\theequation e}}
+\newcommand{\numberthisf}{\addtocounter{equation}{0}\tag{\theequation f}}
+\def\shrinkage{2.1mu}
+\def\vecsign{\mathchar"017E}
+\def\dvecsign{\smash{\stackon[-2.60pt]{\mkern-\shrinkage\vecsign}{\rotatebox{180}{$\mkern-\shrinkage\vecsign$}}}}
+\def\dvec#1{\def\useanchorwidth{T}\stackon[-4.2pt]{#1}{\,\dvecsign}}
+\stackMath
+\tikzset{
+	>=stealth',}
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{section}.\arabic{table}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+
+
+\titleformat{\section}
+{\Large\scshape}{\thesection}{1em}{}
+\titleformat{\subsection}
+{\large\scshape}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+{\scshape}{\thesubsubsection}{1em}{}
+\pagestyle{fancy}
+%-------------------------------------------------------------------------------------
+% Header and Footer
+%-------------------------------------------------------------------------------------
+\lhead{\(\gamma_5\) in Dimensional Regularization}
+\rhead{\thepage/\pageref{LastPage}}
+\cfoot{}
+%-------------------------------------------------------------------------------------
+%
+%-------------------------------------------------------------------------------------
+\renewcommand{\thesection}{\Roman{section}} 
+\renewcommand{\thesubsection}{\thesection.\textup{\roman{subsection}}}
+\renewcommand{\thesubsubsection}{\thesubsection.\textup{\roman{subsubsection}}}
+
+\makeatletter
+\renewcommand\@dotsep{1000}
+\makeatother
+\makeatletter
+\renewcommand{\l@section}{\@dottedtocline{1}{1.5em}{2.6em}}
+\renewcommand{\l@subsection}{\@dottedtocline{2}{4.0em}{3.0em}}
+\renewcommand{\l@subsubsection}{\@dottedtocline{3}{7.4em}{4.5em}}
+\makeatother
+
+\newcommand{\ve}[2]{\left[
+	\begin{array}{c}
+		#1\\
+		
+		#2
+	\end{array}
+	\right]
+}
+
+\allowdisplaybreaks
+
+\newcommand{\ndot}{\mathrel{\raisebox{-2.3pt}{$ \!  \mathlarger{\mathlarger{\mathlarger{\mathlarger{\cdot}}}} \! $}}}
+
+\newcommand{\edot}{\mathrel{\raisebox{-2.3pt}{$\mathlarger{\mathlarger{\mathlarger{\cdot}}}$}}}
+
+\newcommand{\Li}[1]{\mathrm{Li}_{#1}}
+
+\newcommand{\twomatrix}[4]{
+	\left[
+	\begin{array}{cc}
+		#1 & #2\\
+		#3 & #4
+	\end{array}
+	\right]
+}
+\newcommand{\threematrix}[9]{
+	\left[
+	\begin{array}{ccc}
+		#1 & #2 & #3\\
+		#4 & #5 & #6\\
+		#7 & #8 & #9
+	\end{array}
+	\right]
+}
+%-----------------------------------------------------------------------------------------
+%tikz stuff
+%-----------------------------------------------------------------------------------------
+
+\newcommand{\tikzline}[4]{\draw (#1,#2) -- (#3,#4);}
+\newcommand{\tikztline}[4]{\draw[thick] (#1,#2) -- (#3,#4);}
+\newcommand{\tikzutline}[4]{\draw[ultra thick] (#1,#2) -- (#3,#4);}
+\newcommand{\tikzaline}[4]{\draw[->] (#1,#2) -- (#3,#4);}
+\newcommand{\tikzatline}[4]{\draw[thick,->] (#1,#2) -- (#3,#4);}
+\newcommand{\tikzautline}[4]{\draw[ultra thick,->] (#1,#2) -- (#3,#4);}
+
+%
+% Polar input: takes in a starting point, a radial distance from that point, and an angle with the x-axis
+%
+
+\newcommand{\tikzlinep}[4]{\draw (#1,#2) -- (#1+#3*cos{#4},#2+#3*sin{#4});}
+\newcommand{\tikztlinep}[4]{\draw[thick] (#1,#2) -- (#1+#3*cos{#4},#2+#3*sin{#4});}
+\newcommand{\tikzutlinep}[4]{\draw[ultra thick] (#1,#2) -- (#1+#3*cos{#4},#2+#3*sin{#4});}
+\newcommand{\tikzalinep}[4]{\draw[->] (#1,#2) -- (#1+#3*cos{#4},#2+#3*sin{#4});}
+\newcommand{\tikzatlinep}[4]{\draw[thick,->] (#1,#2) -- (#1+#3*cos{#4},#2+#3*sin{#4});}
+\newcommand{\tikzautlinep}[4]{\draw[ultra thick,->] (#1,#2) -- (#1+#3*cos{#4},#2+#3*sin{#4});}
+
+\newcommand{\tikzsquare}[3]{\draw (#1,#2) -- (#1+#3,#2) -- (#1+#3,#2+#3) -- (#1,#2+#3) -- cycle;}
+\newcommand{\tikztsquare}[3]{\draw[thick] (#1,#2) -- (#1+#3,#2) -- (#1+#3,#2+#3) -- (#1,#2+#3) -- cycle;}
+\newcommand{\tikzutsquare}[3]{\draw[ultra thick] (#1,#2) -- (#1+#3,#2) -- (#1+#3,#2+#3) -- (#1,#2+#3) -- cycle;}
+
+\newcommand{\tikzrect}[4]{\draw (#1,#2) -- (#1+#3,#2) -- (#1+#3,#2+#4) -- (#1,#2+#4) -- cycle;}
+\newcommand{\tikztrect}[4]{\draw[thick] (#1,#2) -- (#1+#3,#2) -- (#1+#3,#2+#4) -- (#1,#2+#4) -- cycle;}
+\newcommand{\tikzutrect}[4]{\draw[ultra thick] (#1,#2) -- (#1+#3,#2) -- (#1+#3,#2+#4) -- (#1,#2+#4) -- cycle;}
+
+\newcommand{\tikzcircle}[3]{\draw (#1,#2) circle (#3);}
+\newcommand{\tikztcircle}[3]{\draw[thick] (#1,#2) circle (#3);}
+\newcommand{\tikzutcircle}[3]{\draw[ultra thick] (#1,#2) circle (#3);}
+
+\newcommand{\tikzellipse}[4]{\draw (#1,#2) ellipse (#3 and #4);}
+\newcommand{\tikztellipse}[4]{\draw[thick] (#1,#2) ellipse (#3 and #4);}
+\newcommand{\tikzutellipse}[4]{\draw[ultra thick] (#1,#2) ellipse (#3 and #4);}
+
+%
+% Inputs: starting point, starting angle, final angle, radius
+%
+
+\newcommand{\tikzarc}[5]{\draw (#1,#2) arc (#3:#4:#5);}
+\newcommand{\tikztarc}[5]{\draw[thick] (#1,#2) arc (#3:#4:#5);}
+\newcommand{\tikzutarc}[5]{\draw[ultra thick] (#1,#2) arc (#3:#4:#5);}
+\newcommand{\tikzaarc}[5]{\draw[->] (#1,#2) arc (#3:#4:#5);}
+\newcommand{\tikzatarc}[5]{\draw[thick,->] (#1,#2) arc (#3:#4:#5);}
+\newcommand{\tikzautarc}[5]{\draw[ultra thick,->] (#1,#2) arc (#3:#4:#5);}
+
+\newcommand{\tikznode}[3]{\node at (#1,#2) {#3};}
+
+\begin{document}
+	\begin{center}
+		{\Huge \scshape \(\gamma_5\) in Dimensional Regularization}
+	\end{center}
+
+	\vspace{0.5cm}
+	
+	\section{Introduction}
+
+        In 4-dimensions, the Dirac matrices are of course \(4\times 4\) matrices which satisfy 
+	\begin{equation}
+	\{\gamma^\mu,\gamma^\nu\}=2g^{\mu\nu},
+	\end{equation}
+        and \(\gamma_5\) is defined by 
+	\begin{equation}
+	\gamma_5=i\gamma^0\gamma^1\gamma^2\gamma^3;
+	\end{equation}
+        this matrix then satisfies the relations 
+	\begin{align*}
+	  \{\gamma^\mu,\gamma_5\} & =0, \numberthisa\\
+          \gamma_5^2=1. \numberthis
+	\end{align*}
+        In the case of \(d\)-dimensional Dirac matrices, we once again have the anticommutation relation 
+	\begin{equation}
+	\{\gamma_d^\mu,\gamma_d^\nu\}=2g_d^{\mu\nu},
+	\end{equation}
+        where we take the Dirac matrices to be \(2^{d/2}\times 2^{d/2}\); we also use the convention 
+	\begin{equation}
+	\Tr(1)=4.
+	\end{equation}
+        The difficulty arises when considering \(\gamma_5\), which has no analagous definition in \(d\)-dimensions; furthermore if we consider the quantity 
+	\begin{equation}
+	g_{\alpha\beta}^d\varepsilon_{\mu\nu\rho\sigma}\Tr(\gamma_d^\alpha\gamma_d^\mu\gamma_d^\nu\gamma_d^\rho\gamma_d^\sigma\gamma_d^\beta\gamma_5),
+	\end{equation}
+        and use 
+	\begin{equation}
+	\gamma_d^\mu\gamma_\mu^d=d,
+	\end{equation}
+        then we arrive at a conundrum. Firstly, we use the cyclicity of the trace, and anticommute \(\gamma_5\) with \(\gamma_d^\alpha\): 
+	\begin{align*}
+	  g_{\alpha\beta}^d\varepsilon_{\mu\nu\rho\sigma}\Tr(\gamma_d^\alpha\gamma_d^\mu\gamma_d^\nu\gamma_d^\rho\gamma_d^\sigma\gamma_d^\beta\gamma_5) & =-g_{\alpha\beta}^d\varepsilon_{\mu\nu\rho\sigma}\Tr(\gamma_d^\mu\gamma_d^\nu\gamma_d^\rho\gamma_d^\sigma\gamma_d^\beta\gamma_d^\alpha\gamma_5)\\
+          & =-d\varepsilon_{\mu\nu\rho\sigma}\Tr(\gamma_d^\mu\gamma_d^\nu\gamma_d^\rho\gamma_d^\sigma\gamma_5); \numberthis \label{intro1}
+	\end{align*}
+        secondly, we anticommute \(\gamma_d^\alpha\) through the adjacent four matrices: 
+	\begin{equation}
+	g_{\alpha\beta}^d\varepsilon_{\mu\nu\rho\sigma}\Tr(\gamma_d^\alpha\gamma_d^\mu\gamma_d^\nu\gamma_d^\rho\gamma_d^\sigma\gamma_d^\beta\gamma_5)=(d-8)\varepsilon_{\mu\nu\rho\sigma}\Tr(\gamma_d^\mu\gamma_d^\nu\gamma_d^\rho\gamma_d^\sigma\gamma_5).  \label{intro2}
+	\end{equation}
+        If we combine these two results, then we find that 
+	\begin{equation}
+	2(d-4)\varepsilon_{\mu\nu\rho\sigma}\Tr(\gamma_d^\mu\gamma_d^\nu\gamma_d^\rho\gamma_d^\sigma)=0;
+	\end{equation}
+        so for \(d\neq 4\), the attempt to impose both the anticommutation rule for \(\gamma_5\) and the cyclicity rule causes this trace to become zero.
+
+        \section{The 't Hooft-Veltman Scheme}
+
+        In the 't Hooft-Veltman scheme, we keep the cyclicity of the trace intact and give up on the anticommutation rule for \(\gamma_5\). In analogy to 4-dimensions, we define \(\gamma_5\) as we did in 4-dimensions as 
+	\begin{equation}
+	\gamma_5=i\gamma_d^0\gamma_d^1\gamma_d^2\gamma_d^3,
+	\end{equation}
+        and impose the anticommutation relation 
+	\begin{equation}
+	\{\gamma_d^\mu,\gamma_5\}=0
+	\end{equation}
+        for \(\mu=0,\dots,4\). For the remaining matrices, we introduce the commutation relation 
+	\begin{equation}
+	[\gamma_d^\mu,\gamma_5]=0.
+	\end{equation}
+        We can see how this changes Equation \ref{intro1}; we anticommute the first 4 matrices through \(\gamma_5\), and then commute the remaining \(d-4\), which gives us an overall factor of \(d-8\), in agreement with Equation \ref{intro2}.
+
+        \section{Kreimer's Scheme}
+
+        In Kreimer's scheme, we establish 5 different rules:
+
+        \subsection{Rule 1}
+        
+        We keep the normal anticommutation rules: 
+	\begin{align*}
+	  \{\gamma_d^\mu,\gamma_d^\nu\} & =2g_d^{\mu\nu}, \numberthisa\\
+          \{\gamma_d^\mu,\gamma_5\} & =0; \numberthisb
+	\end{align*}
+        from the first of these, we get the following contraction rules in \(d\)-dimensions: 
+	\begin{align*}
+	  \gamma_\mu^d\gamma_d^\alpha\gamma_d^\mu & =(2-d)\gamma_d^\alpha, \numberthisa\\
+          \gamma_\mu^d\gamma_d^\alpha\gamma_d^\beta\gamma_d^\mu & =(d-4)\gamma_d^\alpha\gamma_d^\beta+4g_d^{\alpha\beta}. \numberthisb
+	\end{align*}
+        Of course, as we established above, we cannot simultaneously keep both these anticommutation rules and the cyclicity of the trace, and since we have kept the former, we must abandon the latter; the purpose of the remaining rules is to compensate for this.
+
+        \subsection{Rule 2}
+
+        In cases involving no \(\gamma_5\) matrix, we have 
+	\begin{equation}
+	\Tr[\gamma_d^{\mu_1}\dots\gamma_d^{\mu_{2n}}]=4\sum_\mathrm{perm}(-1)^{\sigma(\mathrm{perm})}g_d^{\mu_{i_1}\mu_{j_1}}\dots g_d^{\mu_{i_n}\mu_{j_n}},
+	\end{equation}
+        where \(1=i_1<\dots<i_n, \ i_k<j_k\); the sum is taken over all possible permutations of \(i_k,j_k\). Of course, the trace of an odd number of Dirac matrices is zero. When we include \(\gamma_5\), we have 
+	\begin{align*}
+	  \Tr[\gamma_d^{\mu_1}\dots\gamma_d^{\mu_4}\gamma_5] & =4i\varepsilon_{\mu_1\dots\mu_4}, \numberthisa\\
+          \Tr[\gamma_d^{\mu_1}\dots\gamma_d^{\mu_{2n}}\gamma_5] & =4i\sum_\mathrm{perm}(-1)^{\sigma(\mathrm{perm})}\varepsilon_{\mu_{i_{n+1}}\mu_{i_{n+2}}\mu_{i_{n+3}}\mu_{i_{n+4}}}g_{\mu_{i_1}\mu_{j_1}}\dots g_{\mu_{i_{n+2}}\mu_{j_{n+2}}}; \numberthisb
+	\end{align*}
+        once again, when we have an odd number of \(\gamma_d^{\mu}\)'s, the traces are zero. Note that these traces are unchanged when we reverse the ordering of the indices.
+
+        \subsection{Rule 3}
+
+        Cyclicity of the trace cannot be used in cases involving odd numbers of \(\gamma_5\)'s. Note that the application of this rule forbids Equation \ref{intro1}, which means that we would obtain Equation \ref{intro2} by default, in agreement with the 't Hooft-Veltman scheme. 
+
+        \subsection{Rule 4}
+
+        In each Dirac chain, a reading point must be chosen, i.e. we pick an index at which to start the chain and keep this consistent across all diagrams. If we did not do this, then the relative signs between Dirac chains would not be consisten. 
+
+        \subsection{Rule 5}
+
+        If the theory contains anomalous axial currents, then we must start the Dirac chains at an axial vertex. Once again, this rule is to ensure the correct relative signs. 
+
+        
+
+        \section{References}
+
+        \noindent
+        [1] S. Weinzierl, \textit{Feynman Integrals}, (2022) [\hyperlink{}{https://arxiv.org/pdf/2201.03593.pdf}].
+
+        \noindent
+        [2] J. G. K\"orner et. al., \textit{A Practicable \(\gamma_5\)-scheme in dimensional regularization}, \textit{Zeitschrift f\"ur Physik C Particles and Fields}. 54 (1991) 503-512. 
+\end{document}
