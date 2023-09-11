@@ -1,0 +1,5 @@
+jobs:
+  - compute_diagram_interferences:
+      diagrams_file1: "myresults/ggtt_1loop.match.yaml"
+      diagrams_file2: "myresults/ggtt_tree.match.yaml"
+      output_file: "myresults/ggtt.comp"
