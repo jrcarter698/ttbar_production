@@ -1,0 +1,56 @@
+*
+* EW model description for QGRAF
+*
+*********************************************************************
+*Page 11 of the documentation. 
+*
+* Propagators:
+* - The particle flow in the diagram follows the momentum direction
+*   of the particle 'part1' in the definition of the propagator
+*   [part1, part2, -]
+* - The mass parameter must be set to a number or
+*   a symbol declared in the file "global.yaml"
+
+* EW propagators
+
+[photon,  photon, + ; mass='0' ]
+[Z, Z, + ; mass='mZ' ]
+[Wp, Wm, + ; mass='mW']
+[higgs, higgs, + ; mass='mh' ]
+
+* QCD propagators
+
+[up, ubar, - ; mass='0' ] 
+[down, dbar, - ; mass='0' ]
+[top, tbar, - ; mass='mt' ]
+[bottom, bbar, - ; mass='0' ]
+[gluon, gluon, + ; mass='0' ]
+[ghost, Ghost, + ; mass='0' ] 
+
+* Vertices:
+* - The ordering of the fields
+*
+
+* EW vertices
+
+[ubar, photon, up]
+[dbar, photon, down]
+[tbar, photon, down]
+[bbar, photon, bottom]
+[ubar, Z, up]
+[dbar, Z, down]
+[tbar, Z, top]
+[bbar, Z, bottom]
+[ubar, Wp, down]
+[dbar, Wm, down]
+[tbar, Wp, bottom]
+[bbar, Wm, top]
+
+* QCD vertices
+
+[ubar, gluon, up]
+[dbar, gluon, down]
+[tbar, gluon, top]
+[bbar, gluon, bottom]
+[gluon, gluon, gluon]
+[Ghost, gluon, ghost]
