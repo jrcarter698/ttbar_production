@@ -25,7 +25,7 @@
 [top, tbar, - ; mass='mt' ]
 [bottom, bbar, - ; mass='0' ]
 [gluon, gluon, + ; mass='0' ]
-[ghost, Ghost, + ; mass='0' ] 
+*[ghost, Ghost, + ; mass='0' ] 
 
 * Vertices:
 * - The ordering of the fields
@@ -33,24 +33,24 @@
 
 * EW vertices
 
-[ubar, photon, up]
-[dbar, photon, down]
-[tbar, photon, down]
-[bbar, photon, bottom]
-[ubar, Z, up]
-[dbar, Z, down]
-[tbar, Z, top]
-[bbar, Z, bottom]
-[ubar, Wp, down]
-[dbar, Wm, down]
-[tbar, Wp, bottom]
-[bbar, Wm, top]
+[ubar, photon, up ; gpow = '0']
+[dbar, photon, down ; gpow = '0']
+[tbar, photon, down ; gpow = '0']
+[bbar, photon, bottom ; gpow = '0']
+[ubar, Z, up ; gpow = '0']
+[dbar, Z, down ; gpow = '0']
+[tbar, Z, top ; gpow = '0']
+[bbar, Z, bottom ; gpow = '0']
+[ubar, Wp, down ; gpow = '0']
+[dbar, Wm, down ; gpow = '0']
+[tbar, Wp, bottom ; gpow = '0']
+[bbar, Wm, top ; gpow = '0']
 
 * QCD vertices
 
-[ubar, gluon, up]
-[dbar, gluon, down]
-[tbar, gluon, top]
-[bbar, gluon, bottom]
-[gluon, gluon, gluon]
-[Ghost, gluon, ghost]
+[ubar, gluon, up ; gpow = '1']
+[dbar, gluon, down ; gpow = '1']
+[tbar, gluon, top ; gpow = '1']
+[bbar, gluon, bottom ; gpow = '1']
+[gluon, gluon, gluon ; gpow = '1']
+*[Ghost, gluon, ghost ; gpow = '0']

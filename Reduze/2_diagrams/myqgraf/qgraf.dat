@@ -10,6 +10,5 @@ loops=1;
 loop_momentum = k;
 options =  onshell, notadpole;
 
-* Limit the number of gluon propagators to 1.
 
-true = iprop[ gluon, 1, 1] ;
+true = vsum[ gpow, 2, 2] ;
