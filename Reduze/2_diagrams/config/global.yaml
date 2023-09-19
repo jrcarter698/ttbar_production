@@ -1,7 +1,7 @@
 
 # global symbols
 global_symbols:
-  coupling_constants: [g, e]
+  coupling_constants: [g, e, x, y, v]
   su_n_dimensions:
     adjoint: Na              # = Nc^2 - 1
     fundamental: Nc

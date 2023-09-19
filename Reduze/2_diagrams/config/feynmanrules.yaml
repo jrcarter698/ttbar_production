@@ -53,6 +53,7 @@ feynmanrules:
 ##  su_n_dimensions:
 ##    fundamental: Nc
 ##    adjoint: Na   # = Nc^2 - 1
+## Additionally, we need the EW parameters
 
   # template symbols
   momentum_prefix: mom
@@ -69,47 +70,56 @@ feynmanrules:
 # the momentum of field number 1 or lorentz index of field number 2.  
 
   external_legs:
-    in-quark1:    "U(mom1,mass1,i1)"
-    in-qbar1:     "Vbar(mom1,mass1,i1)"
-    in-quark2:    "U(mom1,mass1,i1)"
-    in-qbar2:     "Vbar(mom1,mass1,i1)"
+    in-up:	  "U(mom1,mass1,i1)"
+    in-ubar:      "Vbar(mom1,mass1,i1)"
+    in-down:      "U(mom1,mass1,i1)"
+    in-dbar:      "Vbar(mom1,mass1,i1)"
+    in-bottom:	  "U(mom1,mass1,i1)"
+    in-bbar:      "Vbar(mom1,mass1,i1)"
     in-gluon:     "Pol_gluon(mom1,mass1,mu1,a1,ortho1)"
-    in-ghost:     "Pol_ghost(mom1,mass1,a1)"
-    in-Ghost:     "PolC_ghost(mom1,mass1,a1)"
-    in-photon:    "Pol_photon(mom1,mass1,mu1)"
-    in-electron:  "U(mom1,mass1,0)"
-    in-positron:  "Vbar(mom1,mass1,0)"
+#    in-ghost:     "Pol_ghost(mom1,mass1,a1)"
+#    in-Ghost:     "PolC_ghost(mom1,mass1,a1)"
 
-    out-quark1:   "Ubar(mom1,mass1,i1)"
-    out-qbar1:    "V(mom1,mass1,i1)"
-    out-quark2:   "Ubar(mom1,mass1,i1)"
-    out-qbar2:    "V(mom1,mass1,i1)"
-    out-gluon:    "PolC_gluon(mom1,mass1,mu1,a1,ortho1)"
-    out-ghost:    "PolC_ghost(mom1,mass1,a1)"
-    out-Ghost:    "Pol_ghost(mom1,mass1,a1)"
-    out-photon:   "PolC_photon(mom1,mass1,mu1)"
-    out-electron: "Ubar(mom1,mass1,0)"
-    out-positron: "V(mom1,mass1,0)"
+    out-top:      "Ubar(mom1,mass1,i1)"
+    out-tbar:     "V(mom1,mass1,i1)"
 
   propagators:
-    quark1_qbar1:      "I*(GaS(mom1) + mass1*GaOne(1)) * Prop(mom1, mass1^2) * delta_f(i1,i2)"
-    quark2_qbar2:      "I*(GaS(mom1) + mass1*GaOne(1)) * Prop(mom1, mass1^2) * delta_f(i1,i2)"
+    up_ubar:	       "I*(GaS(mom1) + mass1*GaOne(1)) * Prop(mom1, mass1^2) * delta_f(i1,i2)"
+    down_dbar:         "I*(GaS(mom1) + mass1*GaOne(1)) * Prop(mom1, mass1^2) * delta_f(i1,i2)"
+    top_tbar:          "I*(GaS(mom1) + mass1*GaOne(1)) * Prop(mom1, mass1^2) * delta_f(i1,i2)"
+    bottom_bbar:       "I*(GaS(mom1) + mass1*GaOne(1)) * Prop(mom1, mass1^2) * delta_f(i1,i2)"
     gluon_gluon:       "-I * delta_a(a1, a2) * metric_l(mu1, mu2) * Prop(mom1, 0)"
-    ghost_Ghost:       "I * Prop(mom1, 0) * delta_a(a1, a2)"
+#    ghost_Ghost:       "I * Prop(mom1, 0) * delta_a(a1, a2)"
     photon_photon:     "-I * metric_l(mu1, mu2) * Prop(mom1, 0)"
-    electron_positron: "I*(GaS(mom1) + mass1*GaOne(1)) * Prop(mom1, mass1^2)"
+    Z_Z:	       "-I * (metric_l(mu1,mu2) - Mom(mom1, mu1) * Mom(mom1, mu2) / mass1^2) * Prop(mom1, mass1^2)"
+    Wp_Wm:	       "-I * (metric_l(mu1,mu2) - Mom(mom1, mu1) * Mom(mom1, mu2) / mass1^2) * Prop(mom1, mass1^2)"
+    higgs_higgs:       "I * Prop(mom1, mass1^2)"
+
 
   vertices:
-    qbar1_gluon_quark1:       "I * g * Ga(mu2) * ColT(a2, i1, i3)"
-    qbar2_gluon_quark2:       "I * g * Ga(mu2) * ColT(a2, i1, i3)"
+
+#QCD vertices
+    ubar_gluon_up:            "I * g * Ga(mu2) * ColT(a2, i1, i3)"
+    dbar_gluon_down:          "I * g * Ga(mu2) * ColT(a2, i1, i3)"
+    tbar_gluon_top:           "I * g * Ga(mu2) * ColT(a2, i1, i3)"
+    bbar_gluon_bottom:        "I * g * Ga(mu2) * ColT(a2, i1, i3)"
     gluon_gluon_gluon:        "g*ColF3(a1,a2,a3) * ( metric_l(mu1, mu2) * Mom(mom1 - mom2, mu3)
                                    + metric_l(mu2, mu3) * Mom(mom2 - mom3, mu1)
 	                               + metric_l(mu3, mu1) * Mom(mom3 - mom1, mu2) )"
     gluon_gluon_gluon_gluon:  "-I*g^2 * (  ColF4(a1, a2, a3, a4) * metric_l_diff(mu1,mu3,mu2,mu4)
                                    + ColF4(a1, a3, a2, a4) * metric_l_diff(mu1,mu2,mu3,mu4)
                                    + ColF4(a1, a4, a2, a3) * metric_l_diff(mu1,mu2,mu4,mu3) )"
-    Ghost_gluon_ghost:        "g * ColF3(a1, a2, a3) * Mom(mom1, mu2)"
-    positron_photon_electron: "I * e * Ga(mu2)"
+#    Ghost_gluon_ghost:        "g * ColF3(a1, a2, a3) * Mom(mom1, mu2)"
+
+#EW vertices
+#Include an electroweak scheme to fix the parameters.
+    ubar_photon_up:           "I * (2/3)*e * Ga(mu2) * delta_f(i1, i3)"
+    dbar_photon_down:         "-I * (1/3)*e * Ga(mu2) * delta_f(i1, i3)"
+    bbar_photon_bottom:       "-I * (1/3)*e * Ga(mu2) * delta_f(i1, i3)"
+    tbar_photon_top:          "I * (2/3)*e * Ga(mu2) * delta_f(i1, i3)"
+
+#Vertex for the top and higgs.
+    tbar_higgs_top:	      "-I*(mass1/v) * (x * GaOne(1) + I*y * Ga(5))"
 
 
   # polarization sums: [ pol, polc, val ]  means  pol*polc = val
@@ -118,8 +128,8 @@ feynmanrules:
   polarization_sums:
     - [ "U(mom,mass,i1)", "Ubar(mom,mass,i2)", "(GaS(mom) + mass * GaOne(1)) * delta_f(i1,i2)" ]
     - [ "V(mom,mass,i1)", "Vbar(mom,mass,i2)", "(GaS(mom) - mass * GaOne(1)) * delta_f(i1,i2)" ]
-    - [ "Pol_photon(mom,mass,mu1)", "PolC_photon(mom,mass,mu2)", "-metric_l(mu1, mu2)" ]
-    - [ "Pol_ghost(mom,mass,a1)",   "PolC_ghost(mom,mass,a2)",   "I*delta_a(a1,a2)" ]
+#    - [ "Pol_photon(mom,mass,mu1)", "PolC_photon(mom,mass,mu2)", "-metric_l(mu1, mu2)" ]
+#    - [ "Pol_ghost(mom,mass,a1)",   "PolC_ghost(mom,mass,a2)",   "I*delta_a(a1,a2)" ]
     - [ "Pol_gluon(mom,mass,mu1,a1,0)", "PolC_gluon(mom,mass,mu2,a2,0)", "-delta_a(a1,a2) * metric_l(mu1,mu2)" ]
     - [ "Pol_gluon(mom,mass,mu1,a1,ortho)", "PolC_gluon(mom,mass,mu2,a2,ortho)",
                              "delta_a(a1,a2) * ( - metric_l(mu1,mu2)

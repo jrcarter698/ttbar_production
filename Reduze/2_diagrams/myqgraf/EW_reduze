@@ -33,6 +33,7 @@
 
 * EW vertices
 
+
 [ubar, photon, up ; gpow = '0']
 [dbar, photon, down ; gpow = '0']
 [tbar, photon, down ; gpow = '0']
@@ -45,6 +46,7 @@
 [dbar, Wm, down ; gpow = '0']
 [tbar, Wp, bottom ; gpow = '0']
 [bbar, Wm, top ; gpow = '0']
+[tbar, higgs, top; gpow = '0', ghiggs = '1']
 
 * QCD vertices
 
@@ -53,4 +55,4 @@
 [tbar, gluon, top ; gpow = '1']
 [bbar, gluon, bottom ; gpow = '1']
 [gluon, gluon, gluon ; gpow = '1']
-*[Ghost, gluon, ghost ; gpow = '0']
+*[Ghost, gluon, ghost]

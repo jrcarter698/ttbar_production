@@ -12,3 +12,4 @@ options =  onshell, notadpole;
 
 
 true = vsum[ gpow, 2, 2] ;
+true = vsum[ ghiggs, 0, 2];
