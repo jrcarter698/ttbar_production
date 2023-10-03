@@ -2,8 +2,10 @@ jobs:
   - reduce_sectors:
       sector_selection:
         select_recursively:
-          - [B, 13]
-          - [A, 15]
+          - [Zbox, 15]
+	  - [hbox, 15]
+	  - [Wbox, 15]
+	  - [Zbub, 5 ]
       identities: 
         ibp: &myrsranges    # define label myrsranges for later reference
           - { r: [t, 4], s: [0, 2] }

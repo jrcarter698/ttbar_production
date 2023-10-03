@@ -2,8 +2,10 @@ jobs:
   - print_sector_info:
       sector_selection:
         select_recursively:
-          - [B, 13]
-          - [A, 15]
+          - [Zbox, 15]
+          - [hbox, 15]
+          - [Wbox, 15]
+          - [Zbub, 5 ]
       feynman_diagram_dot_file: "myresults/diagrams.dot"
     # afterwards:
     # run dot or neato commands manually to produce PDFs from the *.dot files

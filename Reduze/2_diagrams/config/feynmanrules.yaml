@@ -117,15 +117,29 @@ feynmanrules:
     dbar_photon_down:         "-I * (1/3)*e * Ga(mu2) * delta_f(i1, i3)"
     bbar_photon_bottom:       "-I * (1/3)*e * Ga(mu2) * delta_f(i1, i3)"
     tbar_photon_top:          "I * (2/3)*e * Ga(mu2) * delta_f(i1, i3)"
+    ubar_Z_up:		      "I * e / 2 / sw / cw * Ga(mu2) * (vf * GaOne(1) - af * GaOne(1)) * delta_f(i1, i3)"
+    dbar_Z_down:	      "I * e / 2 / sw / cw * Ga(mu2) * (vf * GaOne(1) - af * GaOne(1)) * delta_f(i1, i3)"
+    bbar_Z_bottom:	      "I * e / 2 / sw / cw * Ga(mu2) * (vf * GaOne(1) - af * GaOne(1)) * delta_f(i1, i3)"
+    tbar_Z_top:		      "I * e / 2 / sw / cw * Ga(mu2) * (vf * GaOne(1) - af * GaOne(1)) * delta_f(i1, i3)"
+
+#V is a diagonal CKM.
+    ubar_Wp_down:	      "I * e / 2 / 2^(1/2) / sw / cw * Ga(mu2) * (GaOne(1)) * V * delta_f(i1, i3)"
+    dbar_Wm_up:	      	      "I * e / 2 / 2^(1/2) / sw / cw * Ga(mu2) * (GaOne(1)) * V * delta_f(i1, i3)"
+    bbar_Wm_top:	      "I * e / 2 / 2^(1/2) / sw / cw * Ga(mu2) * (GaOne(1)) * V * delta_f(i1, i3)"
+    tbar_Wp_bottom:	      "I * e / 2 / 2^(1/2) / sw / cw * Ga(mu2) * (GaOne(1)) * V * delta_f(i1, i3)"
+    
 
 #Vertex for the top and higgs.
-    tbar_higgs_top:	      "-I*(mass1/v) * (x * GaOne(1) + I*y * Ga(5))"
+    tbar_higgs_top:	      "-I*(mass1/v) * (x * GaOne(1)) * delta_f(i1, i3)"
 
 
   # polarization sums: [ pol, polc, val ]  means  pol*polc = val
   # available template symbols for polarization sums: mom; mass; ortho; i,i1,i2; a,a1,a2; mu,mu1,mu2;
 
   polarization_sums:
+
+#Simply getting rid of the polarization sums causes an error; we need a different way
+#of dealing with them.
     - [ "U(mom,mass,i1)", "Ubar(mom,mass,i2)", "(GaS(mom) + mass * GaOne(1)) * delta_f(i1,i2)" ]
     - [ "V(mom,mass,i1)", "Vbar(mom,mass,i2)", "(GaS(mom) - mass * GaOne(1)) * delta_f(i1,i2)" ]
 #    - [ "Pol_photon(mom,mass,mu1)", "PolC_photon(mom,mass,mu2)", "-metric_l(mu1, mu2)" ]
