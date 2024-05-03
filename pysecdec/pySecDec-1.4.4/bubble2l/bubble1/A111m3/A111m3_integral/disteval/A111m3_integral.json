@@ -1,0 +1,74 @@
+{
+  "name": "A111m3_integral",
+  "type": "integral",
+  "dimension": 2,
+  "regulators": [
+    "eps"
+  ],
+  "realp": [
+    "s",
+    "t",
+    "m2"
+  ],
+  "complexp": [],
+  "deformp_count": 2,
+  "complex_result": true,
+  "requested_orders": [
+    0
+  ],
+  "prefactor": "+(-1/2)*eps**-1+(-3/4+EulerGamma/2)",
+  "prefactor_lowest_orders": [
+    -1
+  ],
+  "prefactor_highest_orders": [
+    0
+  ],
+  "expanded_prefactor": [
+    {
+      "regulator_powers": [
+        -1
+      ],
+      "coefficient": "-1/2"
+    },
+    {
+      "regulator_powers": [
+        0
+      ],
+      "coefficient": "-3/4+EulerGamma/2"
+    }
+  ],
+  "lowest_orders": [
+    0
+  ],
+  "kernels": [
+    "sector_1_order_0",
+    "sector_2_order_0",
+    "sector_3_order_0",
+    "sector_1_order_1",
+    "sector_2_order_1",
+    "sector_3_order_1"
+  ],
+  "orders": [
+    {
+      "regulator_powers": [
+        0
+      ],
+      "kernels": [
+        "sector_1_order_0",
+        "sector_2_order_0",
+        "sector_3_order_0"
+      ]
+    },
+    {
+      "regulator_powers": [
+        1
+      ],
+      "kernels": [
+        "sector_1_order_1",
+        "sector_2_order_1",
+        "sector_3_order_1"
+      ]
+    }
+  ],
+  "generated_by": "pySecDec 1.6.2 (451589a9) [Python 3.9.7, NumPy 1.20.3, SymPy 1.10.1]"
+}

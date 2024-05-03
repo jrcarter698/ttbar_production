@@ -1,0 +1,24 @@
+name = tmpqqttcomp3X3
+  Ax12 3 11  3 1  1 1 -1 1
+   -(1/4*I)*Li2(2)^2*(6*d*s^2-80*mt^4-d^2*t^2+12*d*t*s-16*conjugate(mt)*mt*s+56*mt^2*s-36*mt^2*d*t-2*conjugate(mt)*mt*d^2*t-8*t^2+12*conjugate(mt)*mt*d*s-8*mt^2*d*mh^2+4*d*s*mh^2-8*t*mh^2+4*mt^2*d^2*s+4*conjugate(mt)*mt*d*mh^2-2*conjugate(mt)*mt*d^2*s-16*t*s-36*mt^2*d*s+56*mt^2*t+4*mt^2*d^2*t-28*conjugate(mt)*mt^3*d+16*mt^2*mh^2-3*mt^4*d^2+12*conjugate(mt)*mt*d*t-8*s^2+46*mt^4*d-8*s*mh^2+4*d*t*mh^2+6*d*t^2-8*conjugate(mt)*mt*mh^2+2*conjugate(mt)*mt^3*d^2-2*d^2*t*s-16*conjugate(mt)*mt*t+48*conjugate(mt)*mt^3-d^2*s^2)*v^(-2)*mt^2*g^4*(t+s-mt^2)^(-2)*Color((1+Nc)^2*Nc^(-1)*(-1+Nc)^2)
+    Ax12 3 11  3 0  1 1 0 1
+     (1/4*I)*Li2(2)^2*v^(-2)*mt^2*(16*mt^4*d*t-112*conjugate(mt)*mt^5-8*conjugate(mt)*mt*mh^4-d^2*t^2*s+10*mt^2*d^2*s^2+56*mt^4*mh^2-80*mt^6-68*conjugate(mt)*mt^3*d*s+20*conjugate(mt)*mt*d*s^2+10*mt^2*d^2*t*s-8*s^2*mh^2+4*mt^4*d*mh^2+56*mt^2*s^2+20*conjugate(mt)*mt*d*t*s+6*d*s^3+16*mt^4*t-17*mt^4*d^2*s-4*mt^2*d*t*mh^2+8*mt^2*s*mh^2+3*mt^2*d^2*s*mh^2-24*conjugate(mt)*mt*s^2-d^2*s^2*mh^2+12*d*t*s^2+48*conjugate(mt)*mt^3*t+12*conjugate(mt)*mt*d*s*mh^2+64*conjugate(mt)*mt^3*mh^2+56*mt^2*t*s-16*conjugate(mt)*mt*t*mh^2-8*t^2*s-d^2*t*s*mh^2+16*conjugate(mt)*mt^5*d-8*mt^2*mh^4+104*conjugate(mt)*mt^3*s-8*mt^2*t*mh^2-18*mt^2*d*s*mh^2-16*mt^6*d-2*d^2*t*s^2-8*s^3-24*conjugate(mt)*mt*t*s-8*t*s*mh^2+6*d*s^2*mh^2-2*conjugate(mt)*mt*d^2*s*mh^2+6*d*t^2*s-24*conjugate(mt)*mt*s*mh^2-16*conjugate(mt)*mt^3*d*t-48*mt^2*d*t*s+90*mt^4*d*s-d^2*s^3+4*conjugate(mt)*mt*d*t*mh^2-64*mt^4*s-16*t*s^2-48*mt^2*d*s^2+6*d*t*s*mh^2+12*conjugate(mt)*mt^3*d^2*s-4*conjugate(mt)*mt^3*d*mh^2-4*conjugate(mt)*mt*d^2*t*s-4*conjugate(mt)*mt*d^2*s^2)*g^4*(t+s-mt^2)^(-2)*Color((1+Nc)^2*Nc^(-1)*(-1+Nc)^2)
+    Ax12 2 10  2 1  0 1 -1 1
+     I*Li2(2)^2*v^(-2)*mt^2*g^4*(conjugate(mt)*mt*d-2*t-2*mt^2*d+d*s-2*conjugate(mt)*mt+d*t-2*s+4*mt^2)*(t+s-mt^2)^(-2)*Color((1+Nc)^2*Nc^(-1)*(-1+Nc)^2)
+    Ax12 2 10  2 0  0 1 0 1
+     -(1/4*I)*Li2(2)^2*(6*d*s^2-d^2*t^2+12*d*t*s-8*conjugate(mt)*mt*s+24*mt^2*s-24*mt^2*d*t-2*conjugate(mt)*mt*d^2*t-8*t^2+8*conjugate(mt)*mt*d*s+4*mt^2*d^2*s-2*conjugate(mt)*mt*d^2*s-16*t*s-24*mt^2*d*s+24*mt^2*t+4*mt^2*d^2*t-8*conjugate(mt)*mt^3*d-8*mt^2*mh^2-3*mt^4*d^2+8*conjugate(mt)*mt*d*t-8*s^2+18*mt^4*d+6*d*t^2-8*conjugate(mt)*mt*mh^2+2*conjugate(mt)*mt^3*d^2-2*d^2*t*s-8*conjugate(mt)*mt*t+24*conjugate(mt)*mt^3-d^2*s^2)*v^(-2)*mt^2*g^4*(t+s-mt^2)^(-2)*Color((1+Nc)^2*Nc^(-1)*(-1+Nc)^2)
+    Ax12 2 9  2 0  1 0 0 1
+     (1/4*I)*Li2(2)^2*v^(-2)*mt^2*(6*d*s^2-80*mt^4+6*d*t*s-8*conjugate(mt)*mt*s+48*mt^2*s-16*mt^2*d*t+4*conjugate(mt)*mt*d*s-8*mt^2*d*mh^2+4*d*s*mh^2-8*t*mh^2+mt^2*d^2*s+4*conjugate(mt)*mt*d*mh^2-8*t*s-26*mt^2*d*s+32*mt^2*t-16*conjugate(mt)*mt^3*d+24*mt^2*mh^2-8*s^2+32*mt^4*d-8*s*mh^2+4*d*t*mh^2-d^2*t*s+16*conjugate(mt)*mt^3-d^2*s^2)*g^4*(t+s-mt^2)^(-2)*Color((1+Nc)^2*Nc^(-1)*(-1+Nc)^2)
+    Ax12 2 3  2 1  1 1 0 -1
+     -(2*I)*Li2(2)^2*v^(-2)*mt^3*(conjugate(mt)+mt)*g^4*(t+s-mt^2)^(-2)*Color((1+Nc)^2*Nc^(-1)*(-1+Nc)^2)
+    Ax12 2 3  2 1  1 1 -1 0
+     -I*Li2(2)^2*v^(-2)*mt^2*g^4*(conjugate(mt)*mt*d-2*t-2*mt^2*d+d*s-2*conjugate(mt)*mt+d*t-2*s+4*mt^2)*(t+s-mt^2)^(-2)*Color((1+Nc)^2*Nc^(-1)*(-1+Nc)^2)
+    Ax12 2 3  2 0  1 1 0 0
+     (1/4*I)*Li2(2)^2*v^(-2)*mt^2*(6*d*s^2+56*mt^4+6*d*t*s-24*conjugate(mt)*mt*s+8*mt^2*s-4*mt^2*d*t+12*conjugate(mt)*mt*d*s+3*mt^2*d^2*s-2*conjugate(mt)*mt*d^2*s-8*t*s-18*mt^2*d*s-8*mt^2*t-4*conjugate(mt)*mt^3*d-16*mt^2*mh^2+4*conjugate(mt)*mt*d*t-8*s^2+4*mt^4*d-16*conjugate(mt)*mt*mh^2-d^2*t*s-16*conjugate(mt)*mt*t+64*conjugate(mt)*mt^3-d^2*s^2)*g^4*(t+s-mt^2)^(-2)*Color((1+Nc)^2*Nc^(-1)*(-1+Nc)^2)
+    Ax12 1 8  1 0  0 0 0 1
+     -I*Li2(2)^2*v^(-2)*mt^2*g^4*(conjugate(mt)*mt*d-2*t-2*mt^2*d+d*s+d*t-2*s+6*mt^2)*(t+s-mt^2)^(-2)*Color((1+Nc)^2*Nc^(-1)*(-1+Nc)^2)
+    Ax12 1 2  1 0  0 1 0 0
+     (2*I)*Li2(2)^2*v^(-2)*mt^3*(conjugate(mt)+mt)*g^4*(t+s-mt^2)^(-2)*Color((1+Nc)^2*Nc^(-1)*(-1+Nc)^2)
+    Ax12 1 1  1 0  1 0 0 0
+     I*Li2(2)^2*v^(-2)*mt^2*g^4*(conjugate(mt)*mt*d-2*t-2*mt^2*d+d*s+d*t-2*s+6*mt^2)*(t+s-mt^2)^(-2)*Color((1+Nc)^2*Nc^(-1)*(-1+Nc)^2)
+;

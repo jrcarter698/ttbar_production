@@ -1,0 +1,5 @@
+jobs:
+  - compute_diagram_interferences:
+      diagrams_file1: "myresults/qqtt_1loop.match.yaml"
+      diagrams_file2: "myresults/qqtt_tree.match.yaml"
+      output_file: "myresults/qqtt.comp"

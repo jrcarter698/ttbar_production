@@ -1,0 +1,26 @@
+sectormappings:
+  name: hbox
+  zero_sectors:
+    t=0: [0]
+  sectors_without_graph:
+    {}
+  sector_relations:
+    1: [[Zbox, 1], [[k, k]]]
+    2: [[Zbox, 1], [[k, k+p1]]]
+    3: [[Zbox, 3], [[k, -k+p1]]]
+    4: [[Zbox, 1], [[k, k+p1+p2]]]
+    5: [[Zbox, 5], [[k, -k+p1+p2]]]
+    6: [[Zboxx12x34, 3], [[k, -k+p1+p2]]]
+    7: [[Zbox, 7], [[k, k]]]
+    12: [[hboxx12x34, 9], [[k, -k+p1+p2]]]
+    14: [[hboxx12x34, 11], [[k, -k+p1+p2]]]
+  crossed_sector_relations:
+    x12:
+      8: [[hbox, 8], []]
+      9: [[hbox, 9], []]
+      13: [[hbox, 13], []]
+  sector_symmetries:
+    13:
+      - [[k, -k+p1+p2], [p1, p2], [p3, p1-p3+p2], [p2, p1]]
+    15:
+      - [[k, -k+p1+p2], [p1, p2], [p3, p1-p3+p2], [p2, p1]]

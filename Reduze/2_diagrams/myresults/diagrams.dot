@@ -1,0 +1,574 @@
+digraph Zbox_1_1 {
+  label="Zbox_1_1";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 1 [label="(p1,0;1)"];
+    -2 -> 1 [label="(p2,0;2)"];
+    1 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 2 [label="(k,mt^2;5)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+}
+
+
+digraph Zbox_1_8 {
+  label="Zbox_1_8";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 1 [label="(p1,0;1)"];
+    -2 -> 1 [label="(p2,0;2)"];
+    1 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 2 [label="(k-p3,mZ^2;8)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+}
+
+
+digraph Zbox_2_3 {
+  label="Zbox_2_3";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 2 [label="(p1,0;1)"];
+    -2 -> 1 [label="(p2,0;2)"];
+    1 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 1 [label="(k,mt^2;5)"];
+    1 -> 2 [label="(k-p1,mt^2;6)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+}
+
+
+digraph Zbox_2_5 {
+  label="Zbox_2_5";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 3 [label="(p1,0;1)"];
+    -2 -> 3 [label="(p2,0;2)"];
+    1 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    3 -> 1 [label="(k,mt^2;5)"];
+    1 -> 3 [label="(k-p1-p2,mt^2;7)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+3 [shape=point];
+}
+
+
+digraph Zbox_2_9 {
+  label="Zbox_2_9";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 2 [label="(p1,0;1)"];
+    -2 -> 2 [label="(p2,0;2)"];
+    1 -> -3 [label="(p3,mt^2;3)"];
+    2 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 1 [label="(k,mt^2;5)"];
+    1 -> 2 [label="(k-p3,mZ^2;8)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+}
+
+
+digraph Zbox_2_10 {
+  label="Zbox_2_10";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 3 [label="(p1,0;1)"];
+    -2 -> 1 [label="(p2,0;2)"];
+    3 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    1 -> 3 [label="(k-p1,mt^2;6)"];
+    3 -> 1 [label="(k-p3,mZ^2;8)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+3 [shape=point];
+}
+
+
+digraph Zbox_3_7 {
+  label="Zbox_3_7";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 2 [label="(p1,0;1)"];
+    -2 -> 3 [label="(p2,0;2)"];
+    1 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 1 [label="(k,mt^2;5)"];
+    3 -> 2 [label="(k-p1,mt^2;6)"];
+    1 -> 3 [label="(k-p1-p2,mt^2;7)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+3 [shape=point];
+}
+
+
+digraph Zbox_3_11 {
+  label="Zbox_3_11";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 2 [label="(p1,0;1)"];
+    -2 -> 3 [label="(p2,0;2)"];
+    1 -> -3 [label="(p3,mt^2;3)"];
+    3 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 1 [label="(k,mt^2;5)"];
+    3 -> 2 [label="(k-p1,mt^2;6)"];
+    1 -> 3 [label="(k-p3,mZ^2;8)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+3 [shape=point];
+}
+
+
+digraph Zbox_3_13 {
+  label="Zbox_3_13";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 2 [label="(p1,0;1)"];
+    -2 -> 2 [label="(p2,0;2)"];
+    3 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 3 [label="(k,mt^2;5)"];
+    1 -> 2 [label="(k-p1-p2,mt^2;7)"];
+    3 -> 1 [label="(k-p3,mZ^2;8)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+3 [shape=point];
+}
+
+
+digraph Zbox_4_15 {
+  label="Zbox_4_15";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 2 [label="(p1,0;1)"];
+    -2 -> 3 [label="(p2,0;2)"];
+    4 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 4 [label="(k,mt^2;5)"];
+    3 -> 2 [label="(k-p1,mt^2;6)"];
+    1 -> 3 [label="(k-p1-p2,mt^2;7)"];
+    4 -> 1 [label="(k-p3,mZ^2;8)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+3 [shape=point];
+4 [shape=point];
+}
+
+
+digraph hbox_1_8 {
+  label="hbox_1_8";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 1 [label="(p1,0;1)"];
+    -2 -> 1 [label="(p2,0;2)"];
+    1 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 2 [label="(k-p3,mh^2;8)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+}
+
+
+digraph hbox_2_9 {
+  label="hbox_2_9";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 2 [label="(p1,0;1)"];
+    -2 -> 2 [label="(p2,0;2)"];
+    1 -> -3 [label="(p3,mt^2;3)"];
+    2 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 1 [label="(k,mt^2;5)"];
+    1 -> 2 [label="(k-p3,mh^2;8)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+}
+
+
+digraph hbox_2_10 {
+  label="hbox_2_10";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 3 [label="(p1,0;1)"];
+    -2 -> 1 [label="(p2,0;2)"];
+    3 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    1 -> 3 [label="(-p1+k,mt^2;6)"];
+    3 -> 1 [label="(k-p3,mh^2;8)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+3 [shape=point];
+}
+
+
+digraph hbox_3_11 {
+  label="hbox_3_11";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 2 [label="(p1,0;1)"];
+    -2 -> 3 [label="(p2,0;2)"];
+    1 -> -3 [label="(p3,mt^2;3)"];
+    3 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 1 [label="(k,mt^2;5)"];
+    3 -> 2 [label="(-p1+k,mt^2;6)"];
+    1 -> 3 [label="(k-p3,mh^2;8)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+3 [shape=point];
+}
+
+
+digraph hbox_3_13 {
+  label="hbox_3_13";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 2 [label="(p1,0;1)"];
+    -2 -> 2 [label="(p2,0;2)"];
+    3 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 3 [label="(k,mt^2;5)"];
+    1 -> 2 [label="(-p1+k-p2,mt^2;7)"];
+    3 -> 1 [label="(k-p3,mh^2;8)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+3 [shape=point];
+}
+
+
+digraph hbox_4_15 {
+  label="hbox_4_15";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 2 [label="(p1,0;1)"];
+    -2 -> 3 [label="(p2,0;2)"];
+    4 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 4 [label="(k,mt^2;5)"];
+    3 -> 2 [label="(-p1+k,mt^2;6)"];
+    1 -> 3 [label="(-p1+k-p2,mt^2;7)"];
+    4 -> 1 [label="(k-p3,mh^2;8)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+3 [shape=point];
+4 [shape=point];
+}
+
+
+digraph Wbox_1_8 {
+  label="Wbox_1_8";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 1 [label="(p1,0;1)"];
+    -2 -> 1 [label="(p2,0;2)"];
+    1 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 2 [label="(k-p3,mW^2;8)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+}
+
+
+digraph Wbox_2_5 {
+  label="Wbox_2_5";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 3 [label="(p1,0;1)"];
+    -2 -> 3 [label="(p2,0;2)"];
+    1 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    3 -> 1 [label="(k,0;5)"];
+    1 -> 3 [label="(k-p1-p2,0;7)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+3 [shape=point];
+}
+
+
+digraph Wbox_2_9 {
+  label="Wbox_2_9";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 2 [label="(p1,0;1)"];
+    -2 -> 2 [label="(p2,0;2)"];
+    1 -> -3 [label="(p3,mt^2;3)"];
+    2 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 1 [label="(k,0;5)"];
+    1 -> 2 [label="(k-p3,mW^2;8)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+}
+
+
+digraph Wbox_2_10 {
+  label="Wbox_2_10";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 3 [label="(p1,0;1)"];
+    -2 -> 1 [label="(p2,0;2)"];
+    3 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    1 -> 3 [label="(k-p1,0;6)"];
+    3 -> 1 [label="(k-p3,mW^2;8)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+3 [shape=point];
+}
+
+
+digraph Wbox_3_7 {
+  label="Wbox_3_7";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 2 [label="(p1,0;1)"];
+    -2 -> 3 [label="(p2,0;2)"];
+    1 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 1 [label="(k,0;5)"];
+    3 -> 2 [label="(k-p1,0;6)"];
+    1 -> 3 [label="(k-p1-p2,0;7)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+3 [shape=point];
+}
+
+
+digraph Wbox_3_11 {
+  label="Wbox_3_11";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 2 [label="(p1,0;1)"];
+    -2 -> 3 [label="(p2,0;2)"];
+    1 -> -3 [label="(p3,mt^2;3)"];
+    3 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 1 [label="(k,0;5)"];
+    3 -> 2 [label="(k-p1,0;6)"];
+    1 -> 3 [label="(k-p3,mW^2;8)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+3 [shape=point];
+}
+
+
+digraph Wbox_3_13 {
+  label="Wbox_3_13";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 2 [label="(p1,0;1)"];
+    -2 -> 2 [label="(p2,0;2)"];
+    3 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 3 [label="(k,0;5)"];
+    1 -> 2 [label="(k-p1-p2,0;7)"];
+    3 -> 1 [label="(k-p3,mW^2;8)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+3 [shape=point];
+}
+
+
+digraph Wbox_4_15 {
+  label="Wbox_4_15";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 2 [label="(p1,0;1)"];
+    -2 -> 3 [label="(p2,0;2)"];
+    4 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 4 [label="(k,0;5)"];
+    3 -> 2 [label="(k-p1,0;6)"];
+    1 -> 3 [label="(k-p1-p2,0;7)"];
+    4 -> 1 [label="(k-p3,mW^2;8)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+3 [shape=point];
+4 [shape=point];
+}
+
+
+digraph Zbub_2_5 {
+  label="Zbub_2_5";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 3 [label="(p1,0;1)"];
+    -2 -> 3 [label="(p2,0;2)"];
+    1 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    3 -> 1 [label="(k,mZ^2;5)"];
+    1 -> 3 [label="(-p1+k-p2,mZ^2;7)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+3 [shape=point];
+}
+
+

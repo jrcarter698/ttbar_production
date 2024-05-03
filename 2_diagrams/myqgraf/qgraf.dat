@@ -1,0 +1,11 @@
+*output = 'ggtt_tree.qgraf.yaml' ;
+output = 'ggtt_1loop.qgraf.yaml' ;
+style = 'reduze.sty' ;
+model = 'qcd_reduze';
+
+in =gluon[p1],gluon[p2];
+out=quark2[p3],qbar2[p4];
+*loops=0;
+loops=1;
+loop_momentum = k;
+options =  onshell, notadpole,nosigma;

@@ -1,0 +1,24 @@
+name = tmpqqttcomp2X2
+  Ax12x34 3 11  3 1  1 1 -1 1
+   (1/4*I)*(mt^2-t)^(-2)*Color(Nc^(-1)*(-1+Nc)^2*(1+Nc)^2)*(t^2*d^2+24*mt^2*t-12*mt^2*t*d+8*mh^2*conjugate(mt)*mt-6*t^2*d-16*conjugate(mt)*mt*t+4*mh^2*t*d-8*mh^2*t+8*t^2+4*conjugate(mt)*mt^3*d+12*conjugate(mt)*mt*t*d-mt^4*d^2+2*mt^4*d-4*mh^2*conjugate(mt)*mt*d+2*conjugate(mt)*mt^3*d^2-2*conjugate(mt)*mt*t*d^2-16*conjugate(mt)*mt^3)*mt^2*v^(-2)*g^4
+    Ax12x34 3 11  3 0  1 1 0 1
+     (1/4*I)*(mt^2-t)^(-2)*Color(Nc^(-1)*(-1+Nc)^2*(1+Nc)^2)*mt^2*(mh^2*mt^2*d^2*s+8*conjugate(mt)*mt^3*s+32*mh^2*conjugate(mt)*mt^3+24*conjugate(mt)*mt*t*s-6*mh^2*t*d*s-16*conjugate(mt)*mt^5-8*mh^4*conjugate(mt)*mt+4*conjugate(mt)*mt*t*d^2*s-4*mh^2*mt^4*d+4*conjugate(mt)*mt^3*d^2*s+6*t^2*d*s-6*mt^2*t*d^2*s-8*mh^2*conjugate(mt)*mt*s-16*conjugate(mt)*mt^5*d+8*mh^2*conjugate(mt)*mt*d*s+2*mt^4*d*s-4*mh^2*conjugate(mt)*mt*t*d+4*mh^2*conjugate(mt)*mt^3*d-16*mt^4*t*d-16*mt^4*t+16*mh^2*conjugate(mt)*mt*t+16*mt^6*d+40*mh^2*mt^4+24*mt^2*t*d*s-2*mh^2*conjugate(mt)*mt*d^2*s-mt^4*d^2*s-24*mt^2*t*s-48*conjugate(mt)*mt^3*t-20*conjugate(mt)*mt*t*d*s+4*mh^2*mt^2*t*d-12*conjugate(mt)*mt^3*d*s-8*mh^4*mt^2-t^2*d^2*s+8*mh^2*mt^2*t+16*conjugate(mt)*mt^3*t*d-2*mh^2*mt^2*d*s-48*mt^6+mh^2*t*d^2*s+8*mh^2*t*s-8*t^2*s)*v^(-2)*g^4
+    Ax12x34 2 10  2 1  0 1 -1 1
+     I*(mt^2-t)^(-2)*Color(Nc^(-1)*(-1+Nc)^2*(1+Nc)^2)*mt^2*v^(-2)*(conjugate(mt)*mt*d-t*d+2*t-2*conjugate(mt)*mt)*g^4
+    Ax12x34 2 10  2 0  0 1 0 1
+     (1/4*I)*(mt^2-t)^(-2)*Color(Nc^(-1)*(-1+Nc)^2*(1+Nc)^2)*(t^2*d^2-8*mt^2*t+8*mh^2*conjugate(mt)*mt-6*t^2*d+8*mh^2*mt^2-8*conjugate(mt)*mt*t+8*t^2-8*conjugate(mt)*mt^3*d+8*conjugate(mt)*mt*t*d-mt^4*d^2-16*mt^4+6*mt^4*d+2*conjugate(mt)*mt^3*d^2-2*conjugate(mt)*mt*t*d^2-8*conjugate(mt)*mt^3)*mt^2*v^(-2)*g^4
+    Ax12x34 2 9  2 0  1 0 0 1
+     (1/4*I)*(mt^2-t)^(-2)*Color(Nc^(-1)*(-1+Nc)^2*(1+Nc)^2)*mt^2*(8*t*s+t*d^2*s+2*mt^2*d*s-32*mt^2*t+16*mt^2*t*d+8*mh^2*mt^2-4*mh^2*t*d+8*mh^2*t-16*conjugate(mt)*mt^3*d+4*conjugate(mt)*mt*d*s-8*conjugate(mt)*mt*s-16*mt^4+4*mh^2*conjugate(mt)*mt*d-6*t*d*s+16*conjugate(mt)*mt^3-mt^2*d^2*s)*v^(-2)*g^4
+    Ax12x34 2 3  2 1  1 1 0 -1
+     -(2*I)*(mt^2-t)^(-2)*Color(Nc^(-1)*(-1+Nc)^2*(1+Nc)^2)*mt^3*v^(-2)*g^4*(conjugate(mt)+mt)
+    Ax12x34 2 3  2 1  1 1 -1 0
+     -I*(mt^2-t)^(-2)*Color(Nc^(-1)*(-1+Nc)^2*(1+Nc)^2)*mt^2*v^(-2)*(conjugate(mt)*mt*d-t*d+2*t-2*conjugate(mt)*mt)*g^4
+    Ax12x34 2 3  2 0  1 1 0 0
+     (1/4*I)*(mt^2-t)^(-2)*Color(Nc^(-1)*(-1+Nc)^2*(1+Nc)^2)*mt^2*v^(-2)*(8*t*s+t*d^2*s-2*mt^2*d*s+8*mt^2*t+4*mt^2*t*d-2*conjugate(mt)*mt*d^2*s-16*mh^2*conjugate(mt)*mt-16*mh^2*mt^2+16*conjugate(mt)*mt*t+4*conjugate(mt)*mt^3*d-4*conjugate(mt)*mt*t*d+8*conjugate(mt)*mt*d*s-8*conjugate(mt)*mt*s+40*mt^4-4*mt^4*d-6*t*d*s+32*conjugate(mt)*mt^3+mt^2*d^2*s)*g^4
+    Ax12x34 1 8  1 0  0 0 0 1
+     -I*(mt^2-t)^(-2)*Color(Nc^(-1)*(-1+Nc)^2*(1+Nc)^2)*mt^2*(2*mt^2+conjugate(mt)*mt*d-t*d+2*t)*v^(-2)*g^4
+    Ax12x34 1 2  1 0  0 1 0 0
+     (2*I)*(mt^2-t)^(-2)*Color(Nc^(-1)*(-1+Nc)^2*(1+Nc)^2)*mt^3*v^(-2)*g^4*(conjugate(mt)+mt)
+    Ax12x34 1 1  1 0  1 0 0 0
+     I*(mt^2-t)^(-2)*Color(Nc^(-1)*(-1+Nc)^2*(1+Nc)^2)*mt^2*(2*mt^2+conjugate(mt)*mt*d-t*d+2*t)*v^(-2)*g^4
+;

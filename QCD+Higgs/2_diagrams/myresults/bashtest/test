@@ -1,0 +1,1 @@
+sed -i -e 's/re\([]\)e/new text/g' ./test.txt

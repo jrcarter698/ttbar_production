@@ -1,0 +1,36 @@
+jobs:
+  - collect_integrals:
+      input_file: "myresults/test.comp"
+      output_file: "mytmp/test.comp.ints.m"
+
+  - select_reductions:
+      input_file: "mytmp/test.comp.ints.m"
+      output_file: "mytmp/prered.amp"
+      # generate_crossed: true
+
+  - reduce_files:
+      equation_files: [ "mytmp/prered.amp" ]
+      output_file: "mytmp/red.amp"
+
+  - insert_reductions:
+      input_file: "myresults/test.comp"
+      reductions_file: "mytmp/red.amp"
+      output_file: "mytmp/test.rednn"
+
+  - sum_terms:
+      input_file: "mytmp/test.rednn"
+      output_file: "mytmp/test.red.sumnn"
+
+  - normalize:
+      input_file: "mytmp/test.red.sumnn"
+      output_file: "myresults/test.red.sum"
+
+  - export:
+      input_file: "myresults/test.red.sum"
+      output_format: "mma"
+      output_file: "myresults/test.red.sum.m"
+
+  - collect_integrals:
+      input_file: "myresults/test.red.sum"
+      output_file: "myresults/test.red.masters"
+

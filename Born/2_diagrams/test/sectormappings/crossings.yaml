@@ -1,0 +1,94 @@
+crossings:
+  - name: ""
+    ordered_crossings:
+      - permutation: [[1, 2], [3, 4]]  # name: x12x34
+                                       # rules_momenta: {p2==p1,p1==p2,p3==p2+p1-p3}
+                                       # rules_invariants: {}
+      -
+        permutation: [[1, 3], [2, 4]]  # name: x13x24
+                                       # rules_momenta: {p2==-p2-p1+p3,p1==-p3,p3==-p1}
+                                       # rules_invariants: {}
+      -
+        permutation: [[1, 4], [2, 3]]  # name: x14x23
+                                       # rules_momenta: {p2==-p3,p1==-p2-p1+p3,p3==-p2}
+                                       # rules_invariants: {}
+      -
+        permutation: [[1, 2]]  # name: x12
+                               # rules_momenta: {p2==p1,p1==p2}
+                               # rules_invariants: {t==-t-s+4*m^2}
+      -
+        permutation: [[1, 2, 3]]  # name: x123
+                                  # rules_momenta: {p2==-p3,p1==p2,p3==-p1}
+                                  # rules_invariants: {t==s,s==-t-s+4*m^2}
+      -
+        permutation: [[1, 2, 3, 4]]  # name: x1234
+                                     # rules_momenta: {p2==-p3,p1==p2,p3==p2+p1-p3}
+                                     # rules_invariants: {s==-t-s+4*m^2}
+      -
+        permutation: [[1, 2, 4]]  # name: x124
+                                  # rules_momenta: {p2==-p2-p1+p3,p1==p2}
+                                  # rules_invariants: {t==-t-s+4*m^2,s==t}
+      -
+        permutation: [[1, 2, 4, 3]]  # name: x1243
+                                     # rules_momenta: {p2==-p2-p1+p3,p1==p2,p3==-p1}
+                                     # rules_invariants: {t==s,s==t}
+      -
+        permutation: [[1, 3]]  # name: x13
+                               # rules_momenta: {p1==-p3,p3==-p1}
+                               # rules_invariants: {s==-t-s+4*m^2}
+      -
+        permutation: [[1, 3, 2]]  # name: x132
+                                  # rules_momenta: {p2==p1,p1==-p3,p3==-p2}
+                                  # rules_invariants: {t==-t-s+4*m^2,s==t}
+      -
+        permutation: [[1, 3, 2, 4]]  # name: x1324
+                                     # rules_momenta: {p2==-p2-p1+p3,p1==-p3,p3==-p2}
+                                     # rules_invariants: {t==-t-s+4*m^2}
+      -
+        permutation: [[1, 3, 4]]  # name: x134
+                                  # rules_momenta: {p1==-p3,p3==p2+p1-p3}
+                                  # rules_invariants: {t==s,s==-t-s+4*m^2}
+      -
+        permutation: [[1, 3, 4, 2]]  # name: x1342
+                                     # rules_momenta: {p2==p1,p1==-p3,p3==p2+p1-p3}
+                                     # rules_invariants: {t==s,s==t}
+      -
+        permutation: [[1, 4]]  # name: x14
+                               # rules_momenta: {p1==-p2-p1+p3}
+                               # rules_invariants: {t==s,s==t}
+      -
+        permutation: [[1, 4, 2]]  # name: x142
+                                  # rules_momenta: {p2==p1,p1==-p2-p1+p3}
+                                  # rules_invariants: {t==s,s==-t-s+4*m^2}
+      -
+        permutation: [[1, 4, 2, 3]]  # name: x1423
+                                     # rules_momenta: {p2==-p3,p1==-p2-p1+p3,p3==-p1}
+                                     # rules_invariants: {t==-t-s+4*m^2}
+      -
+        permutation: [[1, 4, 3]]  # name: x143
+                                  # rules_momenta: {p1==-p2-p1+p3,p3==-p1}
+                                  # rules_invariants: {t==-t-s+4*m^2,s==t}
+      -
+        permutation: [[1, 4, 3, 2]]  # name: x1432
+                                     # rules_momenta: {p2==p1,p1==-p2-p1+p3,p3==-p2}
+                                     # rules_invariants: {s==-t-s+4*m^2}
+      -
+        permutation: [[2, 3]]  # name: x23
+                               # rules_momenta: {p2==-p3,p3==-p2}
+                               # rules_invariants: {t==s,s==t}
+      -
+        permutation: [[2, 3, 4]]  # name: x234
+                                  # rules_momenta: {p2==-p3,p3==p2+p1-p3}
+                                  # rules_invariants: {t==-t-s+4*m^2,s==t}
+      -
+        permutation: [[2, 4]]  # name: x24
+                               # rules_momenta: {p2==-p2-p1+p3}
+                               # rules_invariants: {s==-t-s+4*m^2}
+      -
+        permutation: [[2, 4, 3]]  # name: x243
+                                  # rules_momenta: {p2==-p2-p1+p3,p3==-p2}
+                                  # rules_invariants: {t==s,s==-t-s+4*m^2}
+      -
+        permutation: [[3, 4]]  # name: x34
+                               # rules_momenta: {p3==p2+p1-p3}
+                               # rules_invariants: {t==-t-s+4*m^2}

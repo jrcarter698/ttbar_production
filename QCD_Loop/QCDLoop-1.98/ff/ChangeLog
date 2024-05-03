@@ -1,0 +1,17 @@
+Fri Jul 24 2020  Keith Ellis <keith.ellis@durham.ac.uk>
+
+The ff library is taken from van Oldenborgh. We treat it as a black box 
+	and has not been modified by us. At the suggestion of jacek.m.holeczek@gmail.com
+	we have made two modifications to facilitate compilation with 
+	modern fortran compilers, which do greater checks on array sizes.
+	
+        * ffxd0p.f:
+	       removed calls to ffcxra and ffxtra with the penultimate argument ii=3
+	       (both of these routines have as their first executable statement 
+	       "if ( ii .eq. 3 ) return", so this is clearly innocuous
+	        
+        * aaxex.f:
+	       for similar reasons changed the second argument of the call to mdxi 
+	       call ffeji(cdxi,mdxi,ccxi,mcxi,cbxi,mbxi,caxi,maxi,
+	      +		cdxj,mdxj,ccxj,mcxj,cbxj,mbxj,caxj,maxj,level)
+               this routine is never called, so this is also innocuous

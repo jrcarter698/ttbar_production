@@ -1,0 +1,28 @@
+name = tmpqqttcomp7X1
+  A 3 7  3 1  1 1 1 -1
+   64*Color({0,sunt.[a2,Na,Nc].i-6.i-3,sunt.[a1,Na,Nc].i-3.i-6,sunf.[a1,Na,Nc].[a2,Na,Nc].[symbol11852,Na,Nc]})*Li2(2)^2*v^(-2)*mt^4*Tag({14,17,18})*(mh^2-s)^(-1)*g^4
+    A 3 7  3 0  1 1 1 0
+     8*Color({0,sunt.[a2,Na,Nc].i-6.i-3,sunt.[a1,Na,Nc].i-3.i-6,sunf.[a1,Na,Nc].[a2,Na,Nc].[symbol11852,Na,Nc]})*Li2(2)^2*v^(-2)*mt^4*Tag({14,17,18})*(mh^2-s)^(-1)*g^4*(8*mh^2-16*mt^4*s^(-1)+2*mt^2*d-d*s+16*mt^2*t*s^(-1)-2*d*t+4*s-8*mt^2)
+    A 2 6  2 1  0 1 1 -1
+     -32*Color({0,sunt.[a2,Na,Nc].i-6.i-3,sunt.[a1,Na,Nc].i-3.i-6,sunf.[a1,Na,Nc].[a2,Na,Nc].[symbol11852,Na,Nc]})*Li2(2)^2*v^(-2)*mt^4*Tag({14,17,18})*(mh^2-s)^(-1)*g^4*s^(-1)
+    A 2 6  2 1  -1 1 1 0
+     16*Color({0,sunt.[a2,Na,Nc].i-6.i-3,sunt.[a1,Na,Nc].i-3.i-6,sunf.[a1,Na,Nc].[a2,Na,Nc].[symbol11852,Na,Nc]})*Li2(2)^2*v^(-2)*mt^4*Tag({14,17,18})*(mh^2-s)^(-1)*g^4*s^(-1)
+    A 2 6  2 0  0 1 1 0
+     -8*Color({0,sunt.[a2,Na,Nc].i-6.i-3,sunt.[a1,Na,Nc].i-3.i-6,sunf.[a1,Na,Nc].[a2,Na,Nc].[symbol11852,Na,Nc]})*Li2(2)^2*v^(-2)*mt^4*Tag({14,17,18})*(mh^2-s)^(-1)*g^4*(3+4*s^(-1)*mh^2-6*t*s^(-1)-2*mt^2*s^(-1))
+    A 2 5  2 1  1 0 1 -1
+     64*Color({0,sunt.[a2,Na,Nc].i-6.i-3,sunt.[a1,Na,Nc].i-3.i-6,sunf.[a1,Na,Nc].[a2,Na,Nc].[symbol11852,Na,Nc]})*Li2(2)^2*v^(-2)*mt^4*Tag({14,17,18})*(mh^2-s)^(-1)*g^4*s^(-1)
+    A 2 5  2 0  1 0 1 0
+     -16*Color({0,sunt.[a2,Na,Nc].i-6.i-3,sunt.[a1,Na,Nc].i-3.i-6,sunf.[a1,Na,Nc].[a2,Na,Nc].[symbol11852,Na,Nc]})*Li2(2)^2*v^(-2)*mt^4*(-4+d-4*s^(-1)*mh^2-4*t*s^(-1)-2*mt^2*d*s^(-1)+12*mt^2*s^(-1)+2*d*t*s^(-1))*Tag({14,17,18})*(mh^2-s)^(-1)*g^4
+    A 2 3  2 1  1 1 0 -1
+     -32*Color({0,sunt.[a2,Na,Nc].i-6.i-3,sunt.[a1,Na,Nc].i-3.i-6,sunf.[a1,Na,Nc].[a2,Na,Nc].[symbol11852,Na,Nc]})*Li2(2)^2*v^(-2)*mt^4*Tag({14,17,18})*(mh^2-s)^(-1)*g^4*s^(-1)
+    A 2 3  2 1  1 1 -1 0
+     16*Color({0,sunt.[a2,Na,Nc].i-6.i-3,sunt.[a1,Na,Nc].i-3.i-6,sunf.[a1,Na,Nc].[a2,Na,Nc].[symbol11852,Na,Nc]})*Li2(2)^2*v^(-2)*mt^4*Tag({14,17,18})*(mh^2-s)^(-1)*g^4*s^(-1)
+    A 2 3  2 0  1 1 0 0
+     -8*Color({0,sunt.[a2,Na,Nc].i-6.i-3,sunt.[a1,Na,Nc].i-3.i-6,sunf.[a1,Na,Nc].[a2,Na,Nc].[symbol11852,Na,Nc]})*Li2(2)^2*v^(-2)*mt^4*Tag({14,17,18})*(mh^2-s)^(-1)*g^4*(3+4*s^(-1)*mh^2-6*t*s^(-1)-2*mt^2*s^(-1))
+    A 1 4  1 0  0 0 1 0
+     -32*Color({0,sunt.[a2,Na,Nc].i-6.i-3,sunt.[a1,Na,Nc].i-3.i-6,sunf.[a1,Na,Nc].[a2,Na,Nc].[symbol11852,Na,Nc]})*Li2(2)^2*v^(-2)*mt^4*Tag({14,17,18})*(mh^2-s)^(-1)*g^4*s^(-1)
+    A 1 2  1 0  0 1 0 0
+     32*Color({0,sunt.[a2,Na,Nc].i-6.i-3,sunt.[a1,Na,Nc].i-3.i-6,sunf.[a1,Na,Nc].[a2,Na,Nc].[symbol11852,Na,Nc]})*Li2(2)^2*v^(-2)*mt^4*Tag({14,17,18})*(mh^2-s)^(-1)*g^4*s^(-1)
+    A 1 1  1 0  1 0 0 0
+     -32*Color({0,sunt.[a2,Na,Nc].i-6.i-3,sunt.[a1,Na,Nc].i-3.i-6,sunf.[a1,Na,Nc].[a2,Na,Nc].[symbol11852,Na,Nc]})*Li2(2)^2*v^(-2)*mt^4*Tag({14,17,18})*(mh^2-s)^(-1)*g^4*s^(-1)
+;

@@ -1,0 +1,9 @@
+numpy>=1.6
+sympy>=0.7.6
+setuptools>=3.3
+
+[documentation]
+sphinx>=1.6.3
+
+[testing]
+nose

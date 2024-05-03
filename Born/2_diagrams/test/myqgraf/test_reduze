@@ -1,0 +1,22 @@
+*
+* QCD model description for QGRAF for a light and heavy quark
+*
+*********************************************************************
+*
+*
+* Propagators:
+* - The particle flow in the diagram follows the momentum direction
+*   of the particle 'part1' in the definition of the propagator
+*   [part1, part2, -]
+* - The mass parameter must be set to a number or
+*   a symbol declared in the file "global.yaml"
+
+[test,  test, + ; mass='m' ]
+
+
+* Vertices:
+* - The ordering of the fields
+*
+
+[test, test, test]
+

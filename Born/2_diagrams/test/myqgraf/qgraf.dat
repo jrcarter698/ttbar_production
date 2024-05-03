@@ -1,0 +1,9 @@
+output = 'test.qgraf.yaml' ;
+style = 'reduze.sty' ;
+model = 'test_reduze';
+
+in =test[p1],test[p2];
+out=test[p3],test[p4];
+loops=0;
+loop_momentum = k;
+options =  onshell, notadpole,nosigma;

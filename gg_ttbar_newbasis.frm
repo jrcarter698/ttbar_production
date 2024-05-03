@@ -46,6 +46,8 @@ id T(l?,18,i?,j?)=p3(j)*g_(l,i,p1);
 id T(l?,19,i?,j?)=g_(l,i,j,5_);
 id T(l?,20,i?,j?)=p3(j)*g_(l,i,p1,5_);
 
+* We need a way to implement these tensor structures into the code. We have at most 3 gamma matrices (without including gamma5); this setup can be accomplished with a tree-level diagram. 
+
 id Tp(l?,1,i?,j?)=p3(j)*g_(l,i);
 id Tp(l?,2,i?,j?)=p3(i)*g_(l,j);
 id Tp(l?,3,i?,j?)=p3(i)*p3(j)*g_(l,p1);

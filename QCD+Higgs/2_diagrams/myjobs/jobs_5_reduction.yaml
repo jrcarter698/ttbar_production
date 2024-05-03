@@ -1,0 +1,19 @@
+jobs:
+  - reduce_sectors:
+      sector_selection:
+        select_recursively:
+#          - [B, 15]
+          - [A, 15]
+#          - [C, 15]
+#          - [D, 15]
+      identities: 
+        ibp: &myrsranges    # define label myrsranges for later reference
+          - { r: [t, 4], s: [0, 3] }
+        lorentz: &myrsranges
+          - { r: [t, 4], s: [0, 3] }
+        sector_symmetries: &myrsranges
+          - { r: [t, 4], s: [0, 3] }
+      solutions:
+        requested_solutions: *myrsranges    # selects the above defined ranges
+#      reduzer_options:
+#        use_database: false

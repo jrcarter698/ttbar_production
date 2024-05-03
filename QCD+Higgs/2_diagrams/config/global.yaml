@@ -1,0 +1,12 @@
+
+# global symbols
+global_symbols:
+  coupling_constants: [g, e, v, mt,a,b]
+  su_n_dimensions:
+    adjoint: Na              # = Nc^2 - 1
+    fundamental: Nc
+  space_time_dimension: d    # can be defined here instead of in the kinematics file
+
+# eg. path to the Fermat executable
+paths: {}
+

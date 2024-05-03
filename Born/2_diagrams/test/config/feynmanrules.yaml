@@ -1,0 +1,91 @@
+# feynmanrules.yaml
+#
+# This file is part of the package Reduze2
+# 
+#
+# FUNCTIONS to be used in the FEYNMAN RULES
+#
+#
+# Prop(p,m_sq)   = 1/( p^2 - m_sq )  # propagator (needs squared mass)
+# SP(p,q)        = p*q               # lorentz invariant scalar prodct
+# Mom(p,mu)      = p_mu              # mu-th component of momentum p
+# Ga(mu)         = gamma_mu          # gamma matrix (clifford)
+# GaS(p)         = p-slash           # p_mu*gamma^mu (clifford)
+# GaOne(1)                           # the identity matrix (clifford)
+# ColT(a,i,j)    = T^a_i_j           # generators of su(N) 
+# ColF3(a,b,c)   = f(a,b,c)          # structure constants of su(N)
+# ColF4(a,b,c,d) = f(a,b,e)*f(c,d,e) #
+# delta_f(i,j)                       # the N dimensional Kronecker
+# delta_a(a,b)                       # the N^2-1 dimensional Kronecker
+# metric_l(mu1,mu2)                  # the d-dimensional metric tensor
+#
+# metric_l_diff(mu1,mu2,mu3,mu4) =
+#      metric_l(mu1,mu2)*metric_l(mu3,mu4) - metric_l(mu1,mu4)*metric_l(mu2,mu3)
+#
+# external leg functions:
+#
+# U(mom,mass,i)                      # incoming spinor with color index 'i' of the fundamental rep. of SU(N)
+# Ubar(mom,mass,i)                   # outgoing spinor
+# V(mom,mass,i)                      # outgoing anti spinor
+# Vbar(mom,mass,i)                   # incoming anti spinor
+#
+# Pol_gluon(mom,mass,mu,a,ortho)     # incoming gluon
+# PolC_gluon(mom,mass,mu,a,ortho)    # outgoing gluon
+# Pol_ghost(mom,mass,a)              # incoming ghost, outgoing anti-ghost
+# PolC_ghost(mom,mass,a)             # outgoing ghost, incoming anti-ghost
+# Pol_photon(mom,mass,mu)            # incoming photon
+# PolC_photon(mom,mass,mu)           # outgoing photon
+#
+# N.B.
+# Non commutative products like GaS(p)*GaS(q) are not supported in the Feynman rules.
+#
+
+
+# Feynman rules
+# QCD part from textbook of Peskin and Schroeder
+# QED coupling follows Denner conventions
+---
+feynmanrules:
+
+## These symbols should be defined in the file global.yaml
+##  # symbols
+##  coupling_constants: [ g, e ]
+##  su_n_dimensions:
+##    fundamental: Nc
+##    adjoint: Na   # = Nc^2 - 1
+
+  # template symbols
+  momentum_prefix: mom
+  mass_prefix:     mass
+  polarization_orthogonal_vector_prefix: ortho
+  index_prefixes:
+    lorentz: mu
+    color_a: a
+    color_f: i
+  max_vertex_degree: 4
+
+# will create the template parameters: mom1,mom2,mom3,mom4, mass1...mass4, mu1...mu4, a1...a4, i1...i4
+# the templated parameters with integer suffix 'i' as e.g. mom1, mu2 refer exactly to
+# the momentum of field number 1 or lorentz index of field number 2.  
+
+  external_legs:
+    in-test:     "Pol_gluon(mom1,mass1,mu1,a1,ortho1)"
+
+    out-test:    "PolC_gluon(mom1,mass1,mu1,a1,ortho1)"
+
+  propagators:
+    test_test:       "1"
+
+  vertices:
+    test_test_test:        "g"
+
+
+
+  # polarization sums: [ pol, polc, val ]  means  pol*polc = val
+  # available template symbols for polarization sums: mom; mass; ortho; i,i1,i2; a,a1,a2; mu,mu1,mu2;
+
+  polarization_sums:
+    - [ "Pol_gluon(mom,mass,mu1,a1,0)", "PolC_gluon(mom,mass,mu2,a2,0)", "1" ]
+    - [ "Pol_gluon(mom,mass,mu1,a1,ortho)", "PolC_gluon(mom,mass,mu2,a2,ortho)","SP(mom, ortho)" ]
+
+

@@ -1,0 +1,13 @@
+sectormappings:
+  name: tree
+  zero_sectors:
+    {}
+  sectors_without_graph:
+    {}
+  sector_relations:
+    {}
+  crossed_sector_relations:
+    x12:
+      0: [[tree, 0], []]
+  sector_symmetries:
+    {}

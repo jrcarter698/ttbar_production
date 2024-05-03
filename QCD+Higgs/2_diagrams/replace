@@ -1,0 +1,1 @@
+sed -i -e 's/Color{(*)}/0/g' ./myresults/qqtt.comp

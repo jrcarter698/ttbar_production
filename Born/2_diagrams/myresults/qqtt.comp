@@ -1,0 +1,36 @@
+name = tmpqqttcomp1X1
+  tree 0 0  0 0 
+   2*Color((1+Nc)*Nc*(-1+Nc))*(2+4*mt^4*(mt^2-t-s)^(-2)-2*d*(mt^2-t-s)^(-1)*t^2*s^(-1)-12*mt^2*(mt^2-t-s)^(-1)*t*s^(-1)-d-2*d*mt^2*(mt^2-t-s)^(-2)*t-2*d*t^2*s^(-2)+4*mt^4*s^(-2)-4*d*t*s^(-1)-8*mt^2*t*s^(-2)+4*(mt^2-t-s)^(-1)*t^2*s^(-1)+4*d*mt^2*t*s^(-2)-12*mt^2*s^(-1)+4*mt^2*(mt^2-t-s)^(-2)*t-2*d*mt^4*(mt^2-t-s)^(-1)*s^(-1)-2*d*mt^4*s^(-2)+4*t^2*s^(-2)+8*t*s^(-1)+2*d*mt^4*(mt^2-t-s)^(-2)+4*d*mt^2*(mt^2-t-s)^(-1)*t*s^(-1)+4*d*mt^2*s^(-1)+8*mt^4*(mt^2-t-s)^(-1)*s^(-1)-2*d*mt^2*(mt^2-t-s)^(-1))*g^4
+;
+name = tmpqqttcomp1X2
+  tree 0 0  0 0 
+   -1/2*(mt^2-t)^(-1)*Color((1+Nc)*Nc*(-1+Nc))*(2*d*mt^2*(mt^2-t-s)^(-1)*s-3*d*t+12*conjugate(mt)*mt^3*(mt^2-t-s)^(-1)+8*mt^2*(mt^2-t-s)^(-2)*t*s-4*d*(mt^2-t-s)^(-1)*t^2-4*conjugate(mt)*mt^3*(mt^2-t-s)^(-2)*s-8*conjugate(mt)*mt*t*s^(-1)-16*mt^2+8*conjugate(mt)*mt^3*s^(-1)-4*d*conjugate(mt)*mt^3*(mt^2-t-s)^(-1)-12*mt^2*(mt^2-t-s)^(-1)*s-4*d*conjugate(mt)*mt^3*s^(-1)+4*t^2*s^(-1)+2*d*mt^4*s^(-1)-4*conjugate(mt)*mt*(mt^2-t-s)^(-1)*t-d*conjugate(mt)*mt+6*t+4*d*conjugate(mt)*mt^3*(mt^2-t-s)^(-2)*s+4*d*conjugate(mt)*mt*t*s^(-1)-12*mt^2*(mt^2-t-s)^(-1)*t-4*d*mt^2*(mt^2-t-s)^(-2)*t*s+8*(mt^2-t-s)^(-1)*t^2-8*mt^2*t*s^(-1)+4*d*mt^2*(mt^2-t-s)^(-1)*t+4*d*conjugate(mt)*mt*(mt^2-t-s)^(-1)*t+2*conjugate(mt)*mt+4*mt^4*s^(-1)-2*d*t^2*s^(-1)+12*mt^4*(mt^2-t-s)^(-2)*s+4*d*mt^2+28*mt^4*(mt^2-t-s)^(-1))*g^4
+;
+name = tmpqqttcomp1X3
+  tree 0 0  0 0 
+   1/2*Color((1+Nc)*Nc*(-1+Nc))*(mt^2-t-s)^(-1)*g^4*(2*d*mt^2*(mt^2-t-s)^(-1)*s-5*d*t-8*conjugate(mt)*mt^3*(mt^2-t-s)^(-2)*s+8*conjugate(mt)*mt*t*s^(-1)-36*mt^2-8*conjugate(mt)*mt^3*s^(-1)-4*d*conjugate(mt)*mt^3*(mt^2-t-s)^(-1)-4*d*mt^4*(mt^2-t-s)^(-1)-4*mt^2*(mt^2-t-s)^(-1)*s+4*d*conjugate(mt)*mt^3*s^(-1)+4*t^2*s^(-1)-6*d*mt^4*s^(-1)-8*conjugate(mt)*mt*(mt^2-t-s)^(-1)*t-5*d*conjugate(mt)*mt+10*t+4*d*conjugate(mt)*mt^3*(mt^2-t-s)^(-2)*s-4*d*conjugate(mt)*mt*t*s^(-1)-8*mt^2*(mt^2-t-s)^(-1)*t+8*d*mt^2*t*s^(-1)-4*d*mt^4*(mt^2-t-s)^(-2)*s-8*mt^2*t*s^(-1)+4*d*mt^2*(mt^2-t-s)^(-1)*t+4*d*conjugate(mt)*mt*(mt^2-t-s)^(-1)*t-d*s+10*conjugate(mt)*mt+4*mt^4*s^(-1)-2*d*t^2*s^(-1)+2*s+8*mt^4*(mt^2-t-s)^(-2)*s+18*d*mt^2-16*mt^4*(mt^2-t-s)^(-1))
+;
+name = tmpqqttcomp2X1
+  tree 0 0  0 0 
+   -1/2*(mt^2-t)^(-1)*Color((1+Nc)*Nc*(-1+Nc))*(2*d*mt^2*(mt^2-t-s)^(-1)*s-3*d*t+8*mt^2*(mt^2-t-s)^(-2)*t*s-4*d*(mt^2-t-s)^(-1)*t^2-14*mt^2-4*d*mt^4*(mt^2-t-s)^(-1)-12*mt^2*(mt^2-t-s)^(-1)*s+4*t^2*s^(-1)-2*d*mt^4*s^(-1)+6*t-16*mt^2*(mt^2-t-s)^(-1)*t+4*d*mt^2*t*s^(-1)+4*d*mt^4*(mt^2-t-s)^(-2)*s-4*d*mt^2*(mt^2-t-s)^(-2)*t*s+8*(mt^2-t-s)^(-1)*t^2-16*mt^2*t*s^(-1)+8*d*mt^2*(mt^2-t-s)^(-1)*t+12*mt^4*s^(-1)-2*d*t^2*s^(-1)+8*mt^4*(mt^2-t-s)^(-2)*s+3*d*mt^2+40*mt^4*(mt^2-t-s)^(-1))*g^4
+;
+name = tmpqqttcomp2X2
+  tree 0 0  0 0 
+   -1/2*(mt^2-t)^(-2)*Color((1+Nc)^2*Nc^(-1)*(-1+Nc)^2)*(4*d*conjugate(mt)*mt*s-24*mt^4*(mt^2-t-s)^(-1)*s-6*d*conjugate(mt)*mt^3+2*d*mt^4+d^2*t*s-2*d^2*conjugate(mt)*mt*t-4*conjugate(mt)*mt*s+4*t*s-8*mt^2*(mt^2-t-s)^(-2)*t*s^2+4*d*mt^2*(mt^2-t-s)^(-1)*t*s-4*d*conjugate(mt)*mt*(mt^2-t-s)^(-1)*t*s-4*mt^2*t-4*d*conjugate(mt)*mt^3*(mt^2-t-s)^(-1)*s-4*d*t^2-4*conjugate(mt)*mt*t-d^2*conjugate(mt)*mt*s-8*mt^4*(mt^2-t-s)^(-2)*s^2-12*conjugate(mt)*mt^3-8*(mt^2-t-s)^(-1)*t^2*s+d^2*t^2+4*t^2-16*conjugate(mt)*mt^3*(mt^2-t-s)^(-1)*s-d^2*mt^4+4*d*(mt^2-t-s)^(-1)*t^2*s+4*d*mt^2*(mt^2-t-s)^(-2)*t*s^2+6*d*conjugate(mt)*mt*t-16*mt^2*(mt^2-t-s)^(-1)*t*s+2*d*mt^2*t-4*d*conjugate(mt)*mt^3*(mt^2-t-s)^(-2)*s^2+2*d^2*conjugate(mt)*mt^3-4*d*t*s-16*mt^4)*g^4
+;
+name = tmpqqttcomp2X3
+  tree 0 0  0 0 
+   1/2*(mt^2-t)^(-1)*(mt^2-t-s)^(-1)*(4*d^2*mt^2*t+8*conjugate(mt)*mt*(mt^2-t-s)^(-1)*t*s-14*d*mt^2*s+6*d*conjugate(mt)*mt*s-8*mt^4*(mt^2-t-s)^(-1)*s-10*d*conjugate(mt)*mt^3+4*mt^2*(mt^2-t-s)^(-1)*s^2+16*d*mt^4-d^2*t*s-2*d^2*conjugate(mt)*mt*t+12*d*mt^4*(mt^2-t-s)^(-1)*s-8*conjugate(mt)*mt*s+8*conjugate(mt)*mt^3*(mt^2-t-s)^(-2)*s^2-12*t*s-4*d*mt^2*(mt^2-t-s)^(-1)*t*s-4*d*conjugate(mt)*mt*(mt^2-t-s)^(-1)*t*s+28*mt^2*t-2*d*mt^2*(mt^2-t-s)^(-1)*s^2-4*d*conjugate(mt)*mt^3*(mt^2-t-s)^(-1)*s+6*d*t^2-12*conjugate(mt)*mt*t-d^2*conjugate(mt)*mt*s-8*mt^4*(mt^2-t-s)^(-2)*s^2+28*conjugate(mt)*mt^3-d^2*t^2-8*t^2+20*mt^2*s+24*conjugate(mt)*mt^3*(mt^2-t-s)^(-1)*s-3*d^2*mt^4+4*d*mt^4*(mt^2-t-s)^(-2)*s^2+2*d^2*mt^2*s+10*d*conjugate(mt)*mt*t+8*mt^2*(mt^2-t-s)^(-1)*t*s-22*d*mt^2*t-4*d*conjugate(mt)*mt^3*(mt^2-t-s)^(-2)*s^2+2*d^2*conjugate(mt)*mt^3+8*d*t*s-4*mt^4)*g^4*Color((1+Nc)*Nc^(-1)*(-1+Nc))
+;
+name = tmpqqttcomp3X1
+  tree 0 0  0 0 
+   1/2*Color((1+Nc)*Nc*(-1+Nc))*(mt^2-t-s)^(-1)*(2*d*mt^2*(mt^2-t-s)^(-1)*s-5*d*t-26*mt^2-8*d*mt^4*(mt^2-t-s)^(-1)-4*mt^2*(mt^2-t-s)^(-1)*s+4*t^2*s^(-1)-2*d*mt^4*s^(-1)+10*t-16*mt^2*(mt^2-t-s)^(-1)*t+4*d*mt^2*t*s^(-1)+8*d*mt^2*(mt^2-t-s)^(-1)*t-d*s-4*mt^4*s^(-1)-2*d*t^2*s^(-1)+2*s+13*d*mt^2-16*mt^4*(mt^2-t-s)^(-1))*g^4
+;
+name = tmpqqttcomp3X2
+  tree 0 0  0 0 
+   -1/2*(mt^2-t)^(-1)*(mt^2-t-s)^(-1)*g^4*(4*d*mt^2*s+4*d*conjugate(mt)*mt*s-16*mt^4*(mt^2-t-s)^(-1)*s-10*d*conjugate(mt)*mt^3-4*mt^2*(mt^2-t-s)^(-1)*s^2+4*d*mt^4+d^2*t*s-2*d^2*conjugate(mt)*mt*t-4*conjugate(mt)*mt*s+12*t*s+8*d*mt^2*(mt^2-t-s)^(-1)*t*s-4*mt^2*t+2*d*mt^2*(mt^2-t-s)^(-1)*s^2-8*d*conjugate(mt)*mt^3*(mt^2-t-s)^(-1)*s-6*d*t^2-12*conjugate(mt)*mt*t-d^2*conjugate(mt)*mt*s-4*conjugate(mt)*mt^3+d^2*t^2+8*t^2-8*mt^2*s-d^2*mt^4+10*d*conjugate(mt)*mt*t-16*mt^2*(mt^2-t-s)^(-1)*t*s+2*d*mt^2*t+2*d^2*conjugate(mt)*mt^3-8*d*t*s-20*mt^4)*Color((1+Nc)*Nc^(-1)*(-1+Nc))
+;
+name = tmpqqttcomp3X3
+  tree 0 0  0 0 
+   1/2*(4*d^2*mt^2*t+2*d*mt^2*s+2*d*conjugate(mt)*mt*s-16*mt^4*(mt^2-t-s)^(-1)*s-6*d*conjugate(mt)*mt^3+10*d*mt^4-d^2*t*s-2*d^2*conjugate(mt)*mt*t+8*d*mt^4*(mt^2-t-s)^(-1)*s-4*t*s+12*mt^2*t-8*d*conjugate(mt)*mt^3*(mt^2-t-s)^(-1)*s+4*d*t^2-4*conjugate(mt)*mt*t-d^2*conjugate(mt)*mt*s+20*conjugate(mt)*mt^3-d^2*t^2-4*t^2-12*mt^2*s+16*conjugate(mt)*mt^3*(mt^2-t-s)^(-1)*s-3*d^2*mt^4+2*d^2*mt^2*s+6*d*conjugate(mt)*mt*t-14*d*mt^2*t+2*d^2*conjugate(mt)*mt^3+4*d*t*s+8*mt^4)*Color((1+Nc)^2*Nc^(-1)*(-1+Nc)^2)*(mt^2-t-s)^(-2)*g^4
+;

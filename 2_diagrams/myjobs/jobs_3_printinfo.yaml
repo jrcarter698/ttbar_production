@@ -1,0 +1,10 @@
+jobs:
+  - print_sector_info:
+      sector_selection:
+        select_recursively:
+          - [B, 13]
+          - [A, 15]
+      feynman_diagram_dot_file: "myresults/diagrams.dot"
+    # afterwards:
+    # run dot or neato commands manually to produce PDFs from the *.dot files
+    # better dot since neato might not understand multiple graphs in one file

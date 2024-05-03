@@ -1,0 +1,4 @@
+jobs:
+  - find_diagram_shifts:
+      qgraf_file: "myqgraf/results/test.qgraf.yaml"
+      output_file: "myresults/test.match.yaml"

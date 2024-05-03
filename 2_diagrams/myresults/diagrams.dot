@@ -1,0 +1,253 @@
+digraph A_1_1 {
+  label="A_1_1";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 1 [label="(p1,0;1)"];
+    -2 -> 1 [label="(p2,0;2)"];
+    1 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 2 [label="(k,mt^2;5)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+}
+
+
+digraph A_2_3 {
+  label="A_2_3";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 2 [label="(p1,0;1)"];
+    -2 -> 1 [label="(p2,0;2)"];
+    1 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 1 [label="(k,mt^2;5)"];
+    1 -> 2 [label="(k-p1,mt^2;6)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+}
+
+
+digraph A_2_5 {
+  label="A_2_5";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 3 [label="(p1,0;1)"];
+    -2 -> 3 [label="(p2,0;2)"];
+    1 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    3 -> 1 [label="(k,mt^2;5)"];
+    1 -> 3 [label="(k-p1-p2,mt^2;7)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+3 [shape=point];
+}
+
+
+digraph A_2_9 {
+  label="A_2_9";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 2 [label="(p1,0;1)"];
+    -2 -> 2 [label="(p2,0;2)"];
+    1 -> -3 [label="(p3,mt^2;3)"];
+    2 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 1 [label="(k,mt^2;5)"];
+    1 -> 2 [label="(k-p3,0;8)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+}
+
+
+digraph A_2_10 {
+  label="A_2_10";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 3 [label="(p1,0;1)"];
+    -2 -> 1 [label="(p2,0;2)"];
+    3 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    1 -> 3 [label="(k-p1,mt^2;6)"];
+    3 -> 1 [label="(k-p3,0;8)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+3 [shape=point];
+}
+
+
+digraph A_3_7 {
+  label="A_3_7";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 2 [label="(p1,0;1)"];
+    -2 -> 3 [label="(p2,0;2)"];
+    1 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 1 [label="(k,mt^2;5)"];
+    3 -> 2 [label="(k-p1,mt^2;6)"];
+    1 -> 3 [label="(k-p1-p2,mt^2;7)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+3 [shape=point];
+}
+
+
+digraph A_3_11 {
+  label="A_3_11";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 2 [label="(p1,0;1)"];
+    -2 -> 3 [label="(p2,0;2)"];
+    1 -> -3 [label="(p3,mt^2;3)"];
+    3 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 1 [label="(k,mt^2;5)"];
+    3 -> 2 [label="(k-p1,mt^2;6)"];
+    1 -> 3 [label="(k-p3,0;8)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+3 [shape=point];
+}
+
+
+digraph A_3_13 {
+  label="A_3_13";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 2 [label="(p1,0;1)"];
+    -2 -> 2 [label="(p2,0;2)"];
+    3 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 3 [label="(k,mt^2;5)"];
+    1 -> 2 [label="(k-p1-p2,mt^2;7)"];
+    3 -> 1 [label="(k-p3,0;8)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+3 [shape=point];
+}
+
+
+digraph A_4_15 {
+  label="A_4_15";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 2 [label="(p1,0;1)"];
+    -2 -> 3 [label="(p2,0;2)"];
+    4 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 4 [label="(k,mt^2;5)"];
+    3 -> 2 [label="(k-p1,mt^2;6)"];
+    1 -> 3 [label="(k-p1-p2,mt^2;7)"];
+    4 -> 1 [label="(k-p3,0;8)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+3 [shape=point];
+4 [shape=point];
+}
+
+
+digraph B_2_5 {
+  label="B_2_5";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 3 [label="(p1,0;1)"];
+    -2 -> 3 [label="(p2,0;2)"];
+    1 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    3 -> 1 [label="(k,0;5)"];
+    1 -> 3 [label="(-p1+k-p2,0;7)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+3 [shape=point];
+}
+
+
+digraph B_3_13 {
+  label="B_3_13";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 2 [label="(p1,0;1)"];
+    -2 -> 2 [label="(p2,0;2)"];
+    3 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 3 [label="(k,0;5)"];
+    1 -> 2 [label="(-p1+k-p2,0;7)"];
+    3 -> 1 [label="(-p3+k,mt^2;8)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+3 [shape=point];
+}
+
+

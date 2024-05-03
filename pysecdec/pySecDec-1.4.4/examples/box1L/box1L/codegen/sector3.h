@@ -1,0 +1,113 @@
+* The name of the loop integral
+#define name "box1L"
+
+* Whether or not we are producing code for contour deformation
+#define contourDeformation "1"
+
+* number of integration variables
+#define numIV "3"
+
+* number of regulators
+#define numReg "1"
+
+#define integrationVariables "x0,x1,x2"
+#define realParameters "s,t,s1,msq"
+#define complexParameters ""
+#define regulators "eps"
+Symbols `integrationVariables'
+        `realParameters'
+        `complexParameters'
+        `regulators';
+
+* Define the imaginary unit in sympy notation.
+Symbol I;
+
+#define calIDerivatives "SecDecInternalCalI"
+#define functions "`calIDerivatives',SecDecInternalRemainder,SecDecInternalCondefFac,SecDecInternalOtherPoly0"
+CFunctions `functions';
+
+#define decomposedPolynomialDerivatives "ddFd2d2,dFd1,F,dFd2,U,ddFd0d0,ddFd0d1,ddFd1d1,dFd0,ddFd0d2,ddFd1d2"
+CFunctions `decomposedPolynomialDerivatives';
+
+* Temporary functions and symbols for replacements in FORM
+AutoDeclare CFunctions SecDecInternalfDUMMY;
+AutoDeclare Symbols SecDecInternalsDUMMY;
+
+* We generated logs in the subtraction and pack denominators
+* and powers into a functions.
+CFunctions log, SecDecInternalPow, SecDecInternalDenominator;
+
+* We rewrite function calls as symbols
+#Do function = {`functions',`decomposedPolynomialDerivatives',log,SecDecInternalPow,SecDecInternalDenominator}
+  AutoDeclare Symbols SecDecInternal`function'Call;
+#EndDo
+
+* We need labels for the code optimization
+AutoDeclare Symbols SecDecInternalLabel;
+
+* The integrand may be longer than FORM can read in one go.
+* We use python to split the the expression if neccessary.
+* Define a procedure that defines the "integrand" expression
+#procedure defineExpansion
+  Global expansion = SecDecInternalsDUMMYIntegrand;
+    Id SecDecInternalsDUMMYIntegrand = (( + (( + (1)) * (( + (1))^(-1)))) * ( + (((( + (1))^( + (1))) * (( + ( + (1)))^( + (0))) * (( + ( + (1)))^( + (0) + (-2))) * (( + (1))^( + (1)))) * (SecDecInternalCalI( + (1)*x0, + (1)*x1, + (1)*x2, + (0))))));
+
+#endProcedure
+
+#define highestPoles "0"
+#define numOrders "1"
+
+* Specify and enumerate all occurring orders in python.
+* Define the preprocessor variables
+* `shiftedRegulator`regulatorIndex'PowerOrder`shiftedOrderIndex''.
+#define shiftedRegulator1PowerOrder1 "0"
+
+* Define two procedures to open and close a nested argument section
+#procedure beginArgumentDepth(depth)
+  #Do recursiveDepth = 1, `depth'
+    Argument;
+  #EndDo
+#endProcedure
+#procedure endArgumentDepth(depth)
+  #Do recursiveDepth = 1, `depth'
+    EndArgument;
+  #EndDo
+#endProcedure
+
+* Define procedures to insert the dummy functions introduced in python and their derivatives.
+#procedure insertCalI
+    Id SecDecInternalCalI(x0?,x1?,x2?,eps?) = (SecDecInternalCondefJac( + (1)*x0, + (1)*x1, + (1)*x2)) * (SecDecInternalCondefFac( + (1)*x0, + (1)*x1, + (1)*x2, + (1)*eps)) * ((SecDecInternalRemainder( + (0), + (0), + (0), + (1)*eps)) * (( + (1))^( + (1))) * ((U(SecDecInternalDeformedx0( + (1)*x0, + (1)*x1, + (1)*x2),SecDecInternalDeformedx1( + (1)*x0, + (1)*x1, + (1)*x2),SecDecInternalDeformedx2( + (1)*x0, + (1)*x1, + (1)*x2), + (1)*eps)) ^ ( + (2)*eps)) * ((F(SecDecInternalDeformedx0( + (1)*x0, + (1)*x1, + (1)*x2),SecDecInternalDeformedx1( + (1)*x0, + (1)*x1, + (1)*x2),SecDecInternalDeformedx2( + (1)*x0, + (1)*x1, + (1)*x2), + (1)*eps)) ^ ( + (-1)*eps + (-2))) * ((SecDecInternalOtherPoly0(SecDecInternalDeformedx0( + (1)*x0, + (1)*x1, + (1)*x2),SecDecInternalDeformedx1( + (1)*x0, + (1)*x1, + (1)*x2),SecDecInternalDeformedx2( + (1)*x0, + (1)*x1, + (1)*x2), + (1)*eps)) ^ ( + (1))));
+
+#endProcedure
+
+#procedure insertOther
+    Id SecDecInternalRemainder(x0?,x1?,x2?,eps?) =  + (1);
+  Id SecDecInternalCondefFac(x0?,x1?,x2?,eps?) = ((SecDecInternalCondefFacx0( + (1)*x0, + (1)*x1, + (1)*x2)) ^ ( + (0))) * ((SecDecInternalCondefFacx1( + (1)*x0, + (1)*x1, + (1)*x2)) ^ ( + (0))) * ((SecDecInternalCondefFacx2( + (1)*x0, + (1)*x1, + (1)*x2)) ^ ( + (0)));
+  Id SecDecInternalOtherPoly0(x0?,x1?,x2?,eps?) =  + ( + (1));
+
+#endProcedure
+
+#procedure insertDecomposed
+    Id ddFd2d2(x0?,x1?,x2?,eps?) =  + (0);
+  Id dFd1(x0?,x1?,x2?,eps?) =  + (msq - t);
+  Id F(x0?,x1?,x2?,eps?) =  + ( + (-s))*x0*x2 + ( + (msq - s1))*x2 + ( + (msq - t))*x1 + ( + (msq))*x0 + ( + (msq));
+  Id dFd2(x0?,x1?,x2?,eps?) =  + (msq - s1) + (-s)*x0;
+  Id U(x0?,x1?,x2?,eps?) =  + ( + (1)) + ( + (1))*x0 + ( + (1))*x1 + ( + (1))*x2;
+  Id ddFd0d0(x0?,x1?,x2?,eps?) =  + (0);
+  Id ddFd0d1(x0?,x1?,x2?,eps?) =  + (0);
+  Id ddFd1d1(x0?,x1?,x2?,eps?) =  + (0);
+  Id dFd0(x0?,x1?,x2?,eps?) =  + (msq) + (-s)*x2;
+  Id ddFd0d2(x0?,x1?,x2?,eps?) =  + (-s);
+  Id ddFd1d2(x0?,x1?,x2?,eps?) =  + (0);
+
+#endProcedure
+
+* Define how deep functions to be inserted are nested.
+#define insertionDepth "5"
+
+* Define the data type of the integrand container class.
+#define integrandContainerType "nested_series_t<sector_container_t>"
+
+* Define the initializer list for the integrand container class
+* (constructed in python).
+#define integrandContainerInitializer "{0,0,{{3,\{0\},sector_3_order_0_numIV,sector_3_order_0_integrand,#@SecDecInternalNewline@##ifdef#@SecDecInternalSpace@#SECDEC_WITH_CUDA#@SecDecInternalNewline@#get_device_sector_3_order_0_integrand,#@SecDecInternalNewline@##endif#@SecDecInternalNewline@#sector_3_order_0_contour_deformation_polynomial,sector_3_order_0_maximal_allowed_deformation_parameters}},true,#@SecDecInternalDblquote@#eps#@SecDecInternalDblquote@#}"

@@ -1,0 +1,6 @@
+jobs:
+  - compute_diagram_interferences:
+      polarization_orthogonal_vectors: [ [1, p3], [2, p1]]
+      diagrams_file1: "myresults/test.match.yaml"
+      diagrams_file2: "myresults/test.match.yaml"
+      output_file: "myresults/test.comp"

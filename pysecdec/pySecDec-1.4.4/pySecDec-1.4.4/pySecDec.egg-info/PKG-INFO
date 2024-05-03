@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: pySecDec
+Version: 1.4.4
+Summary: An implementation of "Sector Decomposition" (see arXiv:1703.09692, arXiv:hep-ph/0004013, arXiv:0803.4177).
+Home-page: secdec.hepforge.org
+Author: Sophia Borowka, Gudrun Heinrich, Stephan Jahn, Stephen Jones, Matthias Kerner, Johannes Schlenk, Tom Zirke
+Author-email: secdec@projects.hepforge.org
+License: GPLv3
+Description: UNKNOWN
+Platform: Unix
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Science/Research
+Classifier: Natural Language :: English
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: C++
+Classifier: Topic :: Scientific/Engineering :: Physics
+Provides-Extra: testing
+Provides-Extra: documentation

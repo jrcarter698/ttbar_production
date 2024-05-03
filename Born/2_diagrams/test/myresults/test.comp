@@ -1,0 +1,36 @@
+name = tmptestcomp1X1
+  tree 0 0  0 0 
+   -1/4*Color(1)*(t^2+t*s+4*m^4-2*m^2*s-4*m^2*t)*g^4
+;
+name = tmptestcomp1X2
+  tree 0 0  0 0 
+   -1/4*Color(1)*(t^2+t*s+4*m^4-2*m^2*s-4*m^2*t)*g^4
+;
+name = tmptestcomp1X3
+  tree 0 0  0 0 
+   -1/4*Color(1)*(t^2+t*s+4*m^4-2*m^2*s-4*m^2*t)*g^4
+;
+name = tmptestcomp2X1
+  tree 0 0  0 0 
+   -1/4*Color(1)*(t^2+t*s+4*m^4-2*m^2*s-4*m^2*t)*g^4
+;
+name = tmptestcomp2X2
+  tree 0 0  0 0 
+   -1/4*Color(1)*(t^2+t*s+4*m^4-2*m^2*s-4*m^2*t)*g^4
+;
+name = tmptestcomp2X3
+  tree 0 0  0 0 
+   -1/4*Color(1)*(t^2+t*s+4*m^4-2*m^2*s-4*m^2*t)*g^4
+;
+name = tmptestcomp3X1
+  tree 0 0  0 0 
+   -1/4*Color(1)*(t^2+t*s+4*m^4-2*m^2*s-4*m^2*t)*g^4
+;
+name = tmptestcomp3X2
+  tree 0 0  0 0 
+   -1/4*Color(1)*(t^2+t*s+4*m^4-2*m^2*s-4*m^2*t)*g^4
+;
+name = tmptestcomp3X3
+  tree 0 0  0 0 
+   -1/4*Color(1)*(t^2+t*s+4*m^4-2*m^2*s-4*m^2*t)*g^4
+;

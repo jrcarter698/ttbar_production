@@ -1,0 +1,191 @@
+#include "sector_3_0.hpp"
+namespace bubble2l
+{
+#ifdef SECDEC_WITH_CUDA
+__host__ __device__
+#endif
+integrand_return_t sector_3_order_0_integrand
+(
+real_t const * const integration_variables,
+real_t const * const real_parameters,
+complex_t const * const complex_parameters
+,real_t const * const deformation_parameters
+)
+{
+#define x0 integration_variables[0]
+#define x1 integration_variables[1]
+#define x2 integration_variables[2]
+#define x3 integration_variables[3]
+#define s real_parameters[0]
+#define m2 real_parameters[1]
+#define SecDecInternalLambda0 deformation_parameters[0]
+#define SecDecInternalLambda1 deformation_parameters[1]
+#define SecDecInternalLambda2 deformation_parameters[2]
+#define SecDecInternalLambda3 deformation_parameters[3]
+#define SecDecInternalDenominator(x) 1./(x)
+#ifdef SECDEC_WITH_CUDA
+#define SecDecInternalRealPart(x) (complex_t{x}).real()
+#define SecDecInternalImagPart(x) (complex_t{x}).imag()
+#else
+#define SecDecInternalRealPart(x) std::real(x)
+#define SecDecInternalImagPart(x) std::imag(x)
+#endif
+#define tmp SecDecInternalAbbreviation[0]
+#define SecDecInternalAbbreviations1(ID) SecDecInternalAbbreviation[ID]
+
+integrand_return_t SecDecInternalAbbreviation[35 + 1];
+integrand_return_t SecDecInternalSecondAbbreviation[sector_3_order_0_optimmaxvar_second + 1];
+
+SecDecInternalAbbreviation[1]=x0 + 1.E+0;SecDecInternalAbbreviation[2]=2.E+0*m2;SecDecInternalAbbreviation[3]=SecDecInternalAbbreviation[2]*x1;SecDecInternalAbbreviation[4]=SecDecInternalAbbreviation[3]*SecDecInternalAbbreviation[1];SecDecInternalAbbreviation[5]=SecDecInternalAbbreviation[2]*x3;SecDecInternalAbbreviation[6]=x2 + 1.E+0;SecDecInternalAbbreviation[7]=SecDecInternalAbbreviation[1]*SecDecInternalAbbreviation[6];SecDecInternalAbbreviation[8]=SecDecInternalAbbreviation[1]*x3;SecDecInternalAbbreviation[8]=SecDecInternalAbbreviation[8] +SecDecInternalAbbreviation[7];SecDecInternalAbbreviation[9]=2.E+0*x3;SecDecInternalAbbreviation[10]=SecDecInternalAbbreviation[6]*SecDecInternalAbbreviation[9];SecDecInternalAbbreviation[11]=2.E+0*x2;SecDecInternalAbbreviation[12]=SecDecInternalAbbreviation[11] + 1.E+0;SecDecInternalAbbreviation[13]=SecDecInternalAbbreviation[10] +SecDecInternalAbbreviation[12];SecDecInternalAbbreviation[14]=x1*SecDecInternalAbbreviation[13];SecDecInternalAbbreviation[14]=2.E+0*SecDecInternalAbbreviation[8] +SecDecInternalAbbreviation[14];SecDecInternalAbbreviation[14]=m2*SecDecInternalAbbreviation[14];SecDecInternalAbbreviation[15]=s*SecDecInternalAbbreviation[6];SecDecInternalAbbreviation[16]=x1*x3;SecDecInternalAbbreviation[17]= - SecDecInternalAbbreviation[15]*SecDecInternalAbbreviation[16];SecDecInternalAbbreviation[14]=SecDecInternalAbbreviation[17] +SecDecInternalAbbreviation[14];SecDecInternalAbbreviation[17]=m2*x1;SecDecInternalAbbreviation[18]=SecDecInternalAbbreviation[6] + x3;SecDecInternalAbbreviation[19]=x1*SecDecInternalAbbreviation[18];SecDecInternalAbbreviation[19]=SecDecInternalAbbreviation[19] +SecDecInternalAbbreviation[1];SecDecInternalAbbreviation[19]=SecDecInternalAbbreviation[19]*SecDecInternalAbbreviation[2];SecDecInternalAbbreviation[20]= - s*SecDecInternalAbbreviation[16];SecDecInternalAbbreviation[19]=SecDecInternalAbbreviation[20] +SecDecInternalAbbreviation[19];SecDecInternalAbbreviation[10]=x1*SecDecInternalAbbreviation[10];SecDecInternalAbbreviation[10]=SecDecInternalAbbreviation[10] +SecDecInternalAbbreviation[8];SecDecInternalAbbreviation[10]=SecDecInternalAbbreviation[10]*SecDecInternalAbbreviation[2];SecDecInternalAbbreviation[20]=s*SecDecInternalAbbreviation[1];SecDecInternalAbbreviation[21]= - x3*SecDecInternalAbbreviation[20];SecDecInternalAbbreviation[10]=SecDecInternalAbbreviation[21] +SecDecInternalAbbreviation[10];SecDecInternalAbbreviation[21]=SecDecInternalAbbreviation[18]*SecDecInternalAbbreviation[2];SecDecInternalAbbreviation[13]=m2*SecDecInternalAbbreviation[13];SecDecInternalAbbreviation[22]= - x3*SecDecInternalAbbreviation[15];SecDecInternalAbbreviation[13]=SecDecInternalAbbreviation[22] +SecDecInternalAbbreviation[13];SecDecInternalAbbreviation[22]=SecDecInternalAbbreviation[20]*SecDecInternalAbbreviation[6];SecDecInternalAbbreviation[23]= - x1*SecDecInternalAbbreviation[22];SecDecInternalAbbreviation[24]=2.E+0*x1;SecDecInternalAbbreviation[25]=SecDecInternalAbbreviation[7]*SecDecInternalAbbreviation[24];SecDecInternalAbbreviation[26]=1.E+0 + 2.E+0*x0;SecDecInternalAbbreviation[25]=SecDecInternalAbbreviation[25] +SecDecInternalAbbreviation[26];SecDecInternalAbbreviation[25]=m2*SecDecInternalAbbreviation[25];SecDecInternalAbbreviation[23]=SecDecInternalAbbreviation[23] +SecDecInternalAbbreviation[25];SecDecInternalAbbreviation[25]=m2*SecDecInternalAbbreviation[12];SecDecInternalAbbreviation[27]=x1*SecDecInternalAbbreviation[6];SecDecInternalAbbreviation[27]=SecDecInternalAbbreviation[27] +SecDecInternalAbbreviation[1];SecDecInternalAbbreviation[27]=SecDecInternalAbbreviation[27]*SecDecInternalAbbreviation[2];SecDecInternalAbbreviation[15]= - x1*SecDecInternalAbbreviation[15];SecDecInternalAbbreviation[15]=SecDecInternalAbbreviation[15] +SecDecInternalAbbreviation[27];SecDecInternalAbbreviation[27]= - SecDecInternalAbbreviation[20]*SecDecInternalAbbreviation[16];SecDecInternalAbbreviation[8]=SecDecInternalAbbreviation[8]*SecDecInternalAbbreviation[24];SecDecInternalAbbreviation[8]=SecDecInternalAbbreviation[8] +SecDecInternalAbbreviation[26];SecDecInternalAbbreviation[8]=m2*SecDecInternalAbbreviation[8];SecDecInternalAbbreviation[8]=SecDecInternalAbbreviation[27] +SecDecInternalAbbreviation[8];SecDecInternalAbbreviation[27]=SecDecInternalAbbreviation[6]*SecDecInternalAbbreviation[5];SecDecInternalAbbreviation[28]=SecDecInternalAbbreviation[12]*SecDecInternalAbbreviation[5];SecDecInternalAbbreviation[29]=SecDecInternalAbbreviation[12]*x1;SecDecInternalAbbreviation[29]=SecDecInternalAbbreviation[29] +SecDecInternalAbbreviation[7];SecDecInternalAbbreviation[30]=SecDecInternalAbbreviation[29]*SecDecInternalAbbreviation[2];SecDecInternalAbbreviation[30]=SecDecInternalAbbreviation[30] -SecDecInternalAbbreviation[22];SecDecInternalAbbreviation[31]=SecDecInternalAbbreviation[1]*SecDecInternalAbbreviation[12];SecDecInternalAbbreviation[29]=SecDecInternalAbbreviation[9]*SecDecInternalAbbreviation[29];SecDecInternalAbbreviation[29]=SecDecInternalAbbreviation[29] +SecDecInternalAbbreviation[31];SecDecInternalAbbreviation[29]=m2*SecDecInternalAbbreviation[29];SecDecInternalAbbreviation[32]= - x3*SecDecInternalAbbreviation[22];SecDecInternalAbbreviation[29]=SecDecInternalAbbreviation[32] +SecDecInternalAbbreviation[29];SecDecInternalAbbreviation[32]=x1*SecDecInternalAbbreviation[9];SecDecInternalAbbreviation[32]=SecDecInternalAbbreviation[32] +SecDecInternalAbbreviation[1];SecDecInternalAbbreviation[32]=m2*SecDecInternalAbbreviation[32];SecDecInternalAbbreviation[20]= - x1*SecDecInternalAbbreviation[20];SecDecInternalAbbreviation[20]=SecDecInternalAbbreviation[20] +SecDecInternalAbbreviation[4];SecDecInternalAbbreviation[6]=SecDecInternalAbbreviation[6]*SecDecInternalAbbreviation[2];SecDecInternalAbbreviation[7]=SecDecInternalAbbreviation[7]*SecDecInternalAbbreviation[9];SecDecInternalAbbreviation[7]=SecDecInternalAbbreviation[7] +SecDecInternalAbbreviation[31];SecDecInternalAbbreviation[7]=x1*SecDecInternalAbbreviation[7];SecDecInternalAbbreviation[26]=SecDecInternalAbbreviation[26]*SecDecInternalAbbreviation[18];SecDecInternalAbbreviation[7]=SecDecInternalAbbreviation[7] +SecDecInternalAbbreviation[26];SecDecInternalAbbreviation[7]=m2*SecDecInternalAbbreviation[7];SecDecInternalAbbreviation[16]= - SecDecInternalAbbreviation[22]*SecDecInternalAbbreviation[16];SecDecInternalAbbreviation[7]=SecDecInternalAbbreviation[16] +SecDecInternalAbbreviation[7];SecDecInternalAbbreviation[1]=SecDecInternalAbbreviation[1]*SecDecInternalAbbreviation[17];SecDecInternalAbbreviation[16]=m2*x3;SecDecInternalAbbreviation[12]=SecDecInternalAbbreviation[12]*SecDecInternalAbbreviation[16];SecDecInternalAbbreviation[18]=m2*SecDecInternalAbbreviation[18];SecDecInternalAbbreviation[22]=SecDecInternalAbbreviation[2] - s;SecDecInternalAbbreviation[26]=x3*SecDecInternalLambda3;SecDecInternalAbbreviation[9]= - 1.E+0 + SecDecInternalAbbreviation[9];SecDecInternalAbbreviation[9]=SecDecInternalLambda3*SecDecInternalAbbreviation[9];SecDecInternalAbbreviation[31]=x2*SecDecInternalLambda2;SecDecInternalAbbreviation[11]= - 1.E+0 +SecDecInternalAbbreviation[11];SecDecInternalAbbreviation[11]=SecDecInternalLambda2*SecDecInternalAbbreviation[11];SecDecInternalAbbreviation[33]=x1*SecDecInternalLambda1;SecDecInternalAbbreviation[24]= - 1.E+0 +SecDecInternalAbbreviation[24];SecDecInternalAbbreviation[24]=SecDecInternalLambda1*SecDecInternalAbbreviation[24];SecDecInternalAbbreviation[34]=x0*SecDecInternalLambda0;SecDecInternalAbbreviation[35]= - SecDecInternalLambda0 + 2.E+0*SecDecInternalAbbreviation[34];
+
+
+
+// begin next dependency level
+SecDecInternalSecondAbbreviation[1]=SecDecInternalAbbreviations1(15);SecDecInternalSecondAbbreviation[2]=SecDecInternalAbbreviations1(21);SecDecInternalSecondAbbreviation[3]=SecDecInternalAbbreviations1(10);SecDecInternalSecondAbbreviation[4]=SecDecInternalAbbreviations1(19);
+
+auto SecDecInternalddFd0d3Call1 =SecDecInternalSecondAbbreviation[1];
+auto SecDecInternalddFd0d0Call1 =SecDecInternalSecondAbbreviation[2];
+auto SecDecInternalddFd1d2Call1 =SecDecInternalSecondAbbreviation[3];
+auto SecDecInternalddFd0d2Call1 =SecDecInternalSecondAbbreviation[4];
+auto SecDecInternalSecDecInternalPowCall1 =pow(x0,2);
+auto SecDecInternalSecDecInternalPowCall2 =pow(x1,2);
+auto SecDecInternalSecDecInternalPowCall3 =pow(x2,2);
+auto SecDecInternalSecDecInternalPowCall4 =pow(x3,2);
+
+
+// begin next dependency level
+SecDecInternalSecondAbbreviation[1]=SecDecInternalAbbreviations1(6);SecDecInternalSecondAbbreviation[2]=SecDecInternalAbbreviations1(20);SecDecInternalSecondAbbreviation[3]=SecDecInternalAbbreviations1(29);SecDecInternalSecondAbbreviation[4]=SecDecInternalAbbreviations1(32);SecDecInternalSecondAbbreviation[5]=SecDecInternalAbbreviations1(3);SecDecInternalSecondAbbreviation[6]=SecDecInternalAbbreviations1(30);SecDecInternalSecondAbbreviation[7]=SecDecInternalAbbreviations1(1);SecDecInternalSecondAbbreviation[8]=SecDecInternalAbbreviations1(7);SecDecInternalSecondAbbreviation[9]=SecDecInternalAbbreviations1(12);SecDecInternalSecondAbbreviation[10]=SecDecInternalAbbreviations1(16);SecDecInternalSecondAbbreviation[11]=SecDecInternalAbbreviations1(18);SecDecInternalSecondAbbreviation[12]=SecDecInternalAbbreviations1(5);SecDecInternalSecondAbbreviation[13]=SecDecInternalAbbreviations1(28);SecDecInternalSecondAbbreviation[14]=SecDecInternalAbbreviations1(8);SecDecInternalSecondAbbreviation[15]=SecDecInternalAbbreviations1(27);SecDecInternalSecondAbbreviation[16]=SecDecInternalAbbreviations1(23);SecDecInternalSecondAbbreviation[17]=SecDecInternalAbbreviations1(25);SecDecInternalSecondAbbreviation[18]=SecDecInternalAbbreviations1(13);SecDecInternalSecondAbbreviation[19]=SecDecInternalAbbreviations1(14);SecDecInternalSecondAbbreviation[20]=SecDecInternalAbbreviations1(17);SecDecInternalSecondAbbreviation[21]=SecDecInternalAbbreviations1(4);SecDecInternalSecondAbbreviation[22]=SecDecInternalSecondAbbreviation[1]*SecDecInternalSecDecInternalPowCall2;SecDecInternalSecondAbbreviation[22]=SecDecInternalSecondAbbreviation[22] + SecDecInternalSecondAbbreviation[2];SecDecInternalSecondAbbreviation[23]=SecDecInternalSecondAbbreviation[4]*SecDecInternalSecDecInternalPowCall3;SecDecInternalSecondAbbreviation[23]=SecDecInternalSecondAbbreviation[3] + SecDecInternalSecondAbbreviation[23];SecDecInternalSecondAbbreviation[24]=SecDecInternalSecondAbbreviation[5]*SecDecInternalSecDecInternalPowCall3;SecDecInternalSecondAbbreviation[24]=SecDecInternalSecondAbbreviation[24] + SecDecInternalSecondAbbreviation[6];SecDecInternalSecondAbbreviation[25]=SecDecInternalSecondAbbreviation[10]*SecDecInternalSecDecInternalPowCall3;SecDecInternalSecondAbbreviation[25]=SecDecInternalSecondAbbreviation[25] + SecDecInternalSecondAbbreviation[9];SecDecInternalSecondAbbreviation[25]=SecDecInternalSecDecInternalPowCall2*SecDecInternalSecondAbbreviation[25];SecDecInternalSecondAbbreviation[26]=SecDecInternalSecondAbbreviation[7]*SecDecInternalSecDecInternalPowCall3;SecDecInternalSecondAbbreviation[27]=SecDecInternalSecondAbbreviation[11]*SecDecInternalSecDecInternalPowCall1;SecDecInternalSecondAbbreviation[25]=SecDecInternalSecondAbbreviation[27] + SecDecInternalSecondAbbreviation[26] + SecDecInternalSecondAbbreviation[8] + SecDecInternalSecondAbbreviation[25];SecDecInternalSecondAbbreviation[26]=SecDecInternalSecondAbbreviation[12]*SecDecInternalSecDecInternalPowCall3;SecDecInternalSecondAbbreviation[26]=SecDecInternalSecondAbbreviation[26] + SecDecInternalSecondAbbreviation[13];SecDecInternalSecondAbbreviation[27]=SecDecInternalSecDecInternalPowCall1*m2;SecDecInternalSecondAbbreviation[28]=SecDecInternalSecondAbbreviation[15]*SecDecInternalSecDecInternalPowCall2;SecDecInternalSecondAbbreviation[28]=SecDecInternalSecondAbbreviation[28] + SecDecInternalSecondAbbreviation[27] + SecDecInternalSecondAbbreviation[14];SecDecInternalSecondAbbreviation[29]=m2*SecDecInternalSecDecInternalPowCall3;SecDecInternalSecondAbbreviation[30]=SecDecInternalSecondAbbreviation[17] + SecDecInternalSecondAbbreviation[29];SecDecInternalSecondAbbreviation[30]=SecDecInternalSecDecInternalPowCall2*SecDecInternalSecondAbbreviation[30];SecDecInternalSecondAbbreviation[27]=SecDecInternalSecondAbbreviation[16] + SecDecInternalSecondAbbreviation[27] + SecDecInternalSecondAbbreviation[30];SecDecInternalSecondAbbreviation[29]=SecDecInternalSecondAbbreviation[29] + SecDecInternalSecondAbbreviation[18];SecDecInternalSecondAbbreviation[30]=SecDecInternalSecondAbbreviation[20]*SecDecInternalSecDecInternalPowCall3;SecDecInternalSecondAbbreviation[30]=SecDecInternalSecondAbbreviation[19] + SecDecInternalSecondAbbreviation[30];SecDecInternalSecondAbbreviation[31]=SecDecInternalSecondAbbreviation[12]*SecDecInternalSecDecInternalPowCall2;SecDecInternalSecondAbbreviation[31]=SecDecInternalSecondAbbreviation[31] + SecDecInternalSecondAbbreviation[21];
+
+auto SecDecInternalddFd2d3Call1 =SecDecInternalSecondAbbreviation[22];
+auto SecDecInternaldFd1Call1 =SecDecInternalSecondAbbreviation[23];
+auto SecDecInternalddFd1d3Call1 =SecDecInternalSecondAbbreviation[24];
+auto SecDecInternalFCall2 =SecDecInternalSecondAbbreviation[25];
+auto SecDecInternalddFd1d1Call1 =SecDecInternalSecondAbbreviation[26];
+auto SecDecInternaldFd2Call1 =SecDecInternalSecondAbbreviation[28];
+auto SecDecInternaldFd3Call1 =SecDecInternalSecondAbbreviation[27];
+auto SecDecInternalddFd0d1Call1 =SecDecInternalSecondAbbreviation[29];
+auto SecDecInternaldFd0Call1 =SecDecInternalSecondAbbreviation[30];
+auto SecDecInternalddFd2d2Call1 =SecDecInternalSecondAbbreviation[31];
+auto SecDecInternalSecDecInternalRealPartCall6 =SecDecInternalRealPart(SecDecInternalddFd0d3Call1);
+auto SecDecInternalSecDecInternalRealPartCall9 =SecDecInternalRealPart(SecDecInternalddFd0d0Call1);
+auto SecDecInternalSecDecInternalRealPartCall10 =SecDecInternalRealPart(SecDecInternalddFd1d2Call1);
+auto SecDecInternalSecDecInternalRealPartCall11 =SecDecInternalRealPart(SecDecInternalddFd0d2Call1);
+
+
+// begin next dependency level
+SecDecInternalSecondAbbreviation[1]=SecDecInternalAbbreviations1(34);SecDecInternalSecondAbbreviation[2]=SecDecInternalAbbreviations1(33);SecDecInternalSecondAbbreviation[3]=SecDecInternalAbbreviations1(31);SecDecInternalSecondAbbreviation[4]=SecDecInternalAbbreviations1(26);SecDecInternalSecondAbbreviation[5]=SecDecInternalSecDecInternalPowCall1*SecDecInternalLambda0;SecDecInternalSecondAbbreviation[5]=SecDecInternalSecondAbbreviation[5] - SecDecInternalSecondAbbreviation[1];SecDecInternalSecondAbbreviation[6]=i_*SecDecInternalSecDecInternalRealPartCall6;SecDecInternalSecondAbbreviation[7]=SecDecInternalSecondAbbreviation[5]*SecDecInternalSecondAbbreviation[6];SecDecInternalSecondAbbreviation[8]=i_*SecDecInternalSecDecInternalRealPartCall11;SecDecInternalSecondAbbreviation[5]=SecDecInternalSecondAbbreviation[5]*SecDecInternalSecondAbbreviation[8];SecDecInternalSecondAbbreviation[9]=i_*SecDecInternalSecDecInternalRealPartCall10;SecDecInternalSecondAbbreviation[10]=SecDecInternalSecDecInternalPowCall2*SecDecInternalLambda1;SecDecInternalSecondAbbreviation[10]=SecDecInternalSecondAbbreviation[10] - SecDecInternalSecondAbbreviation[2];SecDecInternalSecondAbbreviation[10]=SecDecInternalSecondAbbreviation[10]*SecDecInternalSecondAbbreviation[9];SecDecInternalSecondAbbreviation[11]=SecDecInternalSecDecInternalPowCall3*SecDecInternalLambda2;SecDecInternalSecondAbbreviation[11]=SecDecInternalSecondAbbreviation[11] - SecDecInternalSecondAbbreviation[3];SecDecInternalSecondAbbreviation[9]=SecDecInternalSecondAbbreviation[11]*SecDecInternalSecondAbbreviation[9];SecDecInternalSecondAbbreviation[8]=SecDecInternalSecondAbbreviation[11]*SecDecInternalSecondAbbreviation[8];SecDecInternalSecondAbbreviation[11]=SecDecInternalSecDecInternalPowCall4*SecDecInternalLambda3;SecDecInternalSecondAbbreviation[11]=SecDecInternalSecondAbbreviation[11] - SecDecInternalSecondAbbreviation[4];SecDecInternalSecondAbbreviation[6]=SecDecInternalSecondAbbreviation[11]*SecDecInternalSecondAbbreviation[6];
+
+auto SecDecInternaldSecDecInternalDeformedx0d3Call1 =SecDecInternalSecondAbbreviation[7];
+auto SecDecInternaldSecDecInternalDeformedx0d2Call1 =SecDecInternalSecondAbbreviation[5];
+auto SecDecInternaldSecDecInternalDeformedx1d2Call1 =SecDecInternalSecondAbbreviation[10];
+auto SecDecInternaldSecDecInternalDeformedx2d1Call1 =SecDecInternalSecondAbbreviation[9];
+auto SecDecInternaldSecDecInternalDeformedx2d0Call1 =SecDecInternalSecondAbbreviation[8];
+auto SecDecInternaldSecDecInternalDeformedx3d0Call1 =SecDecInternalSecondAbbreviation[6];
+auto SecDecInternalSecDecInternalRealPartCall1 =SecDecInternalRealPart(SecDecInternalddFd2d3Call1);
+auto SecDecInternalSecDecInternalRealPartCall2 =SecDecInternalRealPart(SecDecInternaldFd1Call1);
+auto SecDecInternalSecDecInternalRealPartCall3 =SecDecInternalRealPart(SecDecInternalddFd1d3Call1);
+auto SecDecInternalSecDecInternalRealPartCall4 =SecDecInternalRealPart(SecDecInternalddFd1d1Call1);
+auto SecDecInternalSecDecInternalRealPartCall5 =SecDecInternalRealPart(SecDecInternaldFd2Call1);
+auto SecDecInternalSecDecInternalRealPartCall7 =SecDecInternalRealPart(SecDecInternaldFd3Call1);
+auto SecDecInternalSecDecInternalRealPartCall8 =SecDecInternalRealPart(SecDecInternalddFd0d1Call1);
+auto SecDecInternalSecDecInternalRealPartCall12 =SecDecInternalRealPart(SecDecInternaldFd0Call1);
+auto SecDecInternalSecDecInternalRealPartCall13 =SecDecInternalRealPart(SecDecInternalddFd2d2Call1);
+
+
+// begin next dependency level
+SecDecInternalSecondAbbreviation[1]=SecDecInternalAbbreviations1(34);SecDecInternalSecondAbbreviation[2]=SecDecInternalAbbreviations1(35);SecDecInternalSecondAbbreviation[3]=SecDecInternalAbbreviations1(33);SecDecInternalSecondAbbreviation[4]=SecDecInternalAbbreviations1(24);SecDecInternalSecondAbbreviation[5]=SecDecInternalAbbreviations1(31);SecDecInternalSecondAbbreviation[6]=SecDecInternalAbbreviations1(11);SecDecInternalSecondAbbreviation[7]=SecDecInternalAbbreviations1(26);SecDecInternalSecondAbbreviation[8]=SecDecInternalAbbreviations1(9);SecDecInternalSecondAbbreviation[9]=SecDecInternalSecDecInternalPowCall1*SecDecInternalLambda0;SecDecInternalSecondAbbreviation[9]=SecDecInternalSecondAbbreviation[9] - SecDecInternalSecondAbbreviation[1];SecDecInternalSecondAbbreviation[10]=SecDecInternalSecondAbbreviation[9]*i_;SecDecInternalSecondAbbreviation[11]=SecDecInternalSecDecInternalRealPartCall12*SecDecInternalSecondAbbreviation[10];SecDecInternalSecondAbbreviation[11]=x0 + SecDecInternalSecondAbbreviation[11];SecDecInternalSecondAbbreviation[10]=SecDecInternalSecDecInternalRealPartCall8*SecDecInternalSecondAbbreviation[10];SecDecInternalSecondAbbreviation[9]=SecDecInternalSecDecInternalRealPartCall9*SecDecInternalSecondAbbreviation[9];SecDecInternalSecondAbbreviation[12]=SecDecInternalSecDecInternalRealPartCall12*SecDecInternalSecondAbbreviation[2];SecDecInternalSecondAbbreviation[9]=SecDecInternalSecondAbbreviation[12] + SecDecInternalSecondAbbreviation[9];SecDecInternalSecondAbbreviation[9]=i_*SecDecInternalSecondAbbreviation[9];SecDecInternalSecondAbbreviation[9]=1.E+0 + SecDecInternalSecondAbbreviation[9];SecDecInternalSecondAbbreviation[12]=SecDecInternalSecDecInternalPowCall2*SecDecInternalLambda1;SecDecInternalSecondAbbreviation[12]=SecDecInternalSecondAbbreviation[12] - SecDecInternalSecondAbbreviation[3];SecDecInternalSecondAbbreviation[13]=SecDecInternalSecondAbbreviation[12]*i_;SecDecInternalSecondAbbreviation[14]=SecDecInternalSecDecInternalRealPartCall2*SecDecInternalSecondAbbreviation[13];SecDecInternalSecondAbbreviation[14]=x1 + SecDecInternalSecondAbbreviation[14];SecDecInternalSecondAbbreviation[15]=SecDecInternalSecDecInternalRealPartCall3*SecDecInternalSecondAbbreviation[13];SecDecInternalSecondAbbreviation[12]=SecDecInternalSecDecInternalRealPartCall4*SecDecInternalSecondAbbreviation[12];SecDecInternalSecondAbbreviation[16]=SecDecInternalSecDecInternalRealPartCall2*SecDecInternalSecondAbbreviation[4];SecDecInternalSecondAbbreviation[12]=SecDecInternalSecondAbbreviation[16] + SecDecInternalSecondAbbreviation[12];SecDecInternalSecondAbbreviation[12]=i_*SecDecInternalSecondAbbreviation[12];SecDecInternalSecondAbbreviation[12]=1.E+0 + SecDecInternalSecondAbbreviation[12];SecDecInternalSecondAbbreviation[13]=SecDecInternalSecDecInternalRealPartCall8*SecDecInternalSecondAbbreviation[13];SecDecInternalSecondAbbreviation[16]=SecDecInternalSecDecInternalPowCall3*SecDecInternalLambda2;SecDecInternalSecondAbbreviation[16]=SecDecInternalSecondAbbreviation[16] - SecDecInternalSecondAbbreviation[5];SecDecInternalSecondAbbreviation[17]=i_*SecDecInternalSecDecInternalRealPartCall5*SecDecInternalSecondAbbreviation[16];SecDecInternalSecondAbbreviation[17]=x2 + SecDecInternalSecondAbbreviation[17];SecDecInternalSecondAbbreviation[18]=i_*SecDecInternalSecDecInternalRealPartCall1;SecDecInternalSecondAbbreviation[19]=SecDecInternalSecondAbbreviation[16]*SecDecInternalSecondAbbreviation[18];SecDecInternalSecondAbbreviation[16]=SecDecInternalSecDecInternalRealPartCall13*SecDecInternalSecondAbbreviation[16];SecDecInternalSecondAbbreviation[20]=SecDecInternalSecDecInternalRealPartCall5*SecDecInternalSecondAbbreviation[6];SecDecInternalSecondAbbreviation[16]=SecDecInternalSecondAbbreviation[20] + SecDecInternalSecondAbbreviation[16];SecDecInternalSecondAbbreviation[16]=i_*SecDecInternalSecondAbbreviation[16];SecDecInternalSecondAbbreviation[16]=1.E+0 + SecDecInternalSecondAbbreviation[16];SecDecInternalSecondAbbreviation[20]=SecDecInternalSecDecInternalPowCall4*SecDecInternalLambda3;SecDecInternalSecondAbbreviation[20]=SecDecInternalSecondAbbreviation[20] - SecDecInternalSecondAbbreviation[7];SecDecInternalSecondAbbreviation[21]=SecDecInternalSecondAbbreviation[20]*i_;SecDecInternalSecondAbbreviation[22]=SecDecInternalSecDecInternalRealPartCall7*SecDecInternalSecondAbbreviation[21];SecDecInternalSecondAbbreviation[22]=x3 + SecDecInternalSecondAbbreviation[22];SecDecInternalSecondAbbreviation[23]=SecDecInternalSecondAbbreviation[8]*i_*SecDecInternalSecDecInternalRealPartCall7;SecDecInternalSecondAbbreviation[23]=1.E+0 + SecDecInternalSecondAbbreviation[23];SecDecInternalSecondAbbreviation[21]=SecDecInternalSecDecInternalRealPartCall3*SecDecInternalSecondAbbreviation[21];SecDecInternalSecondAbbreviation[18]=SecDecInternalSecondAbbreviation[20]*SecDecInternalSecondAbbreviation[18];
+
+auto SecDecInternalSecDecInternalDeformedx0Call1 =SecDecInternalSecondAbbreviation[11];
+auto SecDecInternaldSecDecInternalDeformedx0d1Call1 =SecDecInternalSecondAbbreviation[10];
+auto SecDecInternaldSecDecInternalDeformedx0d0Call1 =SecDecInternalSecondAbbreviation[9];
+auto SecDecInternalSecDecInternalDeformedx1Call1 =SecDecInternalSecondAbbreviation[14];
+auto SecDecInternaldSecDecInternalDeformedx1d3Call1 =SecDecInternalSecondAbbreviation[15];
+auto SecDecInternaldSecDecInternalDeformedx1d1Call1 =SecDecInternalSecondAbbreviation[12];
+auto SecDecInternaldSecDecInternalDeformedx1d0Call1 =SecDecInternalSecondAbbreviation[13];
+auto SecDecInternalSecDecInternalDeformedx2Call1 =SecDecInternalSecondAbbreviation[17];
+auto SecDecInternaldSecDecInternalDeformedx2d3Call1 =SecDecInternalSecondAbbreviation[19];
+auto SecDecInternaldSecDecInternalDeformedx2d2Call1 =SecDecInternalSecondAbbreviation[16];
+auto SecDecInternalSecDecInternalDeformedx3Call1 =SecDecInternalSecondAbbreviation[22];
+auto SecDecInternaldSecDecInternalDeformedx3d3Call1 =SecDecInternalSecondAbbreviation[23];
+auto SecDecInternaldSecDecInternalDeformedx3d1Call1 =SecDecInternalSecondAbbreviation[21];
+auto SecDecInternaldSecDecInternalDeformedx3d2Call1 =SecDecInternalSecondAbbreviation[18];
+
+
+// begin next dependency level
+SecDecInternalSecondAbbreviation[1]=SecDecInternalSecDecInternalDeformedx0Call1 + 1.E+0;SecDecInternalSecondAbbreviation[2]=SecDecInternalSecDecInternalDeformedx2Call1 + 1.E+0;SecDecInternalSecondAbbreviation[3]=SecDecInternalSecondAbbreviation[2] + SecDecInternalSecDecInternalDeformedx3Call1;SecDecInternalSecondAbbreviation[1]=SecDecInternalSecondAbbreviation[3]*SecDecInternalSecondAbbreviation[1];SecDecInternalSecondAbbreviation[2]=SecDecInternalSecDecInternalDeformedx1Call1*SecDecInternalSecDecInternalDeformedx3Call1*SecDecInternalSecondAbbreviation[2];SecDecInternalSecondAbbreviation[1]=SecDecInternalSecondAbbreviation[2] + SecDecInternalSecondAbbreviation[1];SecDecInternalSecondAbbreviation[2]=SecDecInternaldSecDecInternalDeformedx2d1Call1*SecDecInternaldSecDecInternalDeformedx3d3Call1;SecDecInternalSecondAbbreviation[3]=SecDecInternaldSecDecInternalDeformedx2d3Call1*SecDecInternaldSecDecInternalDeformedx3d1Call1;SecDecInternalSecondAbbreviation[2]=SecDecInternalSecondAbbreviation[2] - SecDecInternalSecondAbbreviation[3];SecDecInternalSecondAbbreviation[3]= - SecDecInternaldSecDecInternalDeformedx1d2Call1*SecDecInternalSecondAbbreviation[2];SecDecInternalSecondAbbreviation[4]=SecDecInternaldSecDecInternalDeformedx2d2Call1*SecDecInternaldSecDecInternalDeformedx3d3Call1;SecDecInternalSecondAbbreviation[5]=SecDecInternaldSecDecInternalDeformedx2d3Call1*SecDecInternaldSecDecInternalDeformedx3d2Call1;SecDecInternalSecondAbbreviation[4]=SecDecInternalSecondAbbreviation[4] - SecDecInternalSecondAbbreviation[5];SecDecInternalSecondAbbreviation[5]=SecDecInternaldSecDecInternalDeformedx1d1Call1*SecDecInternalSecondAbbreviation[4];SecDecInternalSecondAbbreviation[6]=SecDecInternaldSecDecInternalDeformedx2d2Call1*SecDecInternaldSecDecInternalDeformedx3d1Call1;SecDecInternalSecondAbbreviation[7]=SecDecInternaldSecDecInternalDeformedx2d1Call1*SecDecInternaldSecDecInternalDeformedx3d2Call1;SecDecInternalSecondAbbreviation[6]=SecDecInternalSecondAbbreviation[6] - SecDecInternalSecondAbbreviation[7];SecDecInternalSecondAbbreviation[7]= - SecDecInternaldSecDecInternalDeformedx1d3Call1*SecDecInternalSecondAbbreviation[6];SecDecInternalSecondAbbreviation[3]=SecDecInternalSecondAbbreviation[7] + SecDecInternalSecondAbbreviation[3] + SecDecInternalSecondAbbreviation[5];SecDecInternalSecondAbbreviation[3]=SecDecInternaldSecDecInternalDeformedx0d0Call1*SecDecInternalSecondAbbreviation[3];SecDecInternalSecondAbbreviation[2]=SecDecInternaldSecDecInternalDeformedx1d0Call1*SecDecInternalSecondAbbreviation[2];SecDecInternalSecondAbbreviation[5]=SecDecInternaldSecDecInternalDeformedx2d0Call1*SecDecInternaldSecDecInternalDeformedx3d3Call1;SecDecInternalSecondAbbreviation[7]=SecDecInternaldSecDecInternalDeformedx2d3Call1*SecDecInternaldSecDecInternalDeformedx3d0Call1;SecDecInternalSecondAbbreviation[5]=SecDecInternalSecondAbbreviation[5] - SecDecInternalSecondAbbreviation[7];SecDecInternalSecondAbbreviation[7]= - SecDecInternaldSecDecInternalDeformedx1d1Call1*SecDecInternalSecondAbbreviation[5];SecDecInternalSecondAbbreviation[8]=SecDecInternaldSecDecInternalDeformedx2d0Call1*SecDecInternaldSecDecInternalDeformedx3d1Call1;SecDecInternalSecondAbbreviation[9]=SecDecInternaldSecDecInternalDeformedx2d1Call1*SecDecInternaldSecDecInternalDeformedx3d0Call1;SecDecInternalSecondAbbreviation[8]=SecDecInternalSecondAbbreviation[8] - SecDecInternalSecondAbbreviation[9];SecDecInternalSecondAbbreviation[9]=SecDecInternaldSecDecInternalDeformedx1d3Call1*SecDecInternalSecondAbbreviation[8];SecDecInternalSecondAbbreviation[2]=SecDecInternalSecondAbbreviation[9] + SecDecInternalSecondAbbreviation[2] + SecDecInternalSecondAbbreviation[7];SecDecInternalSecondAbbreviation[2]=SecDecInternaldSecDecInternalDeformedx0d2Call1*SecDecInternalSecondAbbreviation[2];SecDecInternalSecondAbbreviation[4]= - SecDecInternaldSecDecInternalDeformedx1d0Call1*SecDecInternalSecondAbbreviation[4];SecDecInternalSecondAbbreviation[5]=SecDecInternaldSecDecInternalDeformedx1d2Call1*SecDecInternalSecondAbbreviation[5];SecDecInternalSecondAbbreviation[7]=SecDecInternaldSecDecInternalDeformedx2d0Call1*SecDecInternaldSecDecInternalDeformedx3d2Call1;SecDecInternalSecondAbbreviation[9]=SecDecInternaldSecDecInternalDeformedx2d2Call1*SecDecInternaldSecDecInternalDeformedx3d0Call1;SecDecInternalSecondAbbreviation[7]=SecDecInternalSecondAbbreviation[7] - SecDecInternalSecondAbbreviation[9];SecDecInternalSecondAbbreviation[9]= - SecDecInternaldSecDecInternalDeformedx1d3Call1*SecDecInternalSecondAbbreviation[7];SecDecInternalSecondAbbreviation[4]=SecDecInternalSecondAbbreviation[9] + SecDecInternalSecondAbbreviation[4] + SecDecInternalSecondAbbreviation[5];SecDecInternalSecondAbbreviation[4]=SecDecInternaldSecDecInternalDeformedx0d1Call1*SecDecInternalSecondAbbreviation[4];SecDecInternalSecondAbbreviation[5]=SecDecInternaldSecDecInternalDeformedx1d0Call1*SecDecInternalSecondAbbreviation[6];SecDecInternalSecondAbbreviation[6]= - SecDecInternaldSecDecInternalDeformedx1d2Call1*SecDecInternalSecondAbbreviation[8];SecDecInternalSecondAbbreviation[7]=SecDecInternaldSecDecInternalDeformedx1d1Call1*SecDecInternalSecondAbbreviation[7];SecDecInternalSecondAbbreviation[5]=SecDecInternalSecondAbbreviation[7] + SecDecInternalSecondAbbreviation[5] + SecDecInternalSecondAbbreviation[6];SecDecInternalSecondAbbreviation[5]=SecDecInternaldSecDecInternalDeformedx0d3Call1*SecDecInternalSecondAbbreviation[5];SecDecInternalSecondAbbreviation[2]=SecDecInternalSecondAbbreviation[5] + SecDecInternalSecondAbbreviation[4] + SecDecInternalSecondAbbreviation[3] + SecDecInternalSecondAbbreviation[2];
+
+auto SecDecInternalUCall1 =SecDecInternalSecondAbbreviation[1];
+auto SecDecInternalSecDecInternalPowCall5 =pow(SecDecInternalSecDecInternalDeformedx0Call1,2);
+auto SecDecInternalSecDecInternalPowCall6 =pow(SecDecInternalSecDecInternalDeformedx1Call1,2);
+auto SecDecInternalSecDecInternalPowCall7 =pow(SecDecInternalSecDecInternalDeformedx2Call1,2);
+auto SecDecInternalSecDecInternalCondefJacCall1 =SecDecInternalSecondAbbreviation[2];
+
+
+// begin next dependency level
+SecDecInternalSecondAbbreviation[1]=SecDecInternalAbbreviations1(2);SecDecInternalSecondAbbreviation[2]=SecDecInternalAbbreviations1(22);SecDecInternalSecondAbbreviation[3]=SecDecInternalSecDecInternalDeformedx2Call1 + 1.E+0;SecDecInternalSecondAbbreviation[4]=SecDecInternalSecDecInternalPowCall5 + 1.E+0;SecDecInternalSecondAbbreviation[5]=SecDecInternalSecondAbbreviation[4]*SecDecInternalSecondAbbreviation[3];SecDecInternalSecondAbbreviation[6]=SecDecInternalSecDecInternalDeformedx0Call1 + 1.E+0;SecDecInternalSecondAbbreviation[6]=SecDecInternalSecondAbbreviation[6]*SecDecInternalSecDecInternalDeformedx1Call1;SecDecInternalSecondAbbreviation[7]=SecDecInternalSecDecInternalPowCall7 + 1.E+0;SecDecInternalSecondAbbreviation[8]=SecDecInternalSecondAbbreviation[7]*SecDecInternalSecondAbbreviation[6];SecDecInternalSecondAbbreviation[7]=SecDecInternalSecDecInternalPowCall6*SecDecInternalSecondAbbreviation[7];SecDecInternalSecondAbbreviation[4]=SecDecInternalSecondAbbreviation[4] + SecDecInternalSecondAbbreviation[7];SecDecInternalSecondAbbreviation[4]=SecDecInternalSecDecInternalDeformedx3Call1*SecDecInternalSecondAbbreviation[4];SecDecInternalSecondAbbreviation[4]=SecDecInternalSecondAbbreviation[4] + SecDecInternalSecondAbbreviation[8] + SecDecInternalSecondAbbreviation[5];SecDecInternalSecondAbbreviation[4]=m2*SecDecInternalSecondAbbreviation[4];SecDecInternalSecondAbbreviation[5]=SecDecInternalSecondAbbreviation[3]*SecDecInternalSecondAbbreviation[2]*SecDecInternalSecondAbbreviation[6];SecDecInternalSecondAbbreviation[6]=SecDecInternalSecDecInternalDeformedx0Call1*SecDecInternalSecondAbbreviation[1];SecDecInternalSecondAbbreviation[7]=SecDecInternalSecDecInternalPowCall6*SecDecInternalSecDecInternalDeformedx2Call1*SecDecInternalSecondAbbreviation[1];SecDecInternalSecondAbbreviation[5]=SecDecInternalSecondAbbreviation[5] + SecDecInternalSecondAbbreviation[6] + SecDecInternalSecondAbbreviation[7];SecDecInternalSecondAbbreviation[5]=SecDecInternalSecDecInternalDeformedx3Call1*SecDecInternalSecondAbbreviation[5];SecDecInternalSecondAbbreviation[3]=SecDecInternalSecondAbbreviation[6]*SecDecInternalSecondAbbreviation[3];SecDecInternalSecondAbbreviation[6]=SecDecInternalSecondAbbreviation[1] + SecDecInternalSecondAbbreviation[6];SecDecInternalSecondAbbreviation[6]=SecDecInternalSecDecInternalDeformedx1Call1*SecDecInternalSecDecInternalDeformedx2Call1*SecDecInternalSecondAbbreviation[6];SecDecInternalSecondAbbreviation[3]=SecDecInternalSecondAbbreviation[4] + SecDecInternalSecondAbbreviation[5] + SecDecInternalSecondAbbreviation[6] + SecDecInternalSecondAbbreviation[3];
+
+auto SecDecInternalFCall1 =SecDecInternalSecondAbbreviation[3];
+auto SecDecInternalSecDecInternalDenominatorCall2 =SecDecInternalDenominator(SecDecInternalUCall1);
+
+
+// begin next dependency level
+
+
+auto SecDecInternalSecDecInternalDenominatorCall1 =SecDecInternalDenominator(SecDecInternalFCall1);
+
+
+// begin final dependency level
+SecDecInternalSecondAbbreviation[1]= - SecDecInternalFCall2 +SecDecInternalFCall1;SecDecInternalSecondAbbreviation[2]=8.E+0*SecDecInternalSecDecInternalCondefJacCall1*SecDecInternalSecDecInternalDenominatorCall1*SecDecInternalSecDecInternalDenominatorCall2;
+
+
+// contour deformation sign checks
+real_t SecDecInternalSignCheckExpression;
+SecDecInternalSignCheckExpression = SecDecInternalImagPart(SecDecInternalSecondAbbreviation[1]);
+#ifdef SECDEC_WITH_CUDA
+if (SecDecInternalSignCheckExpression > 0) {printf("Sign check 1 (contour deformation polynomial) failed.");
+return std::nan("");
+}
+#else
+if (SecDecInternalSignCheckExpression > 0)throw secdecutil::sign_check_error(", \"contour deformation polynomial\", check id \"1\",");
+#endif
+SecDecInternalSignCheckExpression = SecDecInternalRealPart(SecDecInternalUCall1);
+#ifdef SECDEC_WITH_CUDA
+if (SecDecInternalSignCheckExpression < 0) {printf("Sign check 1 (positive polynomial)failed.");
+return std::nan("");
+}
+#else
+if (SecDecInternalSignCheckExpression < 0)throw secdecutil::sign_check_error(", \"positive polynomial\", check id \"1\",");
+#endif
+// end of contour deformation sign checks
+
+tmp = SecDecInternalSecondAbbreviation[2];
+
+return tmp;
+#undef x0
+#undef x1
+#undef x2
+#undef x3
+#undef s
+#undef m2
+#undef SecDecInternalLambda0
+#undef SecDecInternalLambda1
+#undef SecDecInternalLambda2
+#undef SecDecInternalLambda3
+#undef SecDecInternalDenominator
+#undef SecDecInternalRealPart
+#undef SecDecInternalImagPart
+#undef tmp
+#undef SecDecInternalAbbreviations1
+};
+#ifdef SECDEC_WITH_CUDA
+__device__ secdecutil::SectorContainerWithDeformation<real_t, complex_t>::DeformedIntegrandFunction* const device_sector_3_order_0_integrand = sector_3_order_0_integrand;
+secdecutil::SectorContainerWithDeformation<real_t, complex_t>::DeformedIntegrandFunction* get_device_sector_3_order_0_integrand()
+{
+using IntegrandFunction = secdecutil::SectorContainerWithDeformation<real_t, complex_t>::DeformedIntegrandFunction;
+IntegrandFunction* device_address_on_host;
+auto errcode = cudaMemcpyFromSymbol(&device_address_on_host,device_sector_3_order_0_integrand, sizeof(IntegrandFunction*));
+if (errcode != cudaSuccess) throw secdecutil::cuda_error( cudaGetErrorString(errcode) );
+return device_address_on_host;
+};
+#endif
+};

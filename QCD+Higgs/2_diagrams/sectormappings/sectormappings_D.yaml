@@ -1,0 +1,26 @@
+sectormappings:
+  name: D
+  zero_sectors:
+    t=0: [0]
+  sectors_without_graph:
+    {}
+  sector_relations:
+    1: [[A, 8], [[k, k-p3]]]
+    2: [[A, 8], [[k, k+p1-p3]]]
+    3: [[B, 3], [[k, p1-k]]]
+    4: [[A, 1], [[k, k+p3]]]
+    5: [[A, 9], [[k, -k+p3]]]
+    6: [[A, 10], [[k, -k+p1+p3]]]
+    7: [[B, 11], [[k, k]]]
+    8: [[A, 1], [[k, -p2+k+p3]]]
+    9: [[Ax12, 10], [[k, -k+p3]]]
+    10: [[Ax12x34, 9], [[k, -p2+k+p3]]]
+    11: [[Bx34, 11], [[k, p1-k]]]
+    12: [[Ax12x34, 3], [[k, -p2+k+p3]]]
+    13: [[Ax12, 11], [[k, -k+p3]]]
+    14: [[Ax12x34, 11], [[k, -p2+k+p3]]]
+  crossed_sector_relations:
+    x12:
+      15: [[Dx12x34, 15], [[k, p2-k]]]
+  sector_symmetries:
+    {}

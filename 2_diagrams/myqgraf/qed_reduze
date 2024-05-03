@@ -1,0 +1,22 @@
+*
+* QED model description for QGRAF
+*
+*********************************************************************
+*
+*
+* Propagators:
+* - The particle flow in the diagram follows the momentum direction
+*   of the particle 'part1' in the definition of the propagator
+*   [part1, part2, -]
+* - The mass parameter must be set to a number or
+*   a symbol declared in the file "global.yaml"
+
+[electron, positron, - ; mass='0' ]
+[photon,  photon, + ; mass='0' ]
+
+* Vertices:
+* - The ordering of the fields
+*
+
+[positron, photon, electron]
+

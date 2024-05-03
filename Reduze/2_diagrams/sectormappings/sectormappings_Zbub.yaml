@@ -1,0 +1,33 @@
+sectormappings:
+  name: Zbub
+  zero_sectors:
+    t=0: [0]
+    t=1: [2, 8]
+  sectors_without_graph:
+    {}
+  sector_relations:
+    1: [[Zbox, 8], [[k, k-p3]]]
+    2: [[Wbox, 1], [[k, p1+k]]]
+    4: [[Zbox, 8], [[k, k+p1-p3+p2]]]
+    6: [[Zbubx12x34, 3], [[k, -k+p1+p2]]]
+    8: [[Wbox, 1], [[k, p3+k]]]
+    12: [[Zbubx12x34, 9], [[k, -k+p1+p2]]]
+    14: [[Zbubx12x34, 11], [[k, -k+p1+p2]]]
+  crossed_sector_relations:
+    x12:
+      3: [[Zbubx12x34, 3], []]
+      5: [[Zbub, 5], [[k, -k+p1+p2]]]
+      7: [[Zbub, 7], [[k, -k+p1+p2]]]
+      9: [[Zbub, 9], []]
+      13: [[Zbub, 13], []]
+  sector_symmetries:
+    5:
+      - [[k, -k+p1+p2]]
+    7:
+      - [[k, -k+p1+p2], [p1, p2], [p3, p1-p3+p2], [p2, p1]]
+    10:
+      - [[k, -k+p1+p3]]
+    13:
+      - [[k, -k+p1+p2], [p1, p2], [p3, p1-p3+p2], [p2, p1]]
+    15:
+      - [[k, -k+p1+p2], [p1, p2], [p3, p1-p3+p2], [p2, p1]]

@@ -74,14 +74,23 @@ feynmanrules:
     in-ubar:      "Vbar(mom1,mass1,i1)"
     in-down:      "U(mom1,mass1,i1)"
     in-dbar:      "Vbar(mom1,mass1,i1)"
+    in-top:	  "U(mom1,mass1,i1)"
+    in-tbar:      "Vbar(mom1,mass1,i1)"
     in-bottom:	  "U(mom1,mass1,i1)"
     in-bbar:      "Vbar(mom1,mass1,i1)"
     in-gluon:     "Pol_gluon(mom1,mass1,mu1,a1,ortho1)"
 #    in-ghost:     "Pol_ghost(mom1,mass1,a1)"
 #    in-Ghost:     "PolC_ghost(mom1,mass1,a1)"
 
+    out-up:       "Ubar(mom1,mass1,i1)"
+    out-ubar:     "V(mom1,mass1,i1)"
+    out-down:     "Ubar(mom1,mass1,i1)"
+    out-dbar:     "V(mom1,mass1,i1)"
     out-top:      "Ubar(mom1,mass1,i1)"
     out-tbar:     "V(mom1,mass1,i1)"
+    out-bottom:   "Ubar(mom1,mass1,i1)"
+    out-bbar:     "V(mom1,mass1,i1)"
+    out-gluon:    "PolC_gluon(mom1,mass1,mu1,a1,ortho1)"
 
   propagators:
     up_ubar:	       "I*(GaS(mom1) + mass1*GaOne(1)) * Prop(mom1, mass1^2) * delta_f(i1,i2)"
@@ -94,6 +103,9 @@ feynmanrules:
     Z_Z:	       "-I * (metric_l(mu1,mu2) - Mom(mom1, mu1) * Mom(mom1, mu2) / mass1^2) * Prop(mom1, mass1^2)"
     Wp_Wm:	       "-I * (metric_l(mu1,mu2) - Mom(mom1, mu1) * Mom(mom1, mu2) / mass1^2) * Prop(mom1, mass1^2)"
     higgs_higgs:       "I * Prop(mom1, mass1^2)"
+
+
+    
 
 
   vertices:
@@ -112,15 +124,17 @@ feynmanrules:
 #    Ghost_gluon_ghost:        "g * ColF3(a1, a2, a3) * Mom(mom1, mu2)"
 
 #EW vertices
+
+#The problem is in the Z-boson vertices
 #Include an electroweak scheme to fix the parameters.
     ubar_photon_up:           "I * (2/3)*e * Ga(mu2) * delta_f(i1, i3)"
     dbar_photon_down:         "-I * (1/3)*e * Ga(mu2) * delta_f(i1, i3)"
     bbar_photon_bottom:       "-I * (1/3)*e * Ga(mu2) * delta_f(i1, i3)"
     tbar_photon_top:          "I * (2/3)*e * Ga(mu2) * delta_f(i1, i3)"
-    ubar_Z_up:		      "I * e / 2 / sw / cw * Ga(mu2) * (vf * GaOne(1) - af * GaOne(1)) * delta_f(i1, i3)"
-    dbar_Z_down:	      "I * e / 2 / sw / cw * Ga(mu2) * (vf * GaOne(1) - af * GaOne(1)) * delta_f(i1, i3)"
-    bbar_Z_bottom:	      "I * e / 2 / sw / cw * Ga(mu2) * (vf * GaOne(1) - af * GaOne(1)) * delta_f(i1, i3)"
-    tbar_Z_top:		      "I * e / 2 / sw / cw * Ga(mu2) * (vf * GaOne(1) - af * GaOne(1)) * delta_f(i1, i3)"
+    ubar_Z_up:		      "I * e / 2 / sw / cw * Ga(mu2) * (vf * GaOne(1) - bf * GaOne(1)) * delta_f(i1, i3)"
+    dbar_Z_down:	      "I * e / 2 / sw / cw * Ga(mu2) * (vf * GaOne(1) - bf * GaOne(1)) * delta_f(i1, i3)"
+    bbar_Z_bottom:	      "I * e / 2 / sw / cw * Ga(mu2) * (vf * GaOne(1) - bf * GaOne(1)) * delta_f(i1, i3)"
+    tbar_Z_top:		      "I * e / 2 / sw / cw * Ga(mu2) * (vf * GaOne(1) - bf * GaOne(1)) * delta_f(i1, i3)"
 
 #V is a diagonal CKM.
     ubar_Wp_down:	      "I * e / 2 / 2^(1/2) / sw / cw * Ga(mu2) * (GaOne(1)) * V * delta_f(i1, i3)"
@@ -130,7 +144,68 @@ feynmanrules:
     
 
 #Vertex for the top and higgs.
-    tbar_higgs_top:	      "-I*(mass1/v) * (x * GaOne(1)) * delta_f(i1, i3)"
+    tbar_higgs_top:	      "-I*(mass1/v) * (x ) * delta_f(i1,i3)"
+
+# For the first one, we will need to put a slash on the epsilon using the gluon vertex, then dot the other epsilon using the top vertex and the propagator.
+
+# Propagators for the tensor structures:
+  #Put in delta functions to get rid of the loop integrals
+#    ten1_ten1:         "metric_l(mu1,mu2)"#Complete
+#    ten2_ten2:         "metric_l(mu1,mu2)"#Complete
+#    ten3_ten3:         "metric_l(mu1,mu2)"#Complete
+#    ten4_ten4:         "GaOne(1)"#Complete
+#    ten5_ten5:         "GaOne(1)"#Complete
+#    ten6_ten6:         "metric_l(mu1,mu2)"#Complete
+#    ten7_ten7:         "GaOne(1)"#Complete
+#    ten8_ten8:         "metric_l(mu1,mu2)"#Complete
+#    ten9_ten9:         "metric_l(mu1,mu2)"#Complete
+#    ten10_ten10:       "metric_l(mu1,mu2)"#Complete
+#    ten11_ten11:       "metric_l(mu1,mu2)"#Complete
+#    ten12_ten12:       "GaOne(1)"#Complete
+#    ten13_ten13:       "GaOne(1)"#Complete
+#    ten14_ten14:       "metric_l(mu1,mu2)"#Complete
+#    ten15_ten15:       "GaOne(1)"#Complete
+#    ten16_ten16:       "metric_l(mu1,mu2)"#Complete
+#    ten17_ten17:       "GaOne(1)"#Complete
+#    ten18_ten18:       "metric_l(mu1,mu2)"#Complete
+
+# Vertices for the tensor structures:#Figure out the index here
+    tbar_ten1_top:            "Mom(mom3,mu2)"#Complete
+#    gluon_ten1_gluon:	      "metric_l(mu3,mu2)*Ga(mu3)"#Complete
+#    tbar_ten2_top:            "Mom(mom3,mu2)"#Complete
+#    gluon_ten2_gluon:	      "metric_l(mu2,mu3)*Ga(mu1)"#Complete
+#    tbar_ten3_ten3_top:       "Mom(mom4,mu2)*Mom(mom4,mu3)"#Complete
+#    gluon_ten3_ten3_gluon:    "metric_l(mu1,mu2)*metric_l(mu3,mu4)*GaS(mom1)"#Complete
+#    tbar_ten4_top:            "GaOne(1)"#Complete
+#    gluon_ten4_gluon:	      "Ga(mu1)*Ga(mom1)*Ga(mu3)"#Complete
+#    tbar_ten5_top:            "GaOne(1)"#Complete
+#    gluon_ten5_gluon:	      "Ga(mu1)*Ga(mom1)*Ga(mu3)"#Complete
+#    tbar_ten6_ten6_top:       "Mom(mom4,mu2)*Mom(mom4,mu3)"#Complete
+#    gluon_ten6_ten6_gluon:    "metric_l(mu1,mu2)*metric_l(mu3,mu4)"#Complete
+#    tbar_ten7_top:            "GaOne(1)"#Complete
+#    gluon_ten7_gluon:	      "metric_l(mu1,mu3)"#Complete
+##    tbar_ten8_top:            "Mom(mom3,mu2)"#Complete
+#    gluon_ten8_gluon:	      "metric_l(mu1,mu2)*Ga(mu3)*GaS(mom1)"#Complete
+#    tbar_ten9_top:            "Mom(mom3,mu2)"#Complete
+#    gluon_ten9_gluon:	      "metric_l(mu3,mu2)*Ga(mu1)"#Put the gamma5 here
+#    tbar_ten10_top:           "Mom(mom3,mu2)"#Complete
+#    gluon_ten10_gluon:	      "metric_l(mu1,mu2)*Ga(mu3)"#Put the gamma5 here
+#    tbar_ten11_ten11_top:     "Mom(mom4,mu2)*Mom(mom4,mu3)"#Complete
+#    gluon_ten11_ten11_gluon:  "metric_l(mu1,mu2)*metric_l(mu3,mu4)*GaS(mom1)"#Put the gamma5 here
+#    tbar_ten12_top:           "GaOne(1)"#Complete
+#    gluon_ten12_gluon:	      "Ga(mu3)*Ga(mom1)*Ga(mu1)"#Put the gamma5 here
+#    tbar_ten13_top:           "GaOne(1)"#Complete
+#    gluon_ten13_gluon:	      "Ga(mu1)*Ga(mom1)*Ga(mu3)#Put the gamma5 here
+#    tbar_ten14_ten14_top:     "Mom(mom4,mu2)*Mom(mom4,mu3)"#Complete
+#    gluon_ten14_ten14_gluon:  "metric_l(mu1,mu2)*metric_l(mu3,mu4)"#Put the gamma5 here
+#    tbar_ten15_top:           "GaOne(1)"#Complete
+#    gluon_ten15_gluon:	      "metric_l(mu1,mu3)"#Put the gamma5 here
+#    tbar_ten16_top:           "Mom(mom3,mu2)"#Complete
+#    gluon_ten16_gluon:	      "metric_l(mu1,mu2)*Ga(mu3)*GaS(mom1)"#Put the gamma5 here
+#    tbar_ten17_top:           "GaOne(1)"#Complete
+#    gluon_ten17_gluon:	      "Ga(mu1)*Ga(mu2)"#Complete
+#    tbar_ten18_top:           "Mom(mom3,mu2)"#Complete
+#    gluon_ten18_gluon:	      "metric(mu2,mu3)*Ga(mu3)*GaS(mom1)"#Complete
 
 
   # polarization sums: [ pol, polc, val ]  means  pol*polc = val
@@ -145,10 +220,10 @@ feynmanrules:
 #    - [ "Pol_photon(mom,mass,mu1)", "PolC_photon(mom,mass,mu2)", "-metric_l(mu1, mu2)" ]
 #    - [ "Pol_ghost(mom,mass,a1)",   "PolC_ghost(mom,mass,a2)",   "I*delta_a(a1,a2)" ]
     - [ "Pol_gluon(mom,mass,mu1,a1,0)", "PolC_gluon(mom,mass,mu2,a2,0)", "-delta_a(a1,a2) * metric_l(mu1,mu2)" ]
-    - [ "Pol_gluon(mom,mass,mu1,a1,ortho)", "PolC_gluon(mom,mass,mu2,a2,ortho)",
-                             "delta_a(a1,a2) * ( - metric_l(mu1,mu2)
-                                  + ( Mom(mom,mu1) * Mom(ortho,mu2) + Mom(ortho,mu1) * Mom(mom,mu2) ) / SP(mom,ortho)
-                                  + SP(ortho,ortho) * Mom(mom,mu1) * Mom(mom,mu2) / SP(mom,ortho)^2 )" ]
+#    - [ "Pol_gluon(mom,mass,mu1,a1,ortho)", "PolC_gluon(mom,mass,mu2,a2,ortho)",
+#                             "delta_a(a1,a2) * ( - metric_l(mu1,mu2)
+#                                  + ( Mom(mom,mu1) * Mom(ortho,mu2) + Mom(ortho,mu1) * Mom(mom,mu2) ) / SP(mom,ortho)
+#                                  + SP(ortho,ortho) * Mom(mom,mu1) * Mom(mom,mu2) / SP(mom,ortho)^2 )" ]
 
 
 

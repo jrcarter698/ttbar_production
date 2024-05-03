@@ -1,0 +1,8 @@
+jobs:
+  - find_diagram_shifts:
+      qgraf_file: "myqgraf/results/ggtt_tree.qgraf.yaml"
+      output_file: "myresults/qqtt_tree.match.yaml"
+  - find_diagram_shifts:
+      qgraf_file: "myqgraf/results/ggtt_1loop.qgraf.yaml"
+      output_file: "myresults/qqtt_1loop.match.yaml"
+      info_file_form: "myresults/qqtt_1loop.match.info.inc"

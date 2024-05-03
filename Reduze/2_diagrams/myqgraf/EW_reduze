@@ -38,15 +38,15 @@
 [dbar, photon, down ; gpow = '0', ghiggs = '0']
 [tbar, photon, down ; gpow = '0', ghiggs = '0']
 [bbar, photon, bottom ; gpow = '0', ghiggs = '0']
-[ubar, Z, up ; gpow = '0', ghiggs = '0']
-[dbar, Z, down ; gpow = '0', ghiggs = '0']
+*[ubar, Z, up ; gpow = '0', ghiggs = '0']
+*[dbar, Z, down ; gpow = '0', ghiggs = '0']
 [tbar, Z, top ; gpow = '0', ghiggs = '0']
-[bbar, Z, bottom ; gpow = '0', ghiggs = '0']
+*[bbar, Z, bottom ; gpow = '0', ghiggs = '0']
 [ubar, Wp, down ; gpow = '0', ghiggs = '0']
 [dbar, Wm, up ; gpow = '0', ghiggs = '0']
 [tbar, Wp, bottom ; gpow = '0', ghiggs = '0']
 [bbar, Wm, top ; gpow = '0', ghiggs = '0']
-[tbar, higgs, top; gpow = '0', ghiggs = '1']
+*[tbar, higgs, top; gpow = '0', ghiggs = '1']
 
 * QCD vertices
 

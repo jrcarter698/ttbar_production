@@ -1,0 +1,39 @@
+integralfamilies:
+
+  - name: "tree"
+    loop_momenta: []
+
+  # for boxes etc.
+  - name: "A"
+    loop_momenta: [k]
+    propagators:
+      - [ "k",        "mt^2"]
+      - [ "k-p1",     "mt^2"]
+      - [ "k-p1-p2",  "mt^2"]
+      - [ "k-p3",        0]
+
+  # for heavy quark vertex correction etc.
+  - name: "B"
+    loop_momenta: [k]
+    propagators:
+      - [ "k",      0 ]
+      - [ "k-p1",     0   ]
+      - [ "k-p1-p2",  0 ]
+      - [ "k-p3",     "mt^2"   ]
+
+ 
+  - name: "C"
+    loop_momenta: [k]
+    propagators:
+      - [ "k",      "mt^2"]
+      - [ "k-p1",     "mt^2"   ]
+      - [ "k-p1-p2",  0 ]
+      - [ "k-p3",     0   ]
+
+  - name: "D"
+    loop_momenta: [k]
+    propagators:
+      - [ "k",     0]
+      - [ "k-p1",    0   ]
+      - [ "k-p3",     "mt^2"   ]
+      - [ "k+p2-p3",  "mt^2" ]

@@ -1,0 +1,36 @@
+{
+  "name": "A1111",
+  "type": "sum",
+  "max_dimension": 3,
+  "regulators": [
+    "eps"
+  ],
+  "realp": [
+    "s",
+    "t",
+    "m2"
+  ],
+  "complexp": [],
+  "complex_result": true,
+  "requested_orders": [
+    0
+  ],
+  "integrals": [
+    "A1111_integral"
+  ],
+  "sums": {
+    "A1111": [
+      {
+        "integral": "A1111_integral",
+        "coefficient": "A1111_integral_coefficient0.txt",
+        "coefficient_lowest_orders": [
+          0
+        ],
+        "coefficient_highest_orders": [
+          0
+        ]
+      }
+    ]
+  },
+  "generated_by": "pySecDec 1.6.2 (451589a9) [Python 3.9.7, NumPy 1.20.3, SymPy 1.10.1]"
+}

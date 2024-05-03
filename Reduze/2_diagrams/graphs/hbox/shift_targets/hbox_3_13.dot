@@ -1,0 +1,23 @@
+digraph hbox_3_13 {
+  label="hbox_3_13";
+  rankdir="LR";
+  subgraph edges {
+    -1 -> 2 [label="(p1,0;1)"];
+    -2 -> 2 [label="(p2,0;2)"];
+    3 -> -3 [label="(p3,mt^2;3)"];
+    1 -> -4 [label="(p1-p3+p2,mt^2;4)"];
+    2 -> 3 [label="(k,mt^2;5)"];
+    1 -> 2 [label="(k-p1-p2,mt^2;7)"];
+    3 -> 1 [label="(k-p3,mh^2;8)"];
+  }
+  subgraph incoming { rank="source"; -1; -2; }
+  subgraph outgoing { rank="sink"; -3; -4; }
+-4 [shape=point];
+-3 [shape=point];
+-2 [shape=point];
+-1 [shape=point];
+1 [shape=point];
+2 [shape=point];
+3 [shape=point];
+}
+
